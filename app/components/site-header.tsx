@@ -42,8 +42,11 @@ export function SiteHeader() {
             Free Assessment
           </Link>
 
-          <details className="relative md:hidden">
-            <summary className="list-none cursor-pointer rounded border border-outline-variant px-3 py-2 font-label text-label-md font-medium text-on-surface marker:hidden [&::-webkit-details-marker]:hidden">
+          <details className="group relative md:hidden">
+            <summary
+              aria-label="Toggle navigation menu"
+              className="list-none cursor-pointer rounded border border-outline-variant px-3 py-2 font-label text-label-md font-medium text-on-surface marker:hidden group-open:bg-surface-container-low [&::-webkit-details-marker]:hidden"
+            >
               Menu
             </summary>
             <div className="absolute right-0 mt-2 w-52 rounded border border-outline-variant bg-surface-container-lowest py-2 shadow-[var(--shadow-institutional)]">

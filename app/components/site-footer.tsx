@@ -1,17 +1,45 @@
 // Purpose: This file creates the bottom section of the site, including helpful links, newsletter signup, and legal text.
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 export function SiteFooter() {
+  const [newsletter, setNewsletter] = useState<
+    "idle" | "submitting" | "sent" | "error"
+  >("idle");
+
+  async function onNewsletterSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setNewsletter("submitting");
+    try {
+      const data = new FormData(e.currentTarget);
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify({
+          name: "Newsletter subscriber",
+          email: data.get("email"),
+          message: "Newsletter signup",
+        }),
+        headers: { "Content-Type": "application/json" },
+      });
+      setNewsletter(res.ok ? "sent" : "error");
+      if (res.ok) e.currentTarget.reset();
+    } catch {
+      setNewsletter("error");
+    }
+  }
+
   return (
-    <footer id="contact" className="mt-auto bg-primary text-on-primary">
+    <footer className="mt-auto bg-primary text-on-primary">
       <div className="mx-auto grid max-w-container-max grid-cols-1 gap-gutter px-margin-mobile py-section-padding md:grid-cols-4 md:px-margin-desktop">
         <div className="md:col-span-1">
           <div className="mb-stack-md font-headline text-headline-md font-bold">
             USD Immigration
           </div>
           <p className="font-body text-body-md text-on-primary/80">
-            Expert legal guidance for your global journey. Professionalism you
-            can trust, outcomes you can rely on.
+            Expert legal guidance for your global journey — outcomes you can
+            rely on.
           </p>
         </div>
         <div>
@@ -60,7 +88,7 @@ export function SiteFooter() {
           <ul className="space-y-stack-sm font-body text-body-md">
             <li>
               <Link
-                href="#"
+                href="/privacy"
                 className="text-on-primary/80 transition-colors hover:text-on-primary"
               >
                 Privacy Policy
@@ -68,7 +96,7 @@ export function SiteFooter() {
             </li>
             <li>
               <Link
-                href="#"
+                href="/terms"
                 className="text-on-primary/80 transition-colors hover:text-on-primary"
               >
                 Terms of Service
@@ -76,7 +104,7 @@ export function SiteFooter() {
             </li>
             <li>
               <Link
-                href="#"
+                href="#contact"
                 className="text-on-primary/80 transition-colors hover:text-on-primary"
               >
                 Office Locations
@@ -84,7 +112,7 @@ export function SiteFooter() {
             </li>
             <li>
               <Link
-                href="#"
+                href="#contact"
                 className="text-on-primary/80 transition-colors hover:text-on-primary"
               >
                 Careers
@@ -99,7 +127,7 @@ export function SiteFooter() {
           <p className="mb-stack-md font-body text-body-md text-on-primary/80">
             Receive the latest policy updates directly.
           </p>
-          <form className="flex" action="#" method="post">
+          <form className="flex" onSubmit={onNewsletterSubmit}>
             <label htmlFor="newsletter-email" className="sr-only">
               Email address
             </label>
@@ -107,23 +135,41 @@ export function SiteFooter() {
               id="newsletter-email"
               name="email"
               type="email"
+              required
               autoComplete="email"
               placeholder="Email Address"
               className="w-full min-w-0 rounded-l rounded-r-none border border-white/20 bg-white/10 px-4 py-2 font-body text-body-md text-on-primary placeholder:text-on-primary/50 focus:border-white/40 focus:outline-none focus:ring-2 focus:ring-on-primary/30"
             />
             <button
               type="submit"
-              className="shrink-0 rounded-r bg-secondary px-4 py-2 font-label text-label-lg font-semibold tracking-[0.05em] text-on-primary"
+              disabled={newsletter === "submitting"}
+              className="shrink-0 rounded-r bg-secondary px-4 py-2 font-label text-label-lg font-semibold tracking-[0.05em] text-on-primary disabled:opacity-60"
             >
-              Join
+              {newsletter === "submitting" ? "…" : "Join"}
             </button>
           </form>
+          {newsletter === "sent" && (
+            <p
+              role="status"
+              className="mt-stack-sm font-body text-body-md text-on-primary/90"
+            >
+              Thanks — you&apos;re on the list.
+            </p>
+          )}
+          {newsletter === "error" && (
+            <p
+              role="alert"
+              className="mt-stack-sm font-body text-body-md text-on-primary/90"
+            >
+              Sign-up failed. Please try again later.
+            </p>
+          )}
         </div>
       </div>
       <div className="mx-auto max-w-container-max border-t border-on-primary/10 px-margin-mobile py-stack-lg md:px-margin-desktop">
         <p className="text-center font-body text-body-md text-on-primary/60 md:text-left">
           © {new Date().getFullYear()} USD Immigration Consultancy. All rights
-          reserved. Professional legal representation.
+          reserved.
         </p>
       </div>
     </footer>

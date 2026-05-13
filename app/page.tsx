@@ -1,6 +1,7 @@
 // Purpose: This file builds the home page by arranging the main sections visitors see from top to bottom.
 import Image from "next/image";
 import Link from "next/link";
+import { ContactSection } from "./components/contact-section";
 import { SiteFooter } from "./components/site-footer";
 import { SiteHeader } from "./components/site-header";
 
@@ -24,7 +25,7 @@ export default function Home() {
   return (
     <>
       <SiteHeader />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* Hero */}
         <section className="relative flex min-h-[min(100vh,600px)] items-center overflow-hidden bg-primary-container">
           <div className="absolute inset-0 z-0">
@@ -39,20 +40,20 @@ export default function Home() {
           </div>
           <div className="relative z-10 mx-auto w-full max-w-container-max px-margin-mobile py-16 md:px-margin-desktop md:py-section-padding">
             <div className="max-w-2xl">
-              <span className="mb-stack-md inline-block rounded bg-secondary px-3 py-1 font-label text-label-md font-medium text-on-primary">
-                GLOBAL REACH, LOCAL EXPERTISE
+              <span className="mb-stack-md inline-block rounded border border-on-primary/30 bg-on-primary/10 px-3 py-1 font-label text-label-md font-medium uppercase tracking-[0.12em] text-on-primary backdrop-blur-sm">
+                Global Reach, Local Expertise
               </span>
               <h1 className="mb-stack-lg font-headline text-headline-lg-mobile font-bold tracking-tight text-on-primary md:text-display-lg">
                 Your Trusted Partner in Global Migration
               </h1>
               <p className="mb-stack-lg font-body text-body-lg text-on-primary/90">
-                Navigating complex immigration laws with precision and
-                integrity. Our certified experts ensure your journey is seamless
-                and secure.
+                Licensed consultants helping individuals, families, and
+                businesses migrate to Canada, the US, the UK, and Australia —
+                with end-to-end case management in five languages.
               </p>
               <div
                 id="assessment"
-                className="flex flex-wrap gap-stack-md scroll-mt-24"
+                className="flex flex-wrap gap-stack-md scroll-mt-20"
               >
                 <Link
                   href="#contact"
@@ -62,7 +63,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="#services"
-                  className="inline-flex items-center justify-center rounded-lg border-2 border-on-primary px-8 py-4 font-label text-label-lg font-semibold tracking-[0.05em] text-on-primary transition-colors hover:bg-on-primary hover:text-primary"
+                  className="inline-flex items-center justify-center rounded-lg border-2 border-on-primary px-8 py-4 font-label text-label-lg font-semibold tracking-[0.05em] text-on-primary transition-colors hover:border-secondary hover:bg-secondary hover:text-on-primary"
                 >
                   View Services
                 </Link>
@@ -73,7 +74,7 @@ export default function Home() {
                     verified
                   </span>
                   <span className="font-label text-label-lg font-semibold tracking-[0.05em] text-on-primary">
-                    Certified Professionals
+                    ICCRC-Certified Consultants
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -92,7 +93,7 @@ export default function Home() {
         {/* Services — bento */}
         <section
           id="services"
-          className="mx-auto max-w-container-max scroll-mt-24 px-margin-mobile py-section-padding md:px-margin-desktop"
+          className="mx-auto max-w-container-max scroll-mt-20 px-margin-mobile py-section-padding md:px-margin-desktop"
         >
           <div className="mb-section-padding text-center">
             <h2 className="mb-stack-sm font-headline text-headline-lg-mobile font-semibold text-primary md:text-headline-lg">
@@ -103,7 +104,7 @@ export default function Home() {
               businesses looking to expand their horizons.
             </p>
           </div>
-          <div className="grid h-auto grid-cols-1 gap-gutter md:grid-cols-12 md:h-[500px]">
+          <div className="grid grid-cols-1 gap-gutter md:grid-cols-12 md:auto-rows-fr md:min-h-[500px]">
             <div className="group relative flex flex-col justify-end overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest p-8 md:col-span-8">
               <div className="absolute inset-0 z-0">
                 <Image
@@ -146,7 +147,8 @@ export default function Home() {
                   Education
                 </h3>
                 <p className="mb-4 font-body text-body-md text-on-surface-variant">
-                  Study permits and institutional placements.
+                  Study permits, institutional placements, and post-graduation
+                  work pathways tailored to your field.
                 </p>
                 <Link
                   href="#contact"
@@ -169,7 +171,9 @@ export default function Home() {
                   Family Reunion
                 </h3>
                 <p className="mb-4 font-body text-body-md text-on-surface-variant">
-                  Sponsorship and family reunification programs.
+                  Spousal sponsorship, dependent visas, and reunification
+                  programs that keep your family together throughout the
+                  process.
                 </p>
                 <Link
                   href="#contact"
@@ -221,7 +225,7 @@ export default function Home() {
         {/* Why us */}
         <section
           id="about"
-          className="scroll-mt-24 bg-surface-container-low py-section-padding"
+          className="scroll-mt-20 bg-surface-container-low py-section-padding"
         >
           <div className="mx-auto grid max-w-container-max grid-cols-1 items-center gap-section-padding px-margin-mobile md:px-margin-desktop lg:grid-cols-2">
             <div>
@@ -304,7 +308,7 @@ export default function Home() {
         {/* Blog previews */}
         <section
           id="insights"
-          className="mx-auto max-w-container-max scroll-mt-24 px-margin-mobile py-section-padding md:px-margin-desktop"
+          className="mx-auto max-w-container-max scroll-mt-20 px-margin-mobile py-section-padding md:px-margin-desktop"
         >
           <div className="mb-section-padding flex flex-col justify-between gap-stack-md sm:flex-row sm:items-end">
             <div>
@@ -394,6 +398,7 @@ export default function Home() {
             </article>
           </div>
         </section>
+        <ContactSection />
       </main>
       <SiteFooter />
     </>

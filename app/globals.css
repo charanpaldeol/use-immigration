@@ -1,5 +1,4 @@
 /* Purpose: This file controls the site's overall look, including shared colors, fonts, spacing, and style rules used everywhere. */
-@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -11,7 +10,7 @@
   /* Colors — Stellar Sovereign (docs/DESIGN.md) */
   --color-surface: #f8f9fa;
   --color-surface-dim: #d9dadb;
-  --color-surface-bright: #f8f9fa;
+  --color-surface-bright: #ffffff;
   --color-surface-container-lowest: #ffffff;
   --color-surface-container-low: #f3f4f5;
   --color-surface-container: #edeeef;
