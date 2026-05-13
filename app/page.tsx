@@ -19,10 +19,10 @@ export default function Home() {
                 Build Your Future in Canada
               </h1>
               <p className="mb-stack-lg max-w-2xl font-body text-body-lg text-on-primary/90">
-                We help skilled workers, students, families, and business owners
-                navigate Canadian immigration with clear strategy and
-                step-by-step support. Based in Niagara Falls, we deliver
-                practical pathways aligned with 2026 program priorities.
+                We deliver clear immigration strategy for 2026 pathways.
+                Our Niagara team supports workers, students, families, and
+                employers. You get a direct plan, defined milestones, and clear
+                next actions.
               </p>
               <div
                 id="assessment"
@@ -85,8 +85,8 @@ export default function Home() {
                 Skilled Worker Pathways
               </h3>
               <p className="mt-2 font-body text-body-md text-on-surface-variant">
-                Express Entry profile strategy, CRS improvement plans, and OINP
-                stream selection for long-term success in Ontario.
+                We build skilled worker plans around Express Entry and OINP.
+                You get score strategy, stream selection, and filing order.
               </p>
               <Link
                 href="/guides/express-entry-2026"
@@ -106,8 +106,8 @@ export default function Home() {
                 Students and Families
               </h3>
               <p className="mt-2 font-body text-body-md text-on-surface-variant">
-                Study permits, spouse open work permits, and family sponsorship
-                planning with practical timelines and documentation support.
+                We map study and family pathways with clear timing.
+                You know what to file, when to file, and why.
               </p>
               <Link
                 href="#contact"
@@ -127,8 +127,8 @@ export default function Home() {
                 Employers and Business Owners
               </h3>
               <p className="mt-2 font-body text-body-md text-on-surface-variant">
-                Employer-driven OINP support, strategic hiring pathways, and
-                regional immigration planning tailored for Niagara operations.
+                We support employer hiring pathways tied to OINP rules.
+                Your team gets compliant process and a defined filing plan.
               </p>
               <Link
                 href="/guides/oinp-2026-niagara"
@@ -153,19 +153,16 @@ export default function Home() {
                 Why Niagara Is a Strategic 2026 Advantage
               </h2>
               <p className="mb-stack-md font-body text-body-md text-on-surface-variant">
-                Federal and provincial programs continue to prioritize economic
-                immigration, while regional pathways provide practical
-                opportunities outside major metro markets.
+                Niagara is a strong region for 2026 immigration planning.
+                Employer demand remains active across key sectors.
               </p>
               <p className="mb-stack-md font-body text-body-md text-on-surface-variant">
-                Our Niagara office is positioned to support applicants and
-                employers through Ontario-focused streams, including updated
-                OINP and temporary-resident-to-PR options.
+                Our office is built for Ontario-focused pathways.
+                We align applications to OINP and TR-to-PR requirements.
               </p>
               <p className="font-body text-body-md text-on-surface-variant">
-                We combine policy updates, eligibility planning, and document
-                readiness so clients can move confidently from application to
-                decision.
+                We do not file weak applications.
+                If a case is not ready, we stop and give a readiness plan first.
               </p>
             </div>
             <div className="rounded-lg border border-outline-variant bg-surface-container-lowest p-7 shadow-[var(--shadow-institutional)]">
@@ -184,8 +181,8 @@ export default function Home() {
                       Clear Process and Eligibility Roadmap
                     </h3>
                     <p className="font-body text-body-md text-on-surface-variant">
-                      A practical action plan from profile setup to final
-                      submission, with every step mapped before you apply.
+                      You get a clear path from profile setup to submission.
+                      Every step is mapped before filing starts.
                     </p>
                   </div>
                 </div>
@@ -200,8 +197,8 @@ export default function Home() {
                       Expert Guidance Through Policy Changes
                     </h3>
                     <p className="font-body text-body-md text-on-surface-variant">
-                      Up-to-date program insights tied to 2026 priorities so you
-                      can choose the right stream at the right time.
+                      We track policy updates and apply them to your case.
+                      You choose the right stream at the right time.
                     </p>
                   </div>
                 </div>
@@ -216,8 +213,8 @@ export default function Home() {
                       Regional Specialization in Niagara
                     </h3>
                     <p className="font-body text-body-md text-on-surface-variant">
-                      Local labor-market context and regional program alignment
-                      that strengthens applications for Niagara-focused pathways.
+                      We use local labor-market signals to shape your strategy.
+                      That improves fit for Niagara-focused pathways.
                     </p>
                   </div>
                 </div>
@@ -236,8 +233,8 @@ export default function Home() {
                 2026 Immigration Guides
               </h2>
               <p className="mt-2 font-body text-body-md text-on-surface-variant">
-                In-depth resources built to answer the most important
-                eligibility and planning questions.
+                Start with a direct pathway answer, then follow a clear action
+                checklist.
               </p>
             </div>
             <Link
@@ -257,8 +254,8 @@ export default function Home() {
                   Express Entry 2026
                 </h3>
                 <p className="font-body text-body-md text-on-surface-variant">
-                  Coverage of CRS scoring, in-demand occupations, and Niagara
-                  strategy for skilled professionals.
+                  Direct guidance on CRS, eligibility, and filing priorities for
+                  skilled professionals.
                 </p>
                 <Link
                   href="/guides/express-entry-2026"
@@ -280,8 +277,8 @@ export default function Home() {
                   OINP 2026 for Niagara
                 </h3>
                 <p className="font-body text-body-md text-on-surface-variant">
-                  Stream-by-stream guidance, Ontario program updates, and
-                  regional opportunities for workers and employers.
+                  Clear stream selection guidance with Ontario rules and Niagara
+                  fit.
                 </p>
                 <Link
                   href="/guides/oinp-2026-niagara"
@@ -303,8 +300,8 @@ export default function Home() {
                   TR to PR Pathway 2026
                 </h3>
                 <p className="font-body text-body-md text-on-surface-variant">
-                  Fast-track options for temporary residents, with eligibility
-                  requirements and Niagara-specific application strategy.
+                  Direct TR-to-PR planning with clear eligibility checks and
+                  filing steps.
                 </p>
                 <Link
                   href="/guides/tr-to-pr-2026"

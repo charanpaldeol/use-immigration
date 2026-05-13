@@ -16,9 +16,9 @@ export default function ExpressEntryGuidePage() {
               Express Entry 2026: Niagara Strategy Guide
             </h1>
             <p className="mt-stack-md max-w-3xl font-body text-body-lg text-on-primary/90">
-              A practical overview of CRS scoring, in-demand occupations, and
-              application sequencing for skilled professionals planning a move
-              to Canada.
+              Express Entry is a strong route for qualified skilled workers.
+              This guide shows what matters most in 2026. You leave with a clear
+              filing sequence.
             </p>
           </div>
         </section>
@@ -29,11 +29,9 @@ export default function ExpressEntryGuidePage() {
               What Changes in 2026
             </h2>
             <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-              Express Entry remains one of Canada&apos;s main pathways for skilled
-              workers. In 2026, applicants should expect continued emphasis on
-              occupation demand, language performance, and profile quality.
-              Federal priorities continue to favor economic immigration streams,
-              making accurate profile setup and supporting evidence essential.
+              Profile quality decides outcomes in 2026.
+              Occupation alignment, language scores, and evidence accuracy drive
+              selection. Weak records reduce your options.
             </p>
 
             <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">
@@ -51,11 +49,9 @@ export default function ExpressEntryGuidePage() {
               Niagara Advantage
             </h2>
             <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-              Niagara continues to present practical benefits for settlement
-              planning: lower cost pressure compared with larger cities, growing
-              labor demand in healthcare and skilled trades, and strong regional
-              employer ecosystems. These factors can support long-term retention
-              and improve pathway selection when paired with OINP options.
+              Niagara gives skilled workers a credible settlement path.
+              The region supports hiring in healthcare and trades with lower
+              cost pressure than major metros. That improves OINP alignment.
             </p>
 
             <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">
@@ -67,6 +63,10 @@ export default function ExpressEntryGuidePage() {
               <li>- Collect proof-of-funds and employment records early.</li>
               <li>- Book a consultation to select Express Entry vs OINP timing.</li>
             </ul>
+            <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
+              We do not submit incomplete files. If your documents are weak, we
+              pause and fix readiness first.
+            </p>
 
             <Link
               href="/#contact"

@@ -16,8 +16,9 @@ export default function TrToPrGuidePage() {
               TR to PR Pathway 2026
             </h1>
             <p className="mt-stack-md max-w-3xl font-body text-body-lg text-on-primary/90">
-              Fast-track transition planning for temporary residents who want to
-              move from valid work status to permanent residence.
+              TR to PR is a direct transition route for eligible workers.
+              This guide shows the core checks and filing order. You get a clear
+              readiness plan before submission.
             </p>
           </div>
         </section>
@@ -28,10 +29,9 @@ export default function TrToPrGuidePage() {
               Who This Pathway Serves
             </h2>
             <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-              TR to PR options are designed for people already contributing to
-              Canada&apos;s labor market, often with an existing employer record
-              and verified Canadian work experience. For many applicants, this
-              pathway can reduce uncertainty compared with starting from zero.
+              This pathway serves temporary residents with valid Canadian work
+              records. Existing employer evidence gives a stronger base than
+              starting from zero.
             </p>
 
             <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">
@@ -48,10 +48,9 @@ export default function TrToPrGuidePage() {
               Niagara Opportunity
             </h2>
             <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-              Niagara employers continue to recruit in healthcare, hospitality,
-              logistics, and trades. For temporary workers already employed in
-              the region, strong local work history can support practical PR
-              planning when paired with the correct stream and timeline.
+              Niagara remains a viable region for TR-to-PR planning.
+              Hiring demand continues across healthcare, hospitality, logistics,
+              and trades. Local work history improves pathway credibility.
             </p>
 
             <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">
@@ -63,6 +62,10 @@ export default function TrToPrGuidePage() {
               <li>3. Schedule language testing if required.</li>
               <li>4. Build a filing timeline for submission readiness.</li>
             </ol>
+            <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
+              We do not submit early to chase speed. If eligibility is not met,
+              we stop and set a compliant timeline.
+            </p>
 
             <Link
               href="/#contact"

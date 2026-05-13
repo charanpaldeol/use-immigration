@@ -16,8 +16,9 @@ export default function OinpGuidePage() {
               OINP 2026: Complete Niagara Guide
             </h1>
             <p className="mt-stack-md max-w-3xl font-body text-body-lg text-on-primary/90">
-              Stream-by-stream planning for skilled workers, students, and
-              employers looking to use Ontario nomination pathways effectively.
+              OINP is a direct route for Ontario-focused applicants.
+              This guide shows where you fit and what to file next. It is built
+              for workers, students, and employers in Niagara.
             </p>
           </div>
         </section>
@@ -28,10 +29,9 @@ export default function OinpGuidePage() {
               Program Snapshot
             </h2>
             <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-              OINP is a provincial pathway that can increase certainty for
-              applicants who align with Ontario priorities. In 2026, strong
-              demand persists in healthcare, trades, technology, and
-              employer-supported roles across regional communities like Niagara.
+              OINP rewards fit with Ontario labor demand.
+              In 2026, demand remains strong in healthcare, trades, technology,
+              and employer-supported roles. Stream choice must match evidence.
             </p>
 
             <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">
@@ -48,11 +48,9 @@ export default function OinpGuidePage() {
               Why Niagara Matters
             </h2>
             <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-              Niagara offers strong employer demand, practical living costs, and
-              reliable regional infrastructure for new permanent residents.
-              Applicants and sponsoring employers can often build stronger cases
-              when applications clearly connect role demand, community fit, and
-              retention potential in the region.
+              Niagara supports stable long-term settlement planning.
+              Employer demand and regional fit strengthen nomination strategy.
+              Cases perform better when role, location, and retention align.
             </p>
 
             <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">
@@ -64,6 +62,10 @@ export default function OinpGuidePage() {
               <li>3. Validate job offer terms where required.</li>
               <li>4. Build timeline from nomination to federal PR stage.</li>
             </ol>
+            <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
+              We do not force weak stream choices. If your profile does not fit,
+              we say no and move to a better path.
+            </p>
 
             <Link
               href="/#contact"
