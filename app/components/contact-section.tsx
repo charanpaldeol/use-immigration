@@ -1,223 +1,182 @@
-// Purpose: Contact section with firm contact details and an intake form for prospective clients.
-"use client";
+import type { ReactNode } from "react";
 
-import { useState } from "react";
+const PHONE_DISPLAY = "403 971 0038";
+const PHONE_TEL = "+14039710038";
+const EMAIL = "info@usdimmigration.ca";
+const HOURS = "Mon-Fri 9-6";
+const ADDRESS_LINES = ["4838 Dorchester Rd", "Niagara Falls, ON L2E 6N9"] as const;
+const ADDRESS_FOR_MAPS =
+  "4838 Dorchester Rd, Niagara Falls, ON L2E 6N9, Canada";
+const SEARCH_LABEL = "Niagara Falls, ON";
+const MAPS_DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(ADDRESS_FOR_MAPS)}`;
+const MAPS_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(
+  ADDRESS_FOR_MAPS,
+)}&z=14&output=embed`;
 
-const PATHWAYS = [
-  "Work & Professional",
-  "Education",
-  "Family Reunion",
-  "Business & Investment",
-  "Permanent Residency",
-  "Not sure yet",
-] as const;
+type ContactItemProps = {
+  icon: ReactNode;
+  title: string;
+  children: ReactNode;
+  tone?: "navy" | "sky";
+};
+
+function ContactItem({ icon, title, children, tone = "navy" }: ContactItemProps) {
+  const iconToneClass =
+    tone === "navy"
+      ? "bg-primary-container text-on-primary"
+      : "bg-secondary text-on-secondary";
+
+  return (
+    <li className="flex items-start gap-stack-md">
+      <div
+        className={`mt-0.5 rounded-md p-3 shadow-[var(--shadow-institutional)] ${iconToneClass}`}
+        aria-hidden="true"
+      >
+        {icon}
+      </div>
+      <div>
+        <p className="font-label text-label-md uppercase tracking-[0.05em] text-primary">
+          {title}
+        </p>
+        <div className="pt-1 font-body text-body-lg text-on-surface-variant">
+          {children}
+        </div>
+      </div>
+    </li>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.11-.27 11.7 11.7 0 0 0 3.7.59 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.7 11.7 0 0 0 .59 3.7 1 1 0 0 1-.27 1.11z" />
+    </svg>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20 4H4a2 2 0 0 0-2 2v.4l10 6.25L22 6.4V6a2 2 0 0 0-2-2Zm2 4.75-9.47 5.92a1 1 0 0 1-1.06 0L2 8.75V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8.75Z" />
+    </svg>
+  );
+}
+
+function ClockIcon() {
+  return (
+    <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8 8.01 8.01 0 0 1-8 8Z" />
+      <path d="M13 7h-2v6l5.25 3.15 1-1.64L13 12.05Z" />
+    </svg>
+  );
+}
+
+function PinIcon() {
+  return (
+    <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5Z" />
+    </svg>
+  );
+}
 
 export function ContactSection() {
-  const [status, setStatus] = useState<"idle" | "submitting" | "sent" | "error">(
-    "idle",
-  );
-
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus("submitting");
-    try {
-      const data = new FormData(e.currentTarget);
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        body: JSON.stringify(Object.fromEntries(data.entries())),
-        headers: { "Content-Type": "application/json" },
-      });
-      setStatus(res.ok ? "sent" : "error");
-      if (res.ok) e.currentTarget.reset();
-    } catch {
-      setStatus("error");
-    }
-  }
-
   return (
     <section
       id="contact"
       className="scroll-mt-20 bg-surface-container-low py-section-padding"
     >
-      <div className="mx-auto grid max-w-container-max grid-cols-1 gap-section-padding px-margin-mobile md:px-margin-desktop lg:grid-cols-2">
-        <div>
-          <h2 className="mb-stack-md font-headline text-headline-lg-mobile font-semibold text-primary md:text-headline-lg">
-            Start Your Free Assessment
-          </h2>
-          <p className="mb-stack-lg font-body text-body-lg text-on-surface-variant">
-            Tell us about your goals and a certified consultant will reach out
-            within one business day. No obligation, fully confidential.
-          </p>
-          <ul className="space-y-stack-md">
-            <li className="flex items-start gap-stack-md">
-              <span className="material-symbols-outlined mt-1 text-primary">
-                call
-              </span>
-              <div>
-                <div className="font-label text-label-lg font-semibold tracking-[0.05em] text-primary">
-                  Phone
-                </div>
-                <a
-                  href="tel:+18005551234"
-                  className="font-body text-body-md text-on-surface-variant hover:text-secondary"
-                >
-                  +1 (800) 555-1234
-                </a>
-              </div>
-            </li>
-            <li className="flex items-start gap-stack-md">
-              <span className="material-symbols-outlined mt-1 text-primary">
-                mail
-              </span>
-              <div>
-                <div className="font-label text-label-lg font-semibold tracking-[0.05em] text-primary">
-                  Email
-                </div>
-                <a
-                  href="mailto:hello@usdimmigration.com"
-                  className="font-body text-body-md text-on-surface-variant hover:text-secondary"
-                >
-                  hello@usdimmigration.com
-                </a>
-              </div>
-            </li>
-            <li className="flex items-start gap-stack-md">
-              <span className="material-symbols-outlined mt-1 text-primary">
-                location_on
-              </span>
-              <div>
-                <div className="font-label text-label-lg font-semibold tracking-[0.05em] text-primary">
-                  Head Office
-                </div>
-                <p className="font-body text-body-md text-on-surface-variant">
-                  220 Bay Street, Suite 1400
-                  <br />
-                  Toronto, ON M5J 2W4, Canada
-                </p>
-              </div>
-            </li>
-            <li className="flex items-start gap-stack-md">
-              <span className="material-symbols-outlined mt-1 text-primary">
-                schedule
-              </span>
-              <div>
-                <div className="font-label text-label-lg font-semibold tracking-[0.05em] text-primary">
-                  Hours
-                </div>
-                <p className="font-body text-body-md text-on-surface-variant">
-                  Monday – Friday, 9:00 – 18:00 (local time)
-                </p>
-              </div>
-            </li>
-          </ul>
-        </div>
+      <div className="mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop">
+        <div className="overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest p-4 shadow-[var(--shadow-institutional)] md:p-6">
+          <div className="grid gap-gutter md:grid-cols-[minmax(290px,1fr)_minmax(0,2fr)]">
+            <section className="overflow-hidden rounded-lg border border-outline-variant bg-surface-container-lowest">
+              <header className="bg-primary-container px-6 py-5 text-on-primary">
+                <h2 className="font-headline text-headline-md font-semibold md:text-headline-lg-mobile">
+                  Contact US!
+                </h2>
+              </header>
+              <div className="space-y-stack-lg bg-surface-container p-6 md:p-7">
+                <ul className="space-y-stack-lg">
+                  <ContactItem icon={<PhoneIcon />} title="Phone" tone="navy">
+                    <a
+                      href={`tel:${PHONE_TEL}`}
+                      className="font-body text-body-lg font-medium text-on-surface-variant transition-colors hover:text-primary"
+                    >
+                      {PHONE_DISPLAY}
+                    </a>
+                  </ContactItem>
 
-        <form
-          onSubmit={onSubmit}
-          className="rounded-2xl border border-outline-variant bg-surface-container-lowest p-8 shadow-[var(--shadow-institutional)]"
-        >
-          <div className="grid grid-cols-1 gap-stack-md sm:grid-cols-2">
-            <label className="flex flex-col gap-1">
-              <span className="font-label text-label-md font-medium tracking-[0.05em] text-on-surface-variant">
-                Full name
-              </span>
-              <input
-                name="name"
-                required
-                autoComplete="name"
-                className="rounded border border-outline-variant bg-surface px-3 py-2 font-body text-body-md text-on-surface focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
-              />
-            </label>
-            <label className="flex flex-col gap-1">
-              <span className="font-label text-label-md font-medium tracking-[0.05em] text-on-surface-variant">
-                Email
-              </span>
-              <input
-                name="email"
-                type="email"
-                required
-                autoComplete="email"
-                className="rounded border border-outline-variant bg-surface px-3 py-2 font-body text-body-md text-on-surface focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
-              />
-            </label>
-            <label className="flex flex-col gap-1">
-              <span className="font-label text-label-md font-medium tracking-[0.05em] text-on-surface-variant">
-                Phone (optional)
-              </span>
-              <input
-                name="phone"
-                type="tel"
-                autoComplete="tel"
-                className="rounded border border-outline-variant bg-surface px-3 py-2 font-body text-body-md text-on-surface focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
-              />
-            </label>
-            <label className="flex flex-col gap-1">
-              <span className="font-label text-label-md font-medium tracking-[0.05em] text-on-surface-variant">
-                Pathway of interest
-              </span>
-              <select
-                name="pathway"
-                defaultValue=""
-                className="rounded border border-outline-variant bg-surface px-3 py-2 font-body text-body-md text-on-surface focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
-              >
-                <option value="" disabled>
-                  Select one
-                </option>
-                {PATHWAYS.map((p) => (
-                  <option key={p} value={p}>
-                    {p}
-                  </option>
-                ))}
-              </select>
-            </label>
+                  <ContactItem icon={<MailIcon />} title="Email" tone="sky">
+                    <a
+                      href={`mailto:${EMAIL}`}
+                      className="font-body text-body-lg font-medium text-secondary underline-offset-2 hover:underline"
+                    >
+                      {EMAIL}
+                    </a>
+                  </ContactItem>
+
+                  <ContactItem icon={<ClockIcon />} title="Business Hours" tone="navy">
+                    <p className="font-body text-body-lg font-medium text-on-surface-variant">
+                      {HOURS}
+                    </p>
+                  </ContactItem>
+
+                  <ContactItem icon={<PinIcon />} title="Address" tone="sky">
+                    <a
+                      href={MAPS_DIRECTIONS_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block font-body text-body-lg font-medium leading-tight text-secondary underline-offset-2 hover:underline"
+                    >
+                      {ADDRESS_LINES[0]}
+                      <br />
+                      {ADDRESS_LINES[1]}
+                    </a>
+                  </ContactItem>
+                </ul>
+              </div>
+            </section>
+
+            <section className="overflow-hidden rounded-lg border border-outline-variant bg-surface-container-lowest">
+              <div className="flex items-center gap-stack-sm bg-surface-container-high p-3">
+                <div className="relative flex-1">
+                  <span
+                    className="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-base text-on-surface-variant/60"
+                    aria-hidden="true"
+                  >
+                    search
+                  </span>
+                  <input
+                    readOnly
+                    value={SEARCH_LABEL}
+                    aria-label="Location"
+                    className="w-full rounded border border-outline-variant bg-surface-container-lowest py-2 pl-10 pr-3 font-label text-label-lg text-on-surface outline-none"
+                  />
+                </div>
+                <a
+                  href={MAPS_DIRECTIONS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded bg-primary px-4 py-2 font-label text-label-md font-semibold uppercase tracking-[0.05em] text-on-primary shadow-[var(--shadow-institutional)] transition-colors hover:bg-primary-container"
+                >
+                  Get Directions
+                </a>
+              </div>
+
+              <div className="relative min-h-[430px]">
+                <iframe
+                  title="USD Immigration office location map"
+                  src={MAPS_EMBED_URL}
+                  className="absolute inset-0 h-full w-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+                <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-surface-container-lowest bg-secondary p-1 shadow-[var(--shadow-institutional)]">
+                  <PinIcon />
+                </div>
+              </div>
+            </section>
           </div>
-          <label className="mt-stack-md flex flex-col gap-1">
-            <span className="font-label text-label-md font-medium tracking-[0.05em] text-on-surface-variant">
-              How can we help?
-            </span>
-            <textarea
-              name="message"
-              rows={4}
-              required
-              className="rounded border border-outline-variant bg-surface px-3 py-2 font-body text-body-md text-on-surface focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/30"
-            />
-          </label>
-          <button
-            type="submit"
-            disabled={status === "submitting"}
-            className="mt-stack-lg inline-flex w-full items-center justify-center rounded-lg bg-secondary px-8 py-4 font-label text-label-lg font-semibold tracking-[0.05em] text-on-primary shadow-[var(--shadow-institutional)] transition-colors hover:bg-secondary-container disabled:opacity-60"
-          >
-            {status === "submitting" ? "Sending…" : "Request my assessment"}
-          </button>
-          {status === "sent" && (
-            <p
-              role="status"
-              className="mt-stack-md font-body text-body-md text-primary"
-            >
-              Thank you — your request was received. A consultant will be in
-              touch within one business day.
-            </p>
-          )}
-          {status === "error" && (
-            <p
-              role="alert"
-              className="mt-stack-md font-body text-body-md text-error"
-            >
-              Something went wrong. Please email{" "}
-              <a href="mailto:hello@usdimmigration.com" className="underline">
-                hello@usdimmigration.com
-              </a>{" "}
-              and we&apos;ll respond directly.
-            </p>
-          )}
-          <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-            By submitting, you agree to our{" "}
-            <a href="/privacy" className="underline hover:text-secondary">
-              Privacy Policy
-            </a>
-            .
-          </p>
-        </form>
+        </div>
       </div>
     </section>
   );
