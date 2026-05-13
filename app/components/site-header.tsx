@@ -11,16 +11,16 @@ const nav = [
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-outline-variant bg-surface shadow-[var(--shadow-institutional)]">
-      <div className="mx-auto flex h-20 w-full max-w-container-max items-center justify-between gap-stack-md px-margin-mobile md:px-margin-desktop">
+      <div className="mx-auto flex h-14 w-full max-w-container-max items-center justify-between gap-stack-sm px-4 md:h-16 md:gap-gutter md:px-margin-desktop">
         <Link
           href="/"
-          className="font-headline text-headline-md font-bold text-primary shrink-0"
+          className="font-headline text-[18px] font-bold text-primary shrink-0 md:text-headline-md"
         >
           USD Immigration
         </Link>
 
         <nav
-          className="hidden items-center gap-gutter md:flex"
+          className="hidden items-center gap-[22px] md:flex"
           aria-label="Primary"
         >
           {nav.map((item) => (
@@ -45,8 +45,9 @@ export function SiteHeader() {
           <details className="group relative md:hidden">
             <summary
               aria-label="Toggle navigation menu"
-              className="list-none cursor-pointer rounded border border-outline-variant px-3 py-2 font-label text-label-md font-medium text-on-surface marker:hidden group-open:bg-surface-container-low [&::-webkit-details-marker]:hidden"
+              className="flex h-11 min-w-11 list-none cursor-pointer items-center gap-1.5 rounded border border-outline-variant bg-surface-container-lowest px-3 font-label text-label-md font-semibold tracking-[0.04em] text-primary marker:hidden group-open:bg-surface-container-low [&::-webkit-details-marker]:hidden"
             >
+              <span className="material-symbols-outlined text-[18px]">menu</span>
               Menu
             </summary>
             <div className="absolute right-0 mt-2 w-52 rounded border border-outline-variant bg-surface-container-lowest py-2 shadow-[var(--shadow-institutional)]">

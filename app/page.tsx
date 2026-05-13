@@ -105,7 +105,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-gutter md:grid-cols-12 md:auto-rows-fr md:min-h-[500px]">
-            <div className="group relative flex flex-col justify-end overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest p-8 md:col-span-8">
+            <div className="group relative grid grid-rows-[auto_auto_1fr_auto] gap-2 overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest p-8 md:col-span-8">
               <div className="absolute inset-0 z-0">
                 <Image
                   src={IMG.workCard}
@@ -115,79 +115,72 @@ export default function Home() {
                   sizes="(min-width: 768px) 66vw, 100vw"
                 />
               </div>
-              <div className="relative z-10">
-                <span className="material-symbols-outlined mb-4 text-4xl text-primary">
-                  work
+              <span className="material-symbols-outlined relative z-10 text-4xl text-primary">
+                work
+              </span>
+              <h3 className="relative z-10 font-headline text-headline-md font-semibold text-primary">
+                Work &amp; Professional
+              </h3>
+              <p className="relative z-10 max-w-md font-body text-body-md text-on-surface-variant">
+                Secure your career in a new country with our comprehensive work
+                permit and skilled worker visa solutions.
+              </p>
+              <Link
+                href="#contact"
+                className="relative z-10 inline-flex items-center gap-2 font-label text-label-lg font-semibold tracking-[0.05em] text-secondary"
+              >
+                Learn more
+                <span className="material-symbols-outlined text-lg">
+                  arrow_forward
                 </span>
-                <h3 className="mb-2 font-headline text-headline-md font-semibold text-primary">
-                  Work &amp; Professional
-                </h3>
-                <p className="mb-6 max-w-md font-body text-body-md text-on-surface-variant">
-                  Secure your career in a new country with our comprehensive
-                  work permit and skilled worker visa solutions.
-                </p>
-                <Link
-                  href="#contact"
-                  className="inline-flex items-center gap-2 font-label text-label-lg font-semibold tracking-[0.05em] text-secondary"
-                >
-                  Learn more
-                  <span className="material-symbols-outlined text-lg">
-                    arrow_forward
-                  </span>
-                </Link>
-              </div>
+              </Link>
             </div>
 
-            <div className="flex flex-col justify-between overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest p-8 md:col-span-4">
+            <div className="grid grid-rows-[auto_auto_1fr_auto] gap-2 overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest p-8 md:col-span-4">
               <span className="material-symbols-outlined text-4xl text-primary">
                 school
               </span>
-              <div>
-                <h3 className="mb-2 font-headline text-headline-md font-semibold text-primary">
-                  Education
-                </h3>
-                <p className="mb-4 font-body text-body-md text-on-surface-variant">
-                  Study permits, institutional placements, and post-graduation
-                  work pathways tailored to your field.
-                </p>
-                <Link
-                  href="#contact"
-                  className="inline-flex items-center gap-2 font-label text-label-lg font-semibold tracking-[0.05em] text-secondary"
-                >
-                  Details
-                  <span className="material-symbols-outlined text-lg">
-                    chevron_right
-                  </span>
-                </Link>
-              </div>
+              <h3 className="font-headline text-headline-md font-semibold text-primary">
+                Education
+              </h3>
+              <p className="font-body text-body-md text-on-surface-variant">
+                Study permits, institutional placements, and post-graduation
+                work pathways tailored to your field.
+              </p>
+              <Link
+                href="#contact"
+                className="inline-flex items-center gap-2 font-label text-label-lg font-semibold tracking-[0.05em] text-secondary"
+              >
+                Details
+                <span className="material-symbols-outlined text-lg">
+                  chevron_right
+                </span>
+              </Link>
             </div>
 
-            <div className="flex flex-col justify-between overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest p-8 md:col-span-4">
+            <div className="grid grid-rows-[auto_auto_1fr_auto] gap-2 overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest p-8 md:col-span-4">
               <span className="material-symbols-outlined text-4xl text-primary">
                 family_restroom
               </span>
-              <div>
-                <h3 className="mb-2 font-headline text-headline-md font-semibold text-primary">
-                  Family Reunion
-                </h3>
-                <p className="mb-4 font-body text-body-md text-on-surface-variant">
-                  Spousal sponsorship, dependent visas, and reunification
-                  programs that keep your family together throughout the
-                  process.
-                </p>
-                <Link
-                  href="#contact"
-                  className="inline-flex items-center gap-2 font-label text-label-lg font-semibold tracking-[0.05em] text-secondary"
-                >
-                  Details
-                  <span className="material-symbols-outlined text-lg">
-                    chevron_right
-                  </span>
-                </Link>
-              </div>
+              <h3 className="font-headline text-headline-md font-semibold text-primary">
+                Family Reunion
+              </h3>
+              <p className="font-body text-body-md text-on-surface-variant">
+                Spousal sponsorship, dependent visas, and reunification programs
+                that keep your family together throughout the process.
+              </p>
+              <Link
+                href="#contact"
+                className="inline-flex items-center gap-2 font-label text-label-lg font-semibold tracking-[0.05em] text-secondary"
+              >
+                Details
+                <span className="material-symbols-outlined text-lg">
+                  chevron_right
+                </span>
+              </Link>
             </div>
 
-            <div className="group relative flex flex-col justify-end overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest p-8 md:col-span-8">
+            <div className="group relative grid grid-rows-[auto_auto_1fr_auto] gap-2 overflow-hidden rounded-xl border border-outline-variant bg-surface-container-lowest p-8 md:col-span-8">
               <div className="absolute inset-0 z-0">
                 <Image
                   src={IMG.businessCard}
@@ -197,27 +190,25 @@ export default function Home() {
                   sizes="(min-width: 768px) 66vw, 100vw"
                 />
               </div>
-              <div className="relative z-10">
-                <span className="material-symbols-outlined mb-4 text-4xl text-primary">
-                  business_center
+              <span className="material-symbols-outlined relative z-10 text-4xl text-primary">
+                business_center
+              </span>
+              <h3 className="relative z-10 font-headline text-headline-md font-semibold text-primary">
+                Business &amp; Investment
+              </h3>
+              <p className="relative z-10 max-w-md font-body text-body-md text-on-surface-variant">
+                Capitalize on global markets through entrepreneur and investor
+                visa categories.
+              </p>
+              <Link
+                href="#contact"
+                className="relative z-10 inline-flex items-center gap-2 font-label text-label-lg font-semibold tracking-[0.05em] text-secondary"
+              >
+                Learn more
+                <span className="material-symbols-outlined text-lg">
+                  arrow_forward
                 </span>
-                <h3 className="mb-2 font-headline text-headline-md font-semibold text-primary">
-                  Business &amp; Investment
-                </h3>
-                <p className="mb-6 max-w-md font-body text-body-md text-on-surface-variant">
-                  Capitalize on global markets through entrepreneur and investor
-                  visa categories.
-                </p>
-                <Link
-                  href="#contact"
-                  className="inline-flex items-center gap-2 font-label text-label-lg font-semibold tracking-[0.05em] text-secondary"
-                >
-                  Learn more
-                  <span className="material-symbols-outlined text-lg">
-                    arrow_forward
-                  </span>
-                </Link>
-              </div>
+              </Link>
             </div>
           </div>
         </section>
