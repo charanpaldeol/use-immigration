@@ -26,22 +26,25 @@ const sourceSerif = Source_Serif_4({
 });
 
 // Only the icon glyphs actually rendered on the marketing site.
+// Google Fonts requires `icon_names` to be alphabetically sorted; an unsorted
+// list returns 400 and the font never loads, leaving raw ligature names visible.
 const MATERIAL_ICONS = [
-  "verified",
-  "trending_up",
-  "work",
-  "school",
-  "family_restroom",
-  "business_center",
-  "gavel",
-  "visibility",
-  "public",
   "arrow_forward",
-  "chevron_right",
+  "business_center",
   "call",
-  "mail",
+  "chevron_right",
+  "family_restroom",
+  "gavel",
   "location_on",
+  "mail",
+  "menu",
+  "public",
   "schedule",
+  "school",
+  "trending_up",
+  "verified",
+  "visibility",
+  "work",
 ].join(",");
 
 const MATERIAL_SYMBOLS_HREF = `https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=${MATERIAL_ICONS}&display=swap`;
