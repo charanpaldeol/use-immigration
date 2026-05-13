@@ -7,7 +7,6 @@ const HOURS = "Mon-Fri 9-6";
 const ADDRESS_LINES = ["4838 Dorchester Rd", "Niagara Falls, ON L2E 6N9"] as const;
 const ADDRESS_FOR_MAPS =
   "4838 Dorchester Rd, Niagara Falls, ON L2E 6N9, Canada";
-const SEARCH_LABEL = "Niagara Falls, ON";
 const MAPS_DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(ADDRESS_FOR_MAPS)}`;
 const MAPS_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(
   ADDRESS_FOR_MAPS,
@@ -137,31 +136,6 @@ export function ContactSection() {
             </section>
 
             <section className="overflow-hidden rounded-lg border border-outline-variant bg-surface-container-lowest">
-              <div className="flex items-center gap-stack-sm bg-surface-container-high p-3">
-                <div className="relative flex-1">
-                  <span
-                    className="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-base text-on-surface-variant/60"
-                    aria-hidden="true"
-                  >
-                    search
-                  </span>
-                  <input
-                    readOnly
-                    value={SEARCH_LABEL}
-                    aria-label="Location"
-                    className="w-full rounded border border-outline-variant bg-surface-container-lowest py-2 pl-10 pr-3 font-label text-label-lg text-on-surface outline-none"
-                  />
-                </div>
-                <a
-                  href={MAPS_DIRECTIONS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded bg-primary px-4 py-2 font-label text-label-md font-semibold uppercase tracking-[0.05em] text-on-primary shadow-[var(--shadow-institutional)] transition-colors hover:bg-primary-container"
-                >
-                  Get Directions
-                </a>
-              </div>
-
               <div className="relative min-h-[430px]">
                 <iframe
                   title="USD Immigration office location map"
