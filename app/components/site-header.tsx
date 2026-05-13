@@ -14,7 +14,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-14 w-full max-w-container-max items-center justify-between gap-stack-sm px-4 md:h-16 md:gap-gutter md:px-margin-desktop">
         <Link
           href="/"
-          className="font-headline text-[18px] font-bold text-primary shrink-0 md:text-headline-md"
+          className="font-headline text-headline-md font-semibold text-primary shrink-0"
         >
           USD Immigration
         </Link>
