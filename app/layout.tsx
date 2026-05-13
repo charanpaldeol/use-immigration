@@ -50,21 +50,21 @@ const MATERIAL_ICONS = [
 const MATERIAL_SYMBOLS_HREF = `https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=${MATERIAL_ICONS}&display=swap`;
 
 export const metadata: Metadata = {
-  title: "USD Immigration | Global Migration Experts",
+  title: "USD Immigration | Niagara Immigration Experts",
   description:
-    "Licensed consultants helping individuals, families, and businesses migrate to Canada, the US, the UK, and Australia.",
+    "Niagara-based immigration consultants helping skilled workers, students, families, and employers navigate 2026 Canadian pathways.",
   openGraph: {
-    title: "USD Immigration | Global Migration Experts",
+    title: "USD Immigration | Niagara Immigration Experts",
     description:
-      "Licensed consultants helping individuals, families, and businesses migrate to Canada, the US, the UK, and Australia.",
+      "Niagara-based immigration consultants helping skilled workers, students, families, and employers navigate 2026 Canadian pathways.",
     type: "website",
     siteName: "USD Immigration",
   },
   twitter: {
     card: "summary_large_image",
-    title: "USD Immigration | Global Migration Experts",
+    title: "USD Immigration | Niagara Immigration Experts",
     description:
-      "Licensed consultants helping individuals, families, and businesses migrate.",
+      "Niagara-based immigration consulting for 2026 Canadian pathways.",
   },
 };
 

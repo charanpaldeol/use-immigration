@@ -2,10 +2,10 @@
 import Link from "next/link";
 
 const nav = [
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About Us" },
-  { href: "#insights", label: "Blog" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#services", label: "Services" },
+  { href: "/about", label: "About Us" },
+  { href: "/guides", label: "2026 Guides" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function SiteHeader() {
@@ -36,7 +36,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-stack-sm">
           <Link
-            href="#assessment"
+            href="/#assessment"
             className="hidden rounded bg-secondary px-5 py-2.5 font-label text-label-lg font-semibold tracking-[0.05em] text-on-primary shadow-[var(--shadow-institutional)] transition-opacity hover:opacity-90 sm:inline-flex"
           >
             Free Assessment
@@ -61,7 +61,7 @@ export function SiteHeader() {
                 </Link>
               ))}
               <Link
-                href="#assessment"
+                href="/#assessment"
                 className="mt-1 block border-t border-outline-variant px-4 py-3 font-label text-label-lg font-semibold text-secondary"
               >
                 Free Assessment

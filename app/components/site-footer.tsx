@@ -38,8 +38,8 @@ export function SiteFooter() {
             USD Immigration
           </div>
           <p className="font-body text-body-md text-on-primary/80">
-            Expert legal guidance for your global journey — outcomes you can
-            rely on.
+            Niagara-based immigration strategy for workers, students, families,
+            and employers planning for 2026 pathways.
           </p>
         </div>
         <div>
@@ -49,34 +49,34 @@ export function SiteFooter() {
           <ul className="space-y-stack-sm font-body text-body-md">
             <li>
               <Link
-                href="#services"
+                href="/guides/express-entry-2026"
                 className="text-on-primary/80 transition-colors hover:text-on-primary"
               >
-                Work Permits
+                Express Entry 2026
               </Link>
             </li>
             <li>
               <Link
-                href="#services"
+                href="/guides/oinp-2026-niagara"
                 className="text-on-primary/80 transition-colors hover:text-on-primary"
               >
-                Study Visas
+                OINP 2026
               </Link>
             </li>
             <li>
               <Link
-                href="#services"
+                href="/guides/tr-to-pr-2026"
                 className="text-on-primary/80 transition-colors hover:text-on-primary"
               >
-                Business Visas
+                TR to PR 2026
               </Link>
             </li>
             <li>
               <Link
-                href="#services"
+                href="/#services"
                 className="text-on-primary/80 transition-colors hover:text-on-primary"
               >
-                Permanent Residency
+                Consultation Services
               </Link>
             </li>
           </ul>
@@ -104,18 +104,18 @@ export function SiteFooter() {
             </li>
             <li>
               <Link
-                href="#contact"
+                href="/about"
                 className="text-on-primary/80 transition-colors hover:text-on-primary"
               >
-                Office Locations
+                About Us
               </Link>
             </li>
             <li>
               <Link
-                href="#contact"
+                href="/#contact"
                 className="text-on-primary/80 transition-colors hover:text-on-primary"
               >
-                Careers
+                Niagara Office
               </Link>
             </li>
           </ul>
