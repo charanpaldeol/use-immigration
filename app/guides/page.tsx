@@ -1,6 +1,33 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteFooter } from "../components/site-footer";
 import { SiteHeader } from "../components/site-header";
+
+export const metadata: Metadata = {
+  title: "2026 Immigration Guides: Express Entry, OINP, TR to PR",
+  description:
+    "Free 2026 Canadian immigration guides for skilled workers, students, families, and employers. Express Entry CRS strategy, OINP streams, and TR-to-PR planning for Niagara.",
+  keywords: [
+    "Canadian immigration guides 2026",
+    "Express Entry 2026 guide",
+    "OINP 2026 guide",
+    "TR to PR 2026",
+    "CRS strategy",
+    "Niagara immigration guide",
+    "Ontario immigration guide",
+    "Provincial Nominee Program guide",
+  ],
+  alternates: { canonical: "/guides" },
+  openGraph: {
+    title: "2026 Immigration Guides | USD Immigration",
+    description:
+      "Detailed 2026 Canadian immigration guides: Express Entry, OINP, and TR to PR for Niagara applicants.",
+    url: "/guides",
+    type: "website",
+    siteName: "USD Immigration",
+    locale: "en_CA",
+  },
+};
 
 const GUIDES = [
   {

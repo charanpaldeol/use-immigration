@@ -1,8 +1,61 @@
 // Purpose: This file builds the Niagara-focused homepage for the firm's 2026 content rollout.
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ContactSection } from "./components/contact-section";
 import { SiteFooter } from "./components/site-footer";
 import { SiteHeader } from "./components/site-header";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "USD Immigration | Niagara Immigration Consultants 2026",
+  },
+  description:
+    "Niagara immigration consultants for 2026 Canadian pathways. Express Entry, OINP, Work Permits & LMIA, Study Permits, Family & Spousal Sponsorship, Super Visa, Citizenship, and Humanitarian & Compassionate.",
+  keywords: [
+    "Niagara immigration consultant",
+    "Niagara Falls immigration office",
+    "Canadian immigration consultant Ontario",
+    "Express Entry 2026",
+    "Federal Skilled Worker",
+    "Canadian Experience Class",
+    "Federal Skilled Trades",
+    "Comprehensive Ranking System",
+    "OINP",
+    "Ontario Immigrant Nominee Program",
+    "Provincial Nominee Program",
+    "Work Permit Canada",
+    "LMIA",
+    "LMIA-exempt work permit",
+    "CUSMA work permit",
+    "Intra-Company Transfer",
+    "C11 Work Permit",
+    "Start-Up Visa",
+    "Study Permit Canada",
+    "PGWP",
+    "Family Sponsorship",
+    "Spousal Sponsorship",
+    "Parent and Grandparent Sponsorship",
+    "Super Visa",
+    "Visitor Visa",
+    "Canadian Citizenship",
+    "PR Card Renewal",
+    "Humanitarian and Compassionate",
+    "French-language Express Entry",
+    "Senior Manager Express Entry 2026",
+    "TR to PR pathway",
+    "Niagara OINP",
+  ],
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "USD Immigration | Niagara Immigration Consultants 2026",
+    description:
+      "Niagara immigration consultants for 2026 Canadian pathways. Express Entry, OINP, Work Permits & LMIA, Study Permits, Family Sponsorship, Super Visa, and Citizenship.",
+    url: "/",
+    type: "website",
+    siteName: "USD Immigration",
+    locale: "en_CA",
+  },
+};
 
 export default function Home() {
   return (
@@ -72,25 +125,25 @@ export default function Home() {
               Core Immigration Services
             </h2>
             <p className="mx-auto max-w-xl font-body text-body-md text-on-surface-variant">
-              Tailored guidance for work permits, permanent residence, student
-              pathways, and family sponsorship across Canada.
+              Direct guidance across the eight pathways most clients use to
+              live, work, study, and settle in Canada.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-gutter md:grid-cols-3">
-            <article className="rounded-lg border border-outline-variant bg-surface-container-lowest p-6 shadow-[var(--shadow-institutional)]">
+          <div className="grid grid-cols-1 gap-gutter md:grid-cols-2 lg:grid-cols-4">
+            <article className="flex flex-col rounded-xl border border-outline-variant bg-surface-container-lowest p-8">
               <span className="material-symbols-outlined text-4xl text-primary">
-                work
+                trending_up
               </span>
-              <h3 className="mt-3 font-headline text-headline-md font-semibold text-primary">
-                Skilled Worker Pathways
+              <h3 className="mt-3 min-h-[4rem] font-headline text-headline-md font-semibold text-primary">
+                Express Entry
               </h3>
               <p className="mt-2 font-body text-body-md text-on-surface-variant">
-                We build skilled worker plans around Express Entry and OINP.
-                You get score strategy, stream selection, and filing order.
+                We build CRS strategy, stream selection, and filing order for
+                FSW, CEC, and FSTP.
               </p>
               <Link
                 href="/guides/express-entry-2026"
-                className="mt-4 inline-flex items-center gap-2 font-label text-label-lg font-semibold tracking-[0.05em] text-secondary"
+                className="mt-auto inline-flex items-center gap-2 pt-4 font-label text-label-lg font-semibold tracking-[0.05em] text-secondary"
               >
                 Read guide
                 <span className="material-symbols-outlined text-lg">
@@ -98,20 +151,41 @@ export default function Home() {
                 </span>
               </Link>
             </article>
-            <article className="rounded-lg border border-outline-variant bg-surface-container-lowest p-6 shadow-[var(--shadow-institutional)]">
+            <article className="flex flex-col rounded-xl border border-outline-variant bg-surface-container-lowest p-8">
               <span className="material-symbols-outlined text-4xl text-primary">
-                school
+                location_on
               </span>
-              <h3 className="mt-3 font-headline text-headline-md font-semibold text-primary">
-                Students and Families
+              <h3 className="mt-3 min-h-[4rem] font-headline text-headline-md font-semibold text-primary">
+                Provincial Nominee (OINP)
               </h3>
               <p className="mt-2 font-body text-body-md text-on-surface-variant">
-                We map study and family pathways with clear timing.
-                You know what to file, when to file, and why.
+                We match your profile to the right Ontario stream and align
+                your file with current OINP rules.
+              </p>
+              <Link
+                href="/guides/oinp-2026-niagara"
+                className="mt-auto inline-flex items-center gap-2 pt-4 font-label text-label-lg font-semibold tracking-[0.05em] text-secondary"
+              >
+                View OINP guide
+                <span className="material-symbols-outlined text-lg">
+                  arrow_forward
+                </span>
+              </Link>
+            </article>
+            <article className="flex flex-col rounded-xl border border-outline-variant bg-surface-container-lowest p-8">
+              <span className="material-symbols-outlined text-4xl text-primary">
+                work
+              </span>
+              <h3 className="mt-3 min-h-[4rem] font-headline text-headline-md font-semibold text-primary">
+                Work Permits and LMIA
+              </h3>
+              <p className="mt-2 font-body text-body-md text-on-surface-variant">
+                We support LMIA-based and LMIA-exempt streams, including
+                CUSMA, ICT, and C11.
               </p>
               <Link
                 href="#contact"
-                className="mt-4 inline-flex items-center gap-2 font-label text-label-lg font-semibold tracking-[0.05em] text-secondary"
+                className="mt-auto inline-flex items-center gap-2 pt-4 font-label text-label-lg font-semibold tracking-[0.05em] text-secondary"
               >
                 Get assessment
                 <span className="material-symbols-outlined text-lg">
@@ -119,24 +193,108 @@ export default function Home() {
                 </span>
               </Link>
             </article>
-            <article className="rounded-lg border border-outline-variant bg-surface-container-lowest p-6 shadow-[var(--shadow-institutional)]">
+            <article className="flex flex-col rounded-xl border border-outline-variant bg-surface-container-lowest p-8">
               <span className="material-symbols-outlined text-4xl text-primary">
-                business_center
+                school
               </span>
-              <h3 className="mt-3 font-headline text-headline-md font-semibold text-primary">
-                Employers and Business Owners
+              <h3 className="mt-3 min-h-[4rem] font-headline text-headline-md font-semibold text-primary">
+                Study Permits
               </h3>
               <p className="mt-2 font-body text-body-md text-on-surface-variant">
-                We support employer hiring pathways tied to OINP rules.
-                Your team gets compliant process and a defined filing plan.
+                We file study permits with PAL or TAL compliance and clear
+                timing under current cap rules.
               </p>
               <Link
-                href="/guides/oinp-2026-niagara"
-                className="mt-4 inline-flex items-center gap-2 font-label text-label-lg font-semibold tracking-[0.05em] text-secondary"
+                href="#contact"
+                className="mt-auto inline-flex items-center gap-2 pt-4 font-label text-label-lg font-semibold tracking-[0.05em] text-secondary"
               >
-                View OINP guide
+                Get assessment
                 <span className="material-symbols-outlined text-lg">
-                  arrow_forward
+                  chevron_right
+                </span>
+              </Link>
+            </article>
+            <article className="flex flex-col rounded-xl border border-outline-variant bg-surface-container-lowest p-8">
+              <span className="material-symbols-outlined text-4xl text-primary">
+                family_restroom
+              </span>
+              <h3 className="mt-3 min-h-[4rem] font-headline text-headline-md font-semibold text-primary">
+                Family and Spousal Sponsorship
+              </h3>
+              <p className="mt-2 font-body text-body-md text-on-surface-variant">
+                We file spouse, partner, child, and parent sponsorships with
+                complete evidence packages.
+              </p>
+              <Link
+                href="#contact"
+                className="mt-auto inline-flex items-center gap-2 pt-4 font-label text-label-lg font-semibold tracking-[0.05em] text-secondary"
+              >
+                Get assessment
+                <span className="material-symbols-outlined text-lg">
+                  chevron_right
+                </span>
+              </Link>
+            </article>
+            <article className="flex flex-col rounded-xl border border-outline-variant bg-surface-container-lowest p-8">
+              <span className="material-symbols-outlined text-4xl text-primary">
+                public
+              </span>
+              <h3 className="mt-3 min-h-[4rem] font-headline text-headline-md font-semibold text-primary">
+                Visitor Visas and Super Visa
+              </h3>
+              <p className="mt-2 font-body text-body-md text-on-surface-variant">
+                We prepare visitor and super visa applications with strong
+                proof of ties and intent.
+              </p>
+              <Link
+                href="#contact"
+                className="mt-auto inline-flex items-center gap-2 pt-4 font-label text-label-lg font-semibold tracking-[0.05em] text-secondary"
+              >
+                Get assessment
+                <span className="material-symbols-outlined text-lg">
+                  chevron_right
+                </span>
+              </Link>
+            </article>
+            <article className="flex flex-col rounded-xl border border-outline-variant bg-surface-container-lowest p-8">
+              <span className="material-symbols-outlined text-4xl text-primary">
+                verified
+              </span>
+              <h3 className="mt-3 min-h-[4rem] font-headline text-headline-md font-semibold text-primary">
+                Canadian Citizenship
+              </h3>
+              <p className="mt-2 font-body text-body-md text-on-surface-variant">
+                We confirm eligibility, file your application, and prepare
+                you for the test and oath.
+              </p>
+              <Link
+                href="#contact"
+                className="mt-auto inline-flex items-center gap-2 pt-4 font-label text-label-lg font-semibold tracking-[0.05em] text-secondary"
+              >
+                Get assessment
+                <span className="material-symbols-outlined text-lg">
+                  chevron_right
+                </span>
+              </Link>
+            </article>
+            <article className="flex flex-col rounded-xl border border-outline-variant bg-surface-container-lowest p-8">
+              <span className="material-symbols-outlined text-4xl text-primary">
+                gavel
+              </span>
+              <h3 className="mt-3 min-h-[4rem] font-headline text-headline-md font-semibold text-primary">
+                Humanitarian and Compassionate
+              </h3>
+              <p className="mt-2 font-body text-body-md text-on-surface-variant">
+                We build H and C submissions for cases that need a path
+                outside standard streams.
+              </p>
+              <Link
+                href="#contact"
+                className="mt-auto inline-flex items-center gap-2 pt-4 font-label text-label-lg font-semibold tracking-[0.05em] text-secondary"
+              >
+                Get assessment
+                <span className="material-symbols-outlined text-lg">
+                  chevron_right
                 </span>
               </Link>
             </article>

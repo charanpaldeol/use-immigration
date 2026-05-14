@@ -1,6 +1,37 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteFooter } from "../../components/site-footer";
 import { SiteHeader } from "../../components/site-header";
+
+export const metadata: Metadata = {
+  title: "OINP 2026 Niagara Guide: Streams, Eligibility & Process",
+  description:
+    "Complete 2026 OINP guide for Niagara applicants. Employer Job Offer, In-Demand Skills, International Student, and Entrepreneur streams with stream-fit and filing checklists.",
+  keywords: [
+    "OINP 2026",
+    "Ontario Immigrant Nominee Program",
+    "OINP Niagara",
+    "OINP Employer Job Offer",
+    "OINP In-Demand Skills",
+    "OINP International Student",
+    "OINP Entrepreneur",
+    "OINP Foreign Worker",
+    "Ontario PNP",
+    "Provincial Nominee Program Ontario",
+    "OINP allocation 2026",
+    "Niagara nomination",
+  ],
+  alternates: { canonical: "/guides/oinp-2026-niagara" },
+  openGraph: {
+    title: "OINP 2026: Complete Niagara Guide | USD Immigration",
+    description:
+      "Ontario Immigrant Nominee Program 2026 guide for Niagara: Employer Job Offer, In-Demand Skills, International Student, and Entrepreneur streams.",
+    url: "/guides/oinp-2026-niagara",
+    type: "article",
+    siteName: "USD Immigration",
+    locale: "en_CA",
+  },
+};
 
 export default function OinpGuidePage() {
   return (

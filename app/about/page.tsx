@@ -1,5 +1,31 @@
+import type { Metadata } from "next";
 import { SiteFooter } from "../components/site-footer";
 import { SiteHeader } from "../components/site-header";
+
+export const metadata: Metadata = {
+  title: "About | Niagara Immigration Consultants",
+  description:
+    "USD Immigration is a Niagara Falls-based Canadian immigration consulting team specializing in Express Entry, OINP, work permits, LMIA, study permits, and family sponsorship.",
+  keywords: [
+    "USD Immigration about",
+    "Niagara immigration consultants",
+    "Canadian immigration consulting team",
+    "Niagara Falls immigration office",
+    "Ontario immigration consultants",
+    "immigration consultants Niagara",
+    "CICC RCIC Niagara",
+  ],
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About USD Immigration | Niagara Immigration Consultants",
+    description:
+      "Niagara Falls-based Canadian immigration consulting team focused on Express Entry, OINP, work permits, study permits, and family sponsorship.",
+    url: "/about",
+    type: "website",
+    siteName: "USD Immigration",
+    locale: "en_CA",
+  },
+};
 
 const TEAM = [
   {

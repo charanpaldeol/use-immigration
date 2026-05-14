@@ -1,6 +1,40 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteFooter } from "../../components/site-footer";
 import { SiteHeader } from "../../components/site-header";
+
+export const metadata: Metadata = {
+  title: "Express Entry 2026 Guide: CRS, FSW, CEC & FSTP Strategy",
+  description:
+    "Niagara-focused Express Entry strategy for 2026. CRS scoring, FSW, CEC, and FSTP eligibility, NOC alignment, draw trends, French-language category, and post-ITA document prep.",
+  keywords: [
+    "Express Entry 2026",
+    "Express Entry Niagara",
+    "CRS calculator",
+    "Comprehensive Ranking System",
+    "Federal Skilled Worker",
+    "Canadian Experience Class",
+    "Federal Skilled Trades",
+    "FSW eligibility",
+    "CEC eligibility",
+    "NOC coding",
+    "Express Entry draw trends 2026",
+    "French-language Express Entry",
+    "Senior Manager Express Entry 2026",
+    "ITA preparation",
+    "Express Entry profile",
+  ],
+  alternates: { canonical: "/guides/express-entry-2026" },
+  openGraph: {
+    title: "Express Entry 2026: Niagara Strategy Guide | USD Immigration",
+    description:
+      "CRS scoring, FSW/CEC/FSTP eligibility, NOC alignment, and post-ITA document prep for Niagara skilled workers.",
+    url: "/guides/express-entry-2026",
+    type: "article",
+    siteName: "USD Immigration",
+    locale: "en_CA",
+  },
+};
 
 export default function ExpressEntryGuidePage() {
   return (

@@ -1,6 +1,35 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteFooter } from "../../components/site-footer";
 import { SiteHeader } from "../../components/site-header";
+
+export const metadata: Metadata = {
+  title: "TR to PR Pathway 2026: Canadian Experience Class & Work-to-PR",
+  description:
+    "TR-to-PR transition guide for 2026. Eligibility for Canadian Experience Class, work-to-PR options, NOC and language requirements, PGWP-to-PR, and a ready-to-apply checklist.",
+  keywords: [
+    "TR to PR 2026",
+    "TR to PR pathway",
+    "Canadian Experience Class",
+    "CEC eligibility",
+    "PGWP to PR",
+    "work permit to PR",
+    "temporary resident pathway",
+    "Niagara TR to PR",
+    "Post-Graduation Work Permit PR",
+    "NOC alignment PR",
+  ],
+  alternates: { canonical: "/guides/tr-to-pr-2026" },
+  openGraph: {
+    title: "TR to PR Pathway 2026 | USD Immigration",
+    description:
+      "Canadian Experience Class eligibility, work-to-PR options, NOC alignment, and language requirements for temporary residents in 2026.",
+    url: "/guides/tr-to-pr-2026",
+    type: "article",
+    siteName: "USD Immigration",
+    locale: "en_CA",
+  },
+};
 
 export default function TrToPrGuidePage() {
   return (

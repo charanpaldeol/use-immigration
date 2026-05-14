@@ -50,22 +50,60 @@ const MATERIAL_ICONS = [
 
 const MATERIAL_SYMBOLS_HREF = `https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=${MATERIAL_ICONS}&display=swap`;
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://usdimmigration.ca";
+
 export const metadata: Metadata = {
-  title: "USD Immigration | Niagara Immigration Experts",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "USD Immigration | Niagara Immigration Experts",
+    template: "%s | USD Immigration",
+  },
   description:
-    "Niagara-based immigration consultants helping skilled workers, students, families, and employers navigate 2026 Canadian pathways.",
+    "Niagara-based Canadian immigration consultants for Express Entry, OINP, work permits, LMIA, study permits, family sponsorship, super visa, and citizenship in 2026.",
+  keywords: [
+    "Niagara immigration consultant",
+    "Niagara Falls immigration",
+    "Canadian immigration 2026",
+    "Express Entry",
+    "OINP",
+    "Provincial Nominee Program",
+    "Work Permit Canada",
+    "LMIA",
+    "Study Permit Canada",
+    "Spousal Sponsorship",
+    "Family Sponsorship",
+    "Super Visa",
+    "Canadian Citizenship",
+    "USD Immigration",
+  ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "USD Immigration | Niagara Immigration Experts",
     description:
-      "Niagara-based immigration consultants helping skilled workers, students, families, and employers navigate 2026 Canadian pathways.",
+      "Niagara-based Canadian immigration consultants for Express Entry, OINP, work permits, LMIA, study permits, family sponsorship, super visa, and citizenship in 2026.",
+    url: SITE_URL,
     type: "website",
     siteName: "USD Immigration",
+    locale: "en_CA",
   },
   twitter: {
     card: "summary_large_image",
     title: "USD Immigration | Niagara Immigration Experts",
     description:
       "Niagara-based immigration consulting for 2026 Canadian pathways.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
   },
 };
 
