@@ -1,6 +1,7 @@
 // Purpose: This file sets the shared page frame for the whole site and loads global fonts and site-wide page settings.
 import type { Metadata } from "next";
 import { Inter, Montserrat, Source_Serif_4 } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -94,6 +95,7 @@ export default function RootLayout({
           Skip to content
         </a>
         {children}
+        <Analytics />
       </body>
     </html>
   );
