@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { AreasServedSection } from "../components/areas-served-section";
 import { SiteFooter } from "../components/site-footer";
 import { SiteHeader } from "../components/site-header";
 
 export const metadata: Metadata = {
   title: "About | Niagara Immigration Consultants",
   description:
-    "USD Immigration is a Niagara Falls-based Canadian immigration consulting team specializing in Express Entry, OINP, work permits, LMIA, study permits, and family sponsorship.",
+    "USD Immigration is a Niagara Falls-based Canadian immigration consulting team serving the GTA and Niagara Region, specializing in Express Entry, OINP, work permits, LMIA, study permits, and family sponsorship.",
   keywords: [
+    "GTA immigration consultants Ontario",
     "USD Immigration about",
     "Niagara immigration consultants",
     "Canadian immigration consulting team",
@@ -19,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About USD Immigration | Niagara Immigration Consultants",
     description:
-      "Niagara Falls-based Canadian immigration consulting team focused on Express Entry, OINP, work permits, study permits, and family sponsorship.",
+      "Niagara Falls-based team serving the GTA and Niagara Region: Express Entry, OINP, work permits, study permits, and family sponsorship.",
     url: "/about",
     type: "website",
     siteName: "USD Immigration",
@@ -99,6 +101,8 @@ export default function AboutPage() {
             </article>
           </div>
         </section>
+
+        <AreasServedSection id="areas-served-about" compact />
 
         <section className="bg-surface-container-low py-section-padding">
           <div className="mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop">

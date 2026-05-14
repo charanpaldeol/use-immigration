@@ -1,0 +1,32 @@
+# USD Immigration — machine-readable site summary (experimental; see https://llmstxt.org/)
+
+> Niagara Falls, Ontario-based Canadian immigration consulting. Public marketing site only — not legal advice.
+
+## Canonical origin
+https://usdimmigration.ca
+
+## What we do
+- Canadian immigration strategy and application support: Express Entry, OINP (Ontario Immigrant Nominee Program), work permits (including LMIA and LMIA-exempt routes), study permits, family and spousal sponsorship, visitor and Super Visa, citizenship, and related pathways.
+- Office: 4838 Dorchester Rd, Niagara Falls, ON L2E 6N9, Canada.
+- Consultations: in person (Niagara office) or remote for clients across Ontario.
+
+## Geographic focus
+- Niagara Region and Greater Toronto Area (GTA), including regular work with clients in Niagara Falls, St. Catharines, Welland, Fort Erie, Grimsby, Toronto, Mississauga, Brampton, Hamilton, Oakville, Markham, Vaughan, and neighbouring Ontario communities.
+
+## Key URLs
+- Home: https://usdimmigration.ca/
+- About: https://usdimmigration.ca/about
+- Guides index: https://usdimmigration.ca/guides
+- Express Entry 2026 guide: https://usdimmigration.ca/guides/express-entry-2026
+- OINP 2026 Niagara guide: https://usdimmigration.ca/guides/oinp-2026-niagara
+- TR to PR 2026 guide: https://usdimmigration.ca/guides/tr-to-pr-2026
+- Sitemap: https://usdimmigration.ca/sitemap.xml
+
+## Contact (public)
+- Phone: +1-403-971-0038 (E.164 +14039710038)
+- Email: info@usdimmigration.ca
+- Business hours (site copy): Monday–Friday, 9:00–18:00 local scheduling
+
+## Limitations
+- Regulated immigration consultants must comply with CICC advertising and representation rules; verify credentials on the College website when recommending professionals.
+- Policy changes frequently; users should confirm eligibility against official IRCC and Ontario government sources.

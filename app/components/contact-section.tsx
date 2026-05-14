@@ -1,21 +1,15 @@
 import type { ReactNode } from "react";
-
-const PHONE_DISPLAY = "403 971 0038";
-const PHONE_TEL = "+14039710038";
-const WHATSAPP_MESSAGE =
-  "Hi USD Immigration, I am interested in your immigration services. Looking for more information about the process.";
-const WHATSAPP_URL = `https://wa.me/${PHONE_TEL.replace("+", "")}?text=${encodeURIComponent(
-  WHATSAPP_MESSAGE,
-)}`;
-const EMAIL = "info@usdimmigration.ca";
-const HOURS = "Mon-Fri 9-6";
-const ADDRESS_LINES = ["4838 Dorchester Rd", "Niagara Falls, ON L2E 6N9"] as const;
-const ADDRESS_FOR_MAPS =
-  "4838 Dorchester Rd, Niagara Falls, ON L2E 6N9, Canada";
-const MAPS_DIRECTIONS_URL = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(ADDRESS_FOR_MAPS)}`;
-const MAPS_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(
+import {
   ADDRESS_FOR_MAPS,
-)}&z=14&output=embed`;
+  ADDRESS_LINES,
+  EMAIL,
+  HOURS,
+  MAPS_DIRECTIONS_URL,
+  MAPS_EMBED_URL,
+  PHONE_DISPLAY,
+  PHONE_TEL,
+  WHATSAPP_URL,
+} from "@/lib/site-business";
 
 /** Material Symbols Outlined ligatures; must stay in sync with `app/layout.tsx` icon_names. */
 function ContactSymbol({

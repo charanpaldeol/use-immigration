@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat, Source_Serif_4 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { SITE_URL, buildLocalBusinessJsonLd } from "@/lib/site-business";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -50,7 +51,7 @@ const MATERIAL_ICONS = [
 
 const MATERIAL_SYMBOLS_HREF = `https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=${MATERIAL_ICONS}&display=swap`;
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://usdimmigration.ca";
+const localBusinessJsonLd = buildLocalBusinessJsonLd();
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -59,8 +60,10 @@ export const metadata: Metadata = {
     template: "%s | USD Immigration",
   },
   description:
-    "Niagara-based Canadian immigration consultants for Express Entry, OINP, work permits, LMIA, study permits, family sponsorship, super visa, and citizenship in 2026.",
+    "Niagara Falls and GTA-focused Canadian immigration consultants for Express Entry, OINP, work permits, LMIA, study permits, family sponsorship, super visa, and citizenship in 2026.",
   keywords: [
+    "GTA immigration consultant Ontario",
+    "Greater Toronto Area immigration",
     "Niagara immigration consultant",
     "Niagara Falls immigration",
     "Canadian immigration 2026",
@@ -82,7 +85,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "USD Immigration | Niagara Immigration Experts",
     description:
-      "Niagara-based Canadian immigration consultants for Express Entry, OINP, work permits, LMIA, study permits, family sponsorship, super visa, and citizenship in 2026.",
+      "Niagara Falls and GTA-focused immigration consulting for Express Entry, OINP, work permits, LMIA, study permits, family sponsorship, super visa, and citizenship in 2026.",
     url: SITE_URL,
     type: "website",
     siteName: "USD Immigration",
@@ -92,7 +95,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "USD Immigration | Niagara Immigration Experts",
     description:
-      "Niagara-based immigration consulting for 2026 Canadian pathways.",
+      "Niagara Falls and GTA-focused immigration consulting for 2026 Canadian pathways.",
   },
   robots: {
     index: true,
@@ -124,6 +127,12 @@ export default function RootLayout({
           crossOrigin=""
         />
         <link rel="stylesheet" href={MATERIAL_SYMBOLS_HREF} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessJsonLd),
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col bg-background text-on-background">
         <a

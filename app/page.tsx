@@ -1,6 +1,7 @@
 // Purpose: This file builds the Niagara-focused homepage for the firm's 2026 content rollout.
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AreasServedSection } from "./components/areas-served-section";
 import { ContactSection } from "./components/contact-section";
 import { SiteFooter } from "./components/site-footer";
 import { SiteHeader } from "./components/site-header";
@@ -10,8 +11,14 @@ export const metadata: Metadata = {
     absolute: "USD Immigration | Niagara Immigration Consultants 2026",
   },
   description:
-    "Niagara immigration consultants for 2026 Canadian pathways. Express Entry, OINP, Work Permits & LMIA, Study Permits, Family & Spousal Sponsorship, Super Visa, Citizenship, and Humanitarian & Compassionate.",
+    "Niagara Falls immigration consultants serving the GTA and Niagara Region for 2026 Canadian pathways: Express Entry, OINP, work permits and LMIA, study permits, family and spousal sponsorship, Super Visa, citizenship, and humanitarian and compassionate cases.",
   keywords: [
+    "GTA immigration consultant",
+    "Greater Toronto Area immigration Ontario",
+    "Toronto immigration consultant Ontario",
+    "Mississauga immigration consulting",
+    "Hamilton immigration consultant",
+    "St Catharines immigration consultant",
     "Niagara immigration consultant",
     "Niagara Falls immigration office",
     "Canadian immigration consultant Ontario",
@@ -49,7 +56,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "USD Immigration | Niagara Immigration Consultants 2026",
     description:
-      "Niagara immigration consultants for 2026 Canadian pathways. Express Entry, OINP, Work Permits & LMIA, Study Permits, Family Sponsorship, Super Visa, and Citizenship.",
+      "Niagara Falls consultants serving the GTA and Niagara Region for 2026 pathways: Express Entry, OINP, work permits, study permits, family sponsorship, Super Visa, and citizenship.",
     url: "/",
     type: "website",
     siteName: "USD Immigration",
@@ -474,6 +481,7 @@ export default function Home() {
             </article>
           </div>
         </section>
+        <AreasServedSection />
         <ContactSection />
       </main>
       <SiteFooter />
