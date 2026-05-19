@@ -17,12 +17,14 @@ export function SiteHeaderMobileSheet() {
   const panelId = useId();
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const [lastPathname, setLastPathname] = useState(pathname);
 
   const close = useCallback(() => setOpen(false), []);
 
-  useEffect(() => {
-    close();
-  }, [pathname, close]);
+  if (lastPathname !== pathname) {
+    setLastPathname(pathname);
+    setOpen(false);
+  }
 
   useEffect(() => {
     if (!open) return;
