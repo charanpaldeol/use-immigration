@@ -1,12 +1,9 @@
 // Purpose: This file creates the top bar of the website, including the brand name, navigation links, and main action button.
 import Link from "next/link";
+import { primaryNav } from "../lib/site-nav";
+import { headerFocusRing, SiteHeaderNavLink } from "./site-header-nav-link";
 
-const nav = [
-  { href: "/#services", label: "Services" },
-  { href: "/about", label: "About Us" },
-  { href: "/guides", label: "2026 Guides" },
-  { href: "/#contact", label: "Contact" },
-];
+const assessmentCtaClassName = `rounded bg-primary-container px-5 py-2.5 font-label text-label-lg font-semibold tracking-[0.05em] text-on-primary shadow-[var(--shadow-institutional)] transition-opacity duration-200 hover:opacity-90 ${headerFocusRing}`;
 
 export function SiteHeader() {
   return (
@@ -14,30 +11,29 @@ export function SiteHeader() {
       <div className="mx-auto flex h-14 w-full max-w-container-max items-center justify-between gap-stack-sm px-4 md:h-16 md:gap-gutter md:px-margin-desktop">
         <Link
           href="/"
-          className="font-headline text-headline-md font-semibold text-primary shrink-0"
+          className={`shrink-0 font-headline text-headline-md font-semibold text-primary ${headerFocusRing} rounded-sm`}
         >
           USD Immigration
         </Link>
 
         <nav
-          className="hidden items-center gap-[22px] md:flex"
+          className="hidden items-center gap-gutter md:flex"
           aria-label="Primary"
         >
-          {nav.map((item) => (
-            <Link
+          {primaryNav.map((item) => (
+            <SiteHeaderNavLink
               key={item.href}
               href={item.href}
-              className="font-label text-label-lg font-semibold tracking-[0.05em] text-on-surface-variant transition-colors hover:text-secondary"
-            >
-              {item.label}
-            </Link>
+              label={item.label}
+              layout="desktop"
+            />
           ))}
         </nav>
 
         <div className="flex items-center gap-stack-sm">
           <Link
-            href="/#assessment"
-            className="hidden rounded bg-secondary px-5 py-2.5 font-label text-label-lg font-semibold tracking-[0.05em] text-on-primary shadow-[var(--shadow-institutional)] transition-opacity hover:opacity-90 sm:inline-flex"
+            href="/#contact"
+            className={`hidden sm:inline-flex ${assessmentCtaClassName}`}
           >
             Free Assessment
           </Link>
@@ -45,24 +41,23 @@ export function SiteHeader() {
           <details className="group relative md:hidden">
             <summary
               aria-label="Toggle navigation menu"
-              className="flex h-11 min-w-11 list-none cursor-pointer items-center gap-1.5 rounded border border-outline-variant bg-surface-container-lowest px-3 font-label text-label-md font-semibold tracking-[0.04em] text-primary marker:hidden group-open:bg-surface-container-low [&::-webkit-details-marker]:hidden"
+              className={`flex h-11 min-w-11 list-none cursor-pointer items-center gap-1.5 rounded border border-outline-variant bg-surface-container-lowest px-3 font-label text-label-md font-semibold tracking-[0.04em] text-primary marker:hidden group-open:bg-surface-container-low [&::-webkit-details-marker]:hidden ${headerFocusRing}`}
             >
               <span className="material-symbols-outlined text-[18px]">menu</span>
               Menu
             </summary>
             <div className="absolute right-0 mt-2 w-52 rounded border border-outline-variant bg-surface-container-lowest py-2 shadow-[var(--shadow-institutional)]">
-              {nav.map((item) => (
-                <Link
+              {primaryNav.map((item) => (
+                <SiteHeaderNavLink
                   key={item.href}
                   href={item.href}
-                  className="block px-4 py-2 font-label text-label-lg text-on-surface hover:bg-surface-container-low"
-                >
-                  {item.label}
-                </Link>
+                  label={item.label}
+                  layout="mobile"
+                />
               ))}
               <Link
-                href="/#assessment"
-                className="mt-1 block border-t border-outline-variant px-4 py-3 font-label text-label-lg font-semibold text-secondary"
+                href="/#contact"
+                className={`mt-1 block border-t border-outline-variant px-4 py-3 ${assessmentCtaClassName}`}
               >
                 Free Assessment
               </Link>

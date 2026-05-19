@@ -1,11 +1,6 @@
 /* Purpose: This file controls the site's overall look, including shared colors, fonts, spacing, and style rules used everywhere. */
 @import "tailwindcss";
 
-:root {
-  --background: #f8f9fa;
-  --foreground: #191c1d;
-}
-
 @theme inline {
   /* Colors — Stellar Sovereign (docs/DESIGN.md) */
   --color-surface: #f8f9fa;
