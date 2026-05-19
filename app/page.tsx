@@ -71,7 +71,7 @@ export default function Home() {
           <div className="mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop">
             <div className="max-w-3xl">
               <span className="mb-stack-md inline-block rounded border border-on-primary/30 bg-on-primary/10 px-3 py-1 font-label text-label-md font-semibold uppercase tracking-[0.1em] text-on-primary">
-                Niagara Immigration Experts
+                Immigration Experts
               </span>
               <h1 className="mb-stack-lg font-headline text-headline-lg-mobile font-bold text-on-primary md:text-display-lg">
                 Build Your Future in Canada
