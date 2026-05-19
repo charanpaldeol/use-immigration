@@ -1,3 +1,4 @@
+// Purpose: This file creates a single header navigation link that highlights itself when its page is active.
 "use client";
 
 import Link from "next/link";

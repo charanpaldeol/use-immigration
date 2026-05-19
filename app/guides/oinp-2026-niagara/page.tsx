@@ -1,3 +1,4 @@
+// Purpose: This file builds the OINP 2026 Niagara guide page covering Ontario immigrant nominee streams.
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteFooter } from "../../components/site-footer";

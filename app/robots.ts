@@ -1,3 +1,4 @@
+// Purpose: This file generates the site's robots.txt, allowing crawlers and pointing them to the sitemap.
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site-business";
 

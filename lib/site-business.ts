@@ -1,3 +1,4 @@
+// Purpose: This file is the single source of truth for the firm's contact details, hours, and website URL.
 /**
  * Single source of truth for NAP, hours, and site URL (schema, contact UI, sitemap).
  *

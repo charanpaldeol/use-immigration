@@ -1,3 +1,4 @@
+// Purpose: This file builds the About page introducing the firm and its Niagara-based immigration consulting team.
 import type { Metadata } from "next";
 import { AreasServedSection } from "../components/areas-served-section";
 import { SiteFooter } from "../components/site-footer";

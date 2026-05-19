@@ -1,3 +1,4 @@
+// Purpose: This file builds the 2026 immigration guides index that links to each detailed guide.
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteFooter } from "../components/site-footer";

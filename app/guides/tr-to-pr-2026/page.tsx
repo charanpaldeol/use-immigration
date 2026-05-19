@@ -1,3 +1,4 @@
+// Purpose: This file builds the TR to PR 2026 guide page for temporary residents moving to permanent residence.
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteFooter } from "../../components/site-footer";

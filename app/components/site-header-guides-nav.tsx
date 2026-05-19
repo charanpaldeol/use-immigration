@@ -1,3 +1,4 @@
+// Purpose: This file creates the desktop "2026 Guides" dropdown menu in the site header.
 "use client";
 
 import Link from "next/link";

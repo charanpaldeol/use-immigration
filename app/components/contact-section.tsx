@@ -1,3 +1,4 @@
+// Purpose: This file creates the contact section with phone, WhatsApp, email, hours, address, and an embedded map.
 import type { ReactNode } from "react";
 import {
   ADDRESS_FOR_MAPS,

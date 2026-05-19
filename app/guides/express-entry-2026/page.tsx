@@ -1,3 +1,4 @@
+// Purpose: This file builds the Express Entry 2026 guide page for Niagara skilled-worker applicants.
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteFooter } from "../../components/site-footer";

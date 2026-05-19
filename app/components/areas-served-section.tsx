@@ -1,3 +1,4 @@
+// Purpose: This file creates the "Areas We Serve" section listing the GTA and Niagara communities the firm supports.
 import Link from "next/link";
 import {
   SERVICE_AREAS_CITIES,

@@ -1,3 +1,4 @@
+// Purpose: This file creates the header's quick-contact buttons for calling and messaging on WhatsApp.
 import { PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from "@/lib/site-business";
 import { headerFocusRing } from "../lib/header-styles";
 import { WhatsAppIcon } from "./whatsapp-icon";

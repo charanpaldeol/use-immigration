@@ -1,3 +1,4 @@
+// Purpose: This file creates the mobile navigation menu (a slide-in panel) opened from the site header.
 "use client";
 
 import Link from "next/link";

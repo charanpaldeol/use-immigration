@@ -1,3 +1,4 @@
+// Purpose: This file generates the XML sitemap listing every public page for search engines.
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site-business";
 
