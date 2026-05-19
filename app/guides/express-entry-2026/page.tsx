@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteFooter } from "../../components/site-footer";
-import { SiteHeader } from "../../components/site-header";
 
 export const metadata: Metadata = {
   title: "Express Entry 2026 Guide: CRS, FSW, CEC & FSTP Strategy",
@@ -39,7 +38,6 @@ export const metadata: Metadata = {
 export default function ExpressEntryGuidePage() {
   return (
     <>
-      <SiteHeader />
       <main id="main-content" className="flex-1">
         <section className="bg-primary-container py-section-padding">
           <div className="mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop">

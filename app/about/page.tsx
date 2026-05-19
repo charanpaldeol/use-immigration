@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { AreasServedSection } from "../components/areas-served-section";
 import { SiteFooter } from "../components/site-footer";
-import { SiteHeader } from "../components/site-header";
 
 export const metadata: Metadata = {
   title: "About | Niagara Immigration Consultants",
@@ -47,7 +46,6 @@ const TEAM = [
 export default function AboutPage() {
   return (
     <>
-      <SiteHeader />
       <main id="main-content" className="flex-1">
         <section className="bg-primary-container py-section-padding">
           <div className="mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop">

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter, Montserrat, Source_Serif_4 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SITE_URL, buildLocalBusinessJsonLd } from "@/lib/site-business";
+import { SiteHeader } from "./components/site-header";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -35,6 +36,8 @@ const MATERIAL_ICONS = [
   "business_center",
   "call",
   "chevron_right",
+  "close",
+  "expand_more",
   "family_restroom",
   "gavel",
   "location_on",
@@ -141,6 +144,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <SiteHeader />
         {children}
         <Analytics />
       </body>

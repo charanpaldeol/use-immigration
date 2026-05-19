@@ -4,7 +4,6 @@ import Link from "next/link";
 import { AreasServedSection } from "./components/areas-served-section";
 import { ContactSection } from "./components/contact-section";
 import { SiteFooter } from "./components/site-footer";
-import { SiteHeader } from "./components/site-header";
 
 export const metadata: Metadata = {
   title: {
@@ -67,7 +66,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <SiteHeader />
       <main id="main-content" className="flex-1">
         <section className="bg-primary-container py-section-padding">
           <div className="mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop">

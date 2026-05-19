@@ -3,10 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { headerFocusRing } from "../lib/header-styles";
 import { isNavLinkActive } from "../lib/site-nav";
-
-export const headerFocusRing =
-  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-container focus-visible:ring-offset-2";
 
 export function useLocationHash(): string {
   const pathname = usePathname();
@@ -26,9 +24,15 @@ type SiteHeaderNavLinkProps = {
   href: string;
   label: string;
   layout: "desktop" | "mobile";
+  onNavigate?: () => void;
 };
 
-export function SiteHeaderNavLink({ href, label, layout }: SiteHeaderNavLinkProps) {
+export function SiteHeaderNavLink({
+  href,
+  label,
+  layout,
+  onNavigate,
+}: SiteHeaderNavLinkProps) {
   const pathname = usePathname();
   const hash = useLocationHash();
   const active = isNavLinkActive(pathname, hash, href);
@@ -38,6 +42,7 @@ export function SiteHeaderNavLink({ href, label, layout }: SiteHeaderNavLinkProp
     return (
       <Link
         href={href}
+        onClick={onNavigate}
         aria-current={ariaCurrent}
         className={`font-label text-label-lg font-semibold tracking-[0.05em] transition-colors duration-200 ${headerFocusRing} ${
           active
@@ -53,6 +58,7 @@ export function SiteHeaderNavLink({ href, label, layout }: SiteHeaderNavLinkProp
   return (
     <Link
       href={href}
+      onClick={onNavigate}
       aria-current={ariaCurrent}
       className={`block px-4 py-2 font-label text-label-lg transition-colors duration-200 ${headerFocusRing} ${
         active

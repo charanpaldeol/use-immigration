@@ -1,9 +1,8 @@
-// Purpose: Shared primary navigation links for the site header and footer.
+// Purpose: Primary navigation links and active-state helpers for the site header.
 export const primaryNav = [
   { href: "/#services", label: "Services" },
   { href: "/about", label: "About Us" },
   { href: "/guides", label: "2026 Guides", guidesMenu: true },
-  { href: "/#contact", label: "Contact" },
 ] as const;
 
 export const guidesNav = [

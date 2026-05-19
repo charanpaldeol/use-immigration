@@ -1,7 +1,6 @@
 // Purpose: Terms of Service page — placeholder content to be reviewed by legal counsel before publication.
 import type { Metadata } from "next";
 import { SiteFooter } from "../components/site-footer";
-import { SiteHeader } from "../components/site-header";
 
 export const metadata: Metadata = {
   title: "Terms of Service | USD Immigration",
@@ -12,7 +11,6 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <>
-      <SiteHeader />
       <main className="mx-auto w-full max-w-3xl px-margin-mobile py-section-padding md:px-margin-desktop">
         <h1 className="mb-stack-lg font-headline text-headline-lg-mobile font-semibold text-primary md:text-headline-lg">
           Terms of Service
