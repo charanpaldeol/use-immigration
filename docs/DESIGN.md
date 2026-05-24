@@ -144,87 +144,122 @@ motion:
   ease-out: cubic-bezier(.2, .8, .2, 1)
 ---
 
+## How to use this document
+
+This file has two layers:
+
+1. **Fixed tokens** (YAML frontmatter) — color values, type scale, spacing, radii, shadows, and motion durations. These stay stable; build with them via CSS variables / Tailwind theme.
+2. **Flexible patterns** (sections below) — layout, surfaces, components, motion, and imagery. These describe the *current* site and the brand's default lean, but **may evolve** as long as the result still reads as authoritative, calm, and trustworthy.
+
+When exploring a new UI direction, use the tokens and typography roles as anchors. Everything else is fair game if it passes a simple check: *Would a client facing a life-changing immigration decision feel reassured, not sold to or distracted?*
+
 ## Brand & Style
-This design system is built to project absolute authority, reliability, and institutional trust for a high-stakes immigration consultancy. The brand personality is "The Expert Guide"—sophisticated, unwavering, and elite. It avoids the clutter of traditional legal sites in favor of a **Corporate Minimalism** aesthetic. 
+This design system projects authority, reliability, and institutional trust for a high-stakes immigration consultancy. The brand personality is "The Expert Guide"—sophisticated, unwavering, and elite. The default aesthetic leans toward **Corporate Minimalism**: clarity over clutter, whitespace over density.
 
-The visual narrative centers on clarity and precision. By utilizing expansive whitespace, the design system allows complex information to breathe, reducing the cognitive load on users navigating sensitive legal processes. The emotional response is one of calm assurance and security, achieved through a structured grid and a disciplined color application. High-quality professional photography should focus on global connectivity, architectural landmarks, and successful professional milestones, rather than generic stock imagery.
+The emotional target is calm assurance. A structured grid, disciplined color use, and generous spacing reduce cognitive load for users navigating sensitive legal processes. Photography and layout can be expressive within that frame—global connectivity, architectural landmarks, and professional milestones are strong directions; generic stock is weak regardless of treatment.
 
-## Colors
-The palette is rooted in a "Fidelity" approach to established institutional colors. The **Deep Navy Blue (#002147)** serves as the primary anchor, used for headers, key text, and primary brand elements to establish a foundation of stability. 
+## Colors *(fixed)*
+The palette is rooted in a "Fidelity" approach to established institutional colors. Token values in the frontmatter are the source of truth — do not swap hex values without updating the theme.
 
-**Crimson Red (#C41E3A)** is used sparingly and strategically as an accent color for calls to action, critical status indicators, and subtle highlights, ensuring high visibility without compromising the professional tone. **Off-White (#F8F9FA)** acts as the primary canvas, providing a softer, more sophisticated background than pure white. Secondary blues and grays are utilized for borders and subtle background shifts to maintain a layered, organized interface.
+**Deep Navy Blue (#002147 / `primary-container`)** anchors headers, key text, and primary brand elements. **Crimson Red (#C41E3A / `secondary`)** works best as a strategic accent for CTAs, status, and highlights — heavy crimson reads less institutional. **Off-White (#F8F9FA / `surface`)** is the default canvas. Secondary blues and grays from the token set handle borders and surface layering.
 
-## Typography
-This design system employs a sophisticated pairing of a geometric sans-serif for impact and a contemporary serif for readability. **Montserrat** is the voice of authority, used for headlines to convey modern strength and precision. Letter spacing is slightly tightened on larger display sizes to maintain a "locked-in" professional feel.
+You may combine tokens creatively (navy bands, crimson accents, alternating surfaces, tinted containers) as long as contrast and accessibility hold. Gradients and overlays, if used, should be built from existing palette tokens — not new hues.
 
-For long-form content and service descriptions, **Source Serif 4** provides a literary, established quality that signals "official documentation." The high x-height and clear terminals of this serif ensure legibility across all digital devices. **Inter** is reserved for functional UI elements like labels, navigation links, and micro-copy, providing a neutral, utilitarian balance to the more expressive brand fonts.
+## Typography *(fixed roles, flexible application)*
+Three typefaces, fixed roles:
+
+| Role | Face | Use |
+|------|------|-----|
+| Display & headlines | **Montserrat** | Section titles, hero lines, wordmark |
+| Body & long-form | **Source Serif 4** | Paragraphs, service descriptions, guides |
+| UI & labels | **Inter** | Nav, buttons, labels, micro-copy, eyebrows |
+
+The scale in the frontmatter (`display-lg` through `eyebrow-upper`) is the canonical set. You may add intermediate sizes or responsive steps when a layout needs them, but keep each text block on the correct face for its role. Montserrat headlines may use slightly tightened tracking at large sizes; Source Serif carries the "official documentation" feel; Inter stays neutral for chrome.
 
 ## Layout & Spacing
-The layout follows a **Fixed Grid** philosophy for desktop, centering the content within a 1280px container to ensure a premium, curated reading experience. A 12-column grid system is used, with generous 24px gutters to prevent information density from becoming overwhelming.
+**Defaults:** 1280px max container, 12-column grid, 24px gutters, base-8 vertical rhythm, 80px section padding, 4-column fluid grid on mobile with 20px side margins.
 
-Vertical rhythm is governed by a base-8 scale. Large-scale sections are separated by 80px of padding to create the "generous whitespace" requested. On mobile devices, the layout transitions to a 4-column fluid grid with 20px side margins, prioritizing vertical stackability and touch-friendly targets.
+These are starting points, not a cage. Asymmetric column spans, full-bleed media within the container, offset headlines, and varied section density are all welcome when they improve hierarchy or storytelling. Prefer touch-friendly targets on mobile and maintain readable line lengths for body copy.
 
-## Backgrounds
-Surfaces stay **flat**: sections alternate between `surface` (#f8f9fa) and `surface-container-low` (#f3f4f5) to chunk content — never gradients. The only "gradient" anywhere is the hero, achieved by laying a photographic image at `opacity-30` over a solid Deep Navy container. No textures, no patterns, no abstract shapes.
+## Backgrounds & Surfaces
+**Default:** flat surfaces alternating `surface` and `surface-container-low` to chunk sections without visual noise.
+
+**Also valid when it serves the layout:**
+
+- Subtle gradients built only from palette tokens (e.g. navy → `primary-container`, off-white → `surface-container-low`)
+- Photography, video stills, or solid navy bands as section backgrounds
+- Light texture or pattern *only* if it stays low-contrast and does not compete with text
+- Abstract shapes or illustration *if* they support clarity rather than decoration — avoid playful or clip-art aesthetics
+
+The hero currently uses a photo at `opacity-30` over Deep Navy; that pattern works well but is not mandatory. Prefer contrast through token-based color + readable type, not effects that muddy text.
 
 ## Elevation & Depth
-Depth in this design system is achieved through **low-contrast outlines** and **ambient shadows**. Surface layers are strictly defined; we avoid "floating" elements in favor of grounded, structured components. 
+**Default lean:** grounded, brochure-like UI — low-contrast outlines and soft ambient shadow rather than heavy floating panels.
 
-Cards and interactive containers use a subtle 1px border (`outline-variant` / `#c4c6cf`) to define their boundaries against the Off-White background. The canonical lift is `--shadow-institutional: 0 4px 20px rgb(0 33 71 / 0.08)` — soft, diffused, navy-tinted. Shadow appears in only four places on the marketing site: the sticky header, the primary CTA, the testimonial frame, and the contact mega-card. The contact card uses a heavier `0 10px 30px rgba(0, 0, 0, 0.16)` to lift it off the navy contact-section background.
+**Token toolkit** (use as needed):
 
-**No inner shadows. No multi-layer shadows.** Regular service cards have **no shadow at all** — their 1px border alone defines them. This "institutional depth" ensures the UI feels like a physical piece of stationery or a high-end brochure.
+| Token | Typical use |
+|-------|-------------|
+| `outline-variant` 1px border | Cards, inputs, dividers |
+| `--shadow-institutional` | Header, primary CTA, featured frames |
+| `--shadow-sm` / `--shadow-md` | Lighter lift where hierarchy needs it |
+| `--shadow-lg` | Strong lift on dark backgrounds (e.g. contact section) |
+| `--focus-ring` | All interactive focus states |
+
+Cards may be border-only, shadow-only, or both depending on context. Prefer single-layer, navy-tinted shadows over stacked or inner shadows. If an element needs to feel elevated, pick the lightest shadow tier that reads clearly.
 
 ## Shapes
-The shape language is **Soft (Level 1)**, with 4px (`0.25rem`) as the default. The active range is deliberately tight — five radii cover every surface:
+**Default:** soft rectangles — `rounded` (4px) for controls, up through `rounded-2xl` (16px) for larger frames, `rounded-full` for pills and avatars.
 
-- **4px** — buttons, inputs (the standard).
-- **8px** (`rounded-lg`) — photo containers.
-- **12px** (`rounded-xl`) — service cards.
-- **16px** (`rounded-2xl`) — the testimonial frame.
-- **full** (9999px) — pills, avatars, and the rare circular icon chip.
+The radii in the frontmatter are the standard set; additional steps are fine if they stay in a coherent family (avoid mixing extreme pill shapes with sharp 2px corners on adjacent elements). Circles and organic shapes are allowed for avatars, icons, and focal moments. Overall geometry should still feel structured and stable, not bubbly or toy-like.
 
-Circular shapes outside that last bucket are not permitted; otherwise, the design system adheres to a rectangular, structured geometry that reinforces the brand's stability.
+## Components *(patterns, not prescriptions)*
+Current implementations are reference points. New pages may diverge when a better pattern emerges, as long as colors, type roles, and accessibility are respected.
 
-## Components
-- **Buttons**: Primary buttons are solid Deep Navy (`primary-container` / `#002147`) with white text and a 4px corner radius. Only the page's primary CTA carries `--shadow-institutional`; every other button is flat. Hover on navy primaries is `opacity-90` (no shrink, no scale). Crimson buttons hover to `secondary-container` (`#da3148`). Outlined buttons (1px crimson) hover by filling crimson with white text.
-- **Service Cards**: 1px `outline-variant` border on a white (`surface-container-lowest`) fill, `rounded-xl` (12px), 32px (`p-8`) padding. **No drop shadow** — the border alone defines the card. Some variants overlay a full-bleed photograph at `opacity-10` behind the content; on hover that image slowly `scale(1.05)`s. Cards never use left-border accents or colored borders.
-- **Navigation Bar**: Persistent and clean. Solid white background, 1px `outline-variant` bottom border, `--shadow-institutional` once sticky. Links are Inter Label-LG; the only hover affordance is a color shift to crimson.
-- **Input Fields**: Sharp and utilitarian. Labels are always visible above the field in Inter Label-MD. Focus uses a 2px solid `primary-container` ring (`--focus-ring`).
-- **Status Chips**: Use the `success`/`warning`/`info` container tints with their paired `on-*-container` foreground for high contrast. Avoid raw saturated greens/ambers — the container tokens are intentionally low-saturation.
-- **Progress Steppers**: Linear, clean, navy/gray. No color-graded or "gamified" bars.
-- **Eyebrow Tags**: The `eyebrow-upper` style (Inter 600, 12px, uppercase, 0.12em tracking, crimson). Rendered as a small pill on photographic backgrounds via `bg-on-primary/10 backdrop-blur-sm`; otherwise inline above section headlines.
+- **Buttons:** Default fill is Deep Navy (`primary-container`) or Crimson (`secondary`) with token-matched foreground. Outlined and ghost variants are fine. Hover/focus should be visible — opacity shifts, fill changes, underline, or subtle scale are all acceptable. Reserve the strongest shadow for the page's primary action when you want extra emphasis.
+- **Cards:** White or `surface-container-lowest` fill with optional `outline-variant` border, shadow, or photo underlay. Left-border accents, tinted borders, and hover lift are allowed if they stay on-brand. Photo overlays at low opacity (`~10%`) with slow hover scale remain a good default for service tiles.
+- **Navigation:** Clean, persistent header; sticky shadow optional. Link style may include underline, background pill, or icon — hover should clearly signal interactivity (crimson shift is the current default).
+- **Inputs:** Visible labels (Inter Label-MD) above fields; focus ring via `--focus-ring`. Floating labels and inline validation are fine.
+- **Status chips:** Prefer `success` / `warning` / `info` container pairs over raw saturated hues.
+- **Progress & steps:** Linear, readable progress is the default; stepped wizards and animated indicators are fine if they stay professional, not gamified.
+- **Eyebrows:** `eyebrow-upper` style for section kickers; may render inline or as a pill with blur/translucency on photo backgrounds.
 
 ## Iconography
-**Material Symbols Outlined** (Google's Material 3 icon font) is the **only** iconography system, loaded via Google Fonts at variable axis `opsz,wght,FILL,GRAD@24,400,0,0`. The codebase enumerates and trims the request URL to only the glyphs in use.
+**Default system:** Material Symbols Outlined via Google Fonts (`opsz,wght,FILL,GRAD@24,400,0,0`). Trim the glyph URL to icons actually used.
 
-- **Style**: outlined, weight 400, optical size 24. The `.material-symbols-filled` modifier flips `FILL` to 1 for rare emphasis cases (e.g. the hero's `verified` checkmark).
-- **Color** inherits `currentColor`: `text-primary` on light surfaces, `text-on-primary` inside navy chips, `text-secondary` next to crimson CTAs.
-- **Sizing** is set via Tailwind text-size classes (`text-lg`–`text-4xl`), never via the icon font's own `font-size`.
-- **Glyphs in use**: `verified, trending_up, work, school, family_restroom, business_center, gavel, visibility, public, arrow_forward, chevron_right, call, mail, location_on, schedule, search`.
-- **Custom SVG** is permitted **only** inside the contact card (phone/mail/clock/pin chips with `#1d4d82` navy and `#38bdf8` sky tiles). Outside that section, never use bespoke SVG icons.
-- **Emoji and Unicode arrows are never used as icons.** Arrows are `arrow_forward` / `chevron_right`.
-- **Logo**: there is no logo image. The brand is a typographic wordmark: `USD Immigration` set in Montserrat 600 at `headline-md` (24px), color `primary`.
+- Outlined, weight 400, opsz 24; `.material-symbols-filled` for occasional emphasis.
+- Color via `currentColor` and semantic text tokens.
+- Size via Tailwind text utilities, not raw icon `font-size`.
+
+Custom SVG icons, Lucide, or other sets are **allowed** when Material Symbols lacks a glyph or a bespoke mark is clearer — keep stroke weight and visual weight consistent with Material Outlined. Avoid emoji as UI icons. Prefer `arrow_forward` / `chevron_right` (or equivalent) for directional cues.
+
+**Logo:** typographic wordmark by default — `USD Immigration` in Montserrat 600 at `headline-md`, color `primary`. A logo mark may be introduced later if it meets the same institutional bar.
 
 ## Imagery
-Imagery is **structural, not decorative** — it's how the hero and the service cards earn their depth without resorting to gradients or illustration.
+Imagery should **support structure and trust**, not fill empty space.
 
-- **Style**: warm, full-color, sharp professional photography of people, architecture, and global connectivity. Never black-and-white, grain, duotones, or muted color washes.
-- **Treatment**: the hero is a photo at `opacity-30` over Deep Navy. Service cards use a full-bleed photo at `opacity-10` behind their content. Contrast is achieved by **photo opacity over solid color**, never by gradient overlays or capsules.
-- **Forbidden**: textures, patterns, hand-drawn illustrations, abstract shapes, generic legal/immigration stock imagery.
+- **Strong defaults:** warm, full-color, sharp professional photography — people, architecture, global connectivity.
+- **Also usable:** editorial crops, duotone or muted treatments *if* they stay premium and legible; short loops or subtle video in hero regions; custom illustration *if* it matches institutional tone (avoid cartoon or clip-art legal clichés).
+- **Weak regardless of treatment:** generic handshake / globe / gavel stock, low-res assets, imagery that fights headline contrast.
+
+Photo-over-solid-color (hero, card underlays) is a proven pattern here; gradient scrims and token-based overlays are fine when text remains readable.
 
 ## Motion & Interaction
-Motion is **restrained** — it should read as "premium hardware", not "playful app". Duration 150–500ms, easing browser default (or the tokens above). No bounces, no springs, no entrance animations.
+**Default character:** calm and premium — motion clarifies state, not entertains. Use duration tokens (`dur-fast` 150ms – `dur-slow` 300ms+); prefer `ease-standard` / `ease-out` over bouncy curves.
 
-- **Hover**:
-  - Links → color shifts to `secondary` (crimson).
-  - Navy primary buttons → `opacity-90`.
-  - Crimson buttons → background to `secondary-container` (`#da3148`).
-  - Outlined buttons → fill crimson, text flips white.
-  - Imagery inside cards → slow `transition-transform duration-500 group-hover:scale-105`.
-  - Nav links → color to crimson.
-- **Press**: no explicit press/active state — defaults to browser behavior. Buttons do not shrink or shift.
-- **Focus**: `0 0 0 2px var(--color-primary-container)` ring on all interactive controls.
-- **Transparency / blur** is reserved for two cases: the hero eyebrow tag (`bg-on-primary/10 backdrop-blur-sm`) and the testimonial caption inside the about photograph (`bg-white/95 backdrop-blur-sm`). Footer secondary text uses `text-on-primary/80` as the dark-mode equivalent of `on-surface-variant`.
+**Encouraged:**
+
+- Hover and focus feedback on all interactive elements
+- Scroll-triggered fade/slide reveals when subtle (respect `prefers-reduced-motion`)
+- Page and section transitions that feel smooth, not flashy
+- Image parallax or scale on hover for depth
+- Staggered list entrance for dense content, sparingly
+
+**Use sparingly:** spring physics, bounce easing, looping decorative animation, aggressive micro-interactions that shift layout.
+
+**Required:** visible focus ring (`--focus-ring`) on keyboard-focusable controls. Honor `prefers-reduced-motion` by reducing or disabling non-essential animation.
+
+**Transparency / blur:** valid for overlays, sticky glass headers, modals, pills on photography, and captions — keep blur light enough that text contrast still passes.
 
 ## Content Fundamentals
 The copy register is as load-bearing as the visual system — getting it wrong makes the brand read wrong even if the pixels are right.
@@ -248,4 +283,4 @@ The copy register is as load-bearing as the visual system — getting it wrong m
 - **No ALL-CAPS shouting** anywhere in body copy.
 
 ### Emoji
-**Never.** Not in copy, not as icons, not as decoration.
+Avoid in UI and marketing copy. If a channel absolutely requires it (e.g. social), keep it off the main site.
