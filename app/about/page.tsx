@@ -1,6 +1,5 @@
 // Purpose: This file builds the About page introducing the firm and its Niagara-based immigration consulting team.
 import type { Metadata } from "next";
-import { AreasServedSection } from "../components/areas-served-section";
 import { SiteFooter } from "../components/site-footer";
 
 export const metadata: Metadata = {
@@ -100,8 +99,6 @@ export default function AboutPage() {
             </article>
           </div>
         </section>
-
-        <AreasServedSection id="areas-served-about" compact />
 
         <section className="bg-surface-container-low py-section-padding">
           <div className="mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop">

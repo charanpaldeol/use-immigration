@@ -1,6 +1,5 @@
 // Purpose: This file builds the Niagara-focused homepage for the firm's 2026 content rollout.
 import type { Metadata } from "next";
-import { AreasServedSection } from "./components/areas-served-section";
 import { ContactSection } from "./components/contact-section";
 import { GuidesSection } from "./components/home/guides-section";
 import { HeroSection } from "./components/home/hero-section";
@@ -74,7 +73,6 @@ export default function Home() {
         <ServicesSection />
         <ProcessSection />
         <GuidesSection />
-        <AreasServedSection />
         <ContactSection />
       </main>
       <SiteFooter />
