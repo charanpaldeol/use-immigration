@@ -42,9 +42,11 @@ export function headerShellClass(theme: HeaderTheme, scrolled: boolean): string 
   }`;
 }
 
-export const headerCtaClassName = `inline-flex items-center justify-center rounded bg-primary-container px-5 py-2.5 font-label text-label-lg font-semibold tracking-[0.05em] text-on-primary shadow-[var(--shadow-institutional)] transition-[opacity,background-color] duration-150 hover:bg-primary motion-reduce:transition-none ${headerFocusRing}`;
+const headerCtaSharedClassName = `items-center justify-center rounded px-5 py-2.5 font-label text-label-lg font-semibold tracking-[0.05em] shadow-[var(--shadow-institutional)] transition-[opacity,background-color] duration-150 motion-reduce:transition-none ${headerFocusRing}`;
 
-export const headerCtaClassNameHero = `inline-flex items-center justify-center rounded bg-secondary px-5 py-2.5 font-label text-label-lg font-semibold tracking-[0.05em] text-on-secondary shadow-[var(--shadow-institutional)] transition-[opacity,background-color] duration-150 hover:bg-secondary-container motion-reduce:transition-none ${headerFocusRing}`;
+export const headerCtaClassName = `inline-flex bg-primary-container text-on-primary hover:bg-primary ${headerCtaSharedClassName}`;
+
+export const headerCtaClassNameHero = `inline-flex bg-secondary text-on-secondary hover:bg-secondary-container ${headerCtaSharedClassName}`;
 
 export function headerCtaClass(theme: HeaderTheme): string {
   return theme === "hero" ? headerCtaClassNameHero : headerCtaClassName;
@@ -58,9 +60,9 @@ export function headerCtaCompactClass(theme: HeaderTheme): string {
   return theme === "hero" ? headerCtaCompactClassNameHero : headerCtaCompactClassName;
 }
 
-export const headerCtaFullClassName = `hidden sm:inline-flex ${headerCtaClassName}`;
+export const headerCtaFullClassName = `hidden sm:inline-flex bg-primary-container text-on-primary hover:bg-primary ${headerCtaSharedClassName}`;
 
-export const headerCtaFullClassNameHero = `hidden sm:inline-flex ${headerCtaClassNameHero}`;
+export const headerCtaFullClassNameHero = `hidden sm:inline-flex bg-secondary text-on-secondary hover:bg-secondary-container ${headerCtaSharedClassName}`;
 
 export function headerCtaFullClass(theme: HeaderTheme): string {
   return theme === "hero" ? headerCtaFullClassNameHero : headerCtaFullClassName;

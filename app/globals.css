@@ -168,7 +168,12 @@
       rgb(0 0 0 / 0.4) 60%,
       rgb(0 0 0 / 0) 100%
     );
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+  }
+
+  @media (min-width: 768px) {
+    .service-card-glass {
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
   }
 }

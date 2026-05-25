@@ -38,8 +38,8 @@ export function SiteHeader() {
   return (
     <ActiveSectionContext.Provider value={activeHash}>
       <header className={headerShellClass(theme, scrolled)}>
-      <div className="mx-auto flex h-header-height w-full max-w-container-max items-center justify-between gap-stack-sm px-margin-mobile md:gap-2 lg:gap-gutter md:px-margin-desktop">
-        <SiteHeaderBrand theme={theme} />
+      <div className="mx-auto flex h-header-height w-full max-w-container-max items-center justify-between gap-1 px-margin-mobile md:gap-2 lg:gap-gutter md:px-margin-desktop">
+        <SiteHeaderBrand theme={theme} className="flex-1 md:flex-none" />
 
         <nav
           className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 md:flex lg:gap-1"
@@ -63,7 +63,7 @@ export function SiteHeader() {
 
         <div className="relative z-[60] flex shrink-0 items-center gap-1 sm:gap-stack-sm">
           <SiteHeaderUtilities
-            className="flex md:hidden"
+            className="flex min-[390px]:hidden md:hidden"
             theme={theme}
             variant="whatsapp"
           />
@@ -71,7 +71,7 @@ export function SiteHeader() {
 
           <Link
             href="/#contact"
-            className={headerCtaCompactClass(theme)}
+            className={`${headerCtaCompactClass(theme)} max-[389px]:hidden`}
             aria-label="Free Assessment"
           >
             Assessment

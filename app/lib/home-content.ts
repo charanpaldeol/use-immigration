@@ -89,8 +89,8 @@ export const HOME_SERVICES: readonly HomeService[] = [
     href: "#contact",
     cta: "Get assessment",
     image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80",
-    imageAlt: "Person smiling outdoors",
+      "https://images.unsplash.com/photo-1545013806-8e1d077550ca?auto=format&fit=crop&w=900&q=80",
+    imageAlt: "Canadian passport with red-and-white national colors linked to the Canadian flag",
   },
   {
     title: "Humanitarian and Compassionate",

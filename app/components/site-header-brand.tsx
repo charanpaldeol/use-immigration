@@ -29,7 +29,7 @@ export function SiteHeaderBrand({
     >
       <SiteHeaderLogoMark theme={theme} />
       <span
-        className={`truncate font-headline text-headline-md font-semibold ${wordmarkClass}`}
+        className={`hidden truncate font-headline text-headline-md font-semibold min-[390px]:inline ${wordmarkClass}`}
       >
         USD Immigration
       </span>
