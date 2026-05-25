@@ -31,7 +31,7 @@ export function desktopNavLinkStateClass(
 
 export function headerShellClass(theme: HeaderTheme, scrolled: boolean): string {
   const base =
-    "sticky top-0 z-50 w-full transition-[box-shadow,background-color,border-color] duration-200 motion-reduce:transition-none max-md:backdrop-blur-none md:supports-[backdrop-filter]:backdrop-blur-sm";
+    "header-glass-blur sticky top-0 z-50 w-full transition-[box-shadow,background-color,border-color] duration-200 motion-reduce:transition-none";
 
   if (theme === "hero" && !scrolled) {
     return `${base} border-b border-on-primary/15 bg-primary-container/90 text-on-primary shadow-none supports-[backdrop-filter]:bg-primary-container/85`;
@@ -68,9 +68,9 @@ export function headerCtaFullClass(theme: HeaderTheme): string {
   return theme === "hero" ? headerCtaFullClassNameHero : headerCtaFullClassName;
 }
 
-export const utilityButtonClassName = `flex h-11 min-w-11 items-center justify-center rounded border border-outline-variant bg-surface-container-lowest text-primary transition-colors duration-150 hover:bg-surface-container-low hover:text-secondary motion-reduce:transition-none ${headerFocusRing}`;
+export const utilityButtonClassName = `appearance-none select-none flex h-11 min-w-11 items-center justify-center rounded border border-outline-variant bg-surface-container-lowest text-primary transition-colors duration-150 hover:bg-surface-container-low hover:text-secondary motion-reduce:transition-none ${headerFocusRing}`;
 
-export const utilityButtonClassNameHero = `flex h-11 min-w-11 items-center justify-center rounded border border-on-primary/20 bg-on-primary/10 text-on-primary transition-colors duration-150 hover:bg-on-primary/15 hover:text-on-primary motion-reduce:transition-none ${headerFocusRing}`;
+export const utilityButtonClassNameHero = `appearance-none select-none flex h-11 min-w-11 items-center justify-center rounded border border-on-primary/20 bg-on-primary/10 text-on-primary transition-colors duration-150 hover:bg-on-primary/15 hover:text-on-primary motion-reduce:transition-none ${headerFocusRing}`;
 
 export function utilityButtonClass(theme: HeaderTheme): string {
   return theme === "hero" ? utilityButtonClassNameHero : utilityButtonClassName;

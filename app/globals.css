@@ -121,6 +121,11 @@
 }
 
 @layer base {
+  html {
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
   @media (min-width: 768px) {
     :root {
       --spacing-header-height: 4rem;
@@ -131,6 +136,9 @@
     background: var(--color-background);
     color: var(--color-on-background);
     font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   h1,
@@ -161,6 +169,18 @@
 }
 
 @layer components {
+  .header-glass-blur {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  @media (min-width: 768px) {
+    .header-glass-blur {
+      backdrop-filter: saturate(140%) blur(8px);
+      -webkit-backdrop-filter: saturate(140%) blur(8px);
+    }
+  }
+
   .service-card-glass {
     background: linear-gradient(
       0deg,
@@ -168,12 +188,5 @@
       rgb(0 0 0 / 0.4) 60%,
       rgb(0 0 0 / 0) 100%
     );
-  }
-
-  @media (min-width: 768px) {
-    .service-card-glass {
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-    }
   }
 }
