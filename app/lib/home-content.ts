@@ -1,12 +1,12 @@
 // Purpose: Homepage copy and structured lists (services, proof points, process, guides).
 
 export type HomeService = {
-  icon: string;
   title: string;
   body: string;
   href: string;
   cta: string;
-  ctaIcon: string;
+  image: string;
+  imageAlt: string;
 };
 
 export type HomeProofPoint = {
@@ -30,68 +30,76 @@ export type HomeGuideCard = {
 
 export const HOME_SERVICES: readonly HomeService[] = [
   {
-    icon: "trending_up",
     title: "Express Entry",
     body: "We build CRS strategy, stream selection, and filing order for FSW, CEC, and FSTP.",
     href: "/guides/express-entry-2026",
     cta: "Read guide",
-    ctaIcon: "arrow_forward",
+    image:
+      "https://images.unsplash.com/photo-1517935706615-2717063c2225?auto=format&fit=crop&w=900&q=80",
+    imageAlt: "Toronto skyline at dusk",
   },
   {
-    icon: "location_on",
     title: "Provincial Nominee (OINP)",
     body: "We match your profile to the right Ontario stream and align your file with current OINP rules.",
     href: "/guides/oinp-2026-niagara",
     cta: "View OINP guide",
-    ctaIcon: "arrow_forward",
+    image:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=900&q=80",
+    imageAlt: "Mist over mountains and water",
   },
   {
-    icon: "work",
     title: "Work Permits and LMIA",
     body: "We support LMIA-based and LMIA-exempt streams, including CUSMA, ICT, and C11.",
     href: "#contact",
     cta: "Get assessment",
-    ctaIcon: "chevron_right",
+    image:
+      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
+    imageAlt: "Team meeting in a modern office",
   },
   {
-    icon: "school",
     title: "Study Permits",
     body: "We file study permits with PAL or TAL compliance and clear timing under current cap rules.",
     href: "#contact",
     cta: "Get assessment",
-    ctaIcon: "chevron_right",
+    image:
+      "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=900&q=80",
+    imageAlt: "Students on a university campus",
   },
   {
-    icon: "family_restroom",
     title: "Family and Spousal Sponsorship",
     body: "We file spouse, partner, child, and parent sponsorships with complete evidence packages.",
     href: "#contact",
     cta: "Get assessment",
-    ctaIcon: "chevron_right",
+    image:
+      "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=900&q=80",
+    imageAlt: "Family spending time together",
   },
   {
-    icon: "public",
     title: "Visitor Visas and Super Visa",
     body: "We prepare visitor and super visa applications with strong proof of ties and intent.",
     href: "#contact",
     cta: "Get assessment",
-    ctaIcon: "chevron_right",
+    image:
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80",
+    imageAlt: "Resort pool and travel destination",
   },
   {
-    icon: "verified",
     title: "Canadian Citizenship",
     body: "We confirm eligibility, file your application, and prepare you for the test and oath.",
     href: "#contact",
     cta: "Get assessment",
-    ctaIcon: "chevron_right",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80",
+    imageAlt: "Person smiling outdoors",
   },
   {
-    icon: "gavel",
     title: "Humanitarian and Compassionate",
     body: "We build H and C submissions for cases that need a path outside standard streams.",
     href: "#contact",
     cta: "Get assessment",
-    ctaIcon: "chevron_right",
+    image:
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80",
+    imageAlt: "Legal documents on a desk",
   },
 ] as const;
 
