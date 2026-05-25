@@ -1,42 +1,40 @@
-// Purpose: This file creates a single header navigation link that highlights itself when its page is active.
+// Purpose: Header navigation link with active state for routes and in-page hashes.
 "use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { headerFocusRing } from "../lib/header-styles";
+import { useContext } from "react";
+import {
+  desktopNavLinkBase,
+  desktopNavLinkStateClass,
+  headerFocusRing,
+  type HeaderTheme,
+} from "../lib/header-styles";
+import { ActiveSectionContext } from "../lib/use-active-section";
 import { isNavLinkActive } from "../lib/site-nav";
-
-export function useLocationHash(): string {
-  const pathname = usePathname();
-  const [hash, setHash] = useState("");
-
-  useEffect(() => {
-    const syncHash = () => setHash(window.location.hash);
-    syncHash();
-    window.addEventListener("hashchange", syncHash);
-    return () => window.removeEventListener("hashchange", syncHash);
-  }, [pathname]);
-
-  return hash;
-}
 
 type SiteHeaderNavLinkProps = {
   href: string;
   label: string;
+  shortLabel?: string;
   layout: "desktop" | "mobile";
+  theme?: HeaderTheme;
   onNavigate?: () => void;
+  className?: string;
 };
 
 export function SiteHeaderNavLink({
   href,
   label,
+  shortLabel,
   layout,
+  theme = "default",
   onNavigate,
+  className = "",
 }: SiteHeaderNavLinkProps) {
   const pathname = usePathname();
-  const hash = useLocationHash();
-  const active = isNavLinkActive(pathname, hash, href);
+  const activeHash = useContext(ActiveSectionContext);
+  const active = isNavLinkActive(pathname, activeHash, href);
   const ariaCurrent = active ? "page" : undefined;
 
   if (layout === "desktop") {
@@ -45,13 +43,16 @@ export function SiteHeaderNavLink({
         href={href}
         onClick={onNavigate}
         aria-current={ariaCurrent}
-        className={`font-label text-label-lg font-semibold tracking-[0.05em] transition-colors duration-200 ${headerFocusRing} ${
-          active
-            ? "text-primary underline decoration-secondary decoration-2 underline-offset-[6px]"
-            : "text-on-surface-variant hover:text-secondary"
-        }`}
+        className={`${desktopNavLinkBase} ${headerFocusRing} ${desktopNavLinkStateClass(theme, active)} ${className}`}
       >
-        {label}
+        {shortLabel ? (
+          <>
+            <span className="lg:hidden">{shortLabel}</span>
+            <span className="hidden lg:inline">{label}</span>
+          </>
+        ) : (
+          label
+        )}
       </Link>
     );
   }
@@ -61,11 +62,11 @@ export function SiteHeaderNavLink({
       href={href}
       onClick={onNavigate}
       aria-current={ariaCurrent}
-      className={`block px-4 py-2 font-label text-label-lg transition-colors duration-200 ${headerFocusRing} ${
+      className={`block min-h-11 px-margin-mobile py-3 font-label text-label-lg transition-colors duration-150 motion-reduce:transition-none ${headerFocusRing} ${
         active
-          ? "bg-surface-container-low font-semibold text-primary"
-          : "text-on-surface hover:bg-surface-container-low"
-      }`}
+          ? "border-l-[3px] border-secondary bg-surface-container-low pl-[calc(var(--spacing-margin-mobile)-3px)] font-semibold text-primary"
+          : "text-on-surface hover:bg-surface-container-low hover:text-primary"
+      } ${className}`}
     >
       {label}
     </Link>

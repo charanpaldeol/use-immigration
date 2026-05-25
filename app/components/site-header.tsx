@@ -1,19 +1,32 @@
-// Purpose: This file creates the top bar of the website, including the brand name, navigation links, and main action button.
+// Purpose: Sticky site header with primary nav, utilities, CTA, and homepage hero theme.
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { headerFocusRing } from "../lib/header-styles";
-import { primaryNav } from "../lib/site-nav";
+import {
+  headerCtaCompactClass,
+  headerCtaFullClass,
+  headerShellClass,
+  type HeaderTheme,
+} from "../lib/header-styles";
+import { useHashScrollSync } from "../lib/use-location-hash";
+import { ActiveSectionContext, useActiveSection } from "../lib/use-active-section";
+import { homeSectionIds, primaryNav } from "../lib/site-nav";
+import { SiteHeaderBrand } from "./site-header-brand";
 import { SiteHeaderGuidesNav } from "./site-header-guides-nav";
 import { SiteHeaderMobileSheet } from "./site-header-mobile-sheet";
 import { SiteHeaderNavLink } from "./site-header-nav-link";
 import { SiteHeaderUtilities } from "./site-header-utilities";
 
-const assessmentCtaClassName = `rounded bg-primary-container px-5 py-2.5 font-label text-label-lg font-semibold tracking-[0.05em] text-on-primary shadow-[var(--shadow-institutional)] transition-opacity duration-200 hover:opacity-90 ${headerFocusRing}`;
-
 export function SiteHeader() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const isHome = pathname === "/";
+  const theme: HeaderTheme = isHome && !scrolled ? "hero" : "default";
+  const activeHash = useActiveSection(homeSectionIds, isHome);
+
+  useHashScrollSync();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -23,56 +36,56 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header
-      className={`sticky top-0 z-50 w-full border-b border-outline-variant bg-surface transition-[box-shadow] duration-200 ${
-        scrolled
-          ? "shadow-none"
-          : "shadow-[var(--shadow-institutional)]"
-      }`}
-    >
-      <div
-        className={`mx-auto flex w-full max-w-container-max items-center justify-between gap-stack-sm px-4 transition-[height] duration-200 md:gap-gutter md:px-margin-desktop ${
-          scrolled ? "h-14" : "h-14 md:h-16"
-        }`}
-      >
-        <Link
-          href="/"
-          className={`shrink-0 font-headline text-headline-md font-semibold text-primary ${headerFocusRing} rounded-sm`}
-        >
-          USD Immigration
-        </Link>
+    <ActiveSectionContext.Provider value={activeHash}>
+      <header className={headerShellClass(theme, scrolled)}>
+      <div className="mx-auto flex h-header-height w-full max-w-container-max items-center justify-between gap-stack-sm px-margin-mobile md:gap-2 lg:gap-gutter md:px-margin-desktop">
+        <SiteHeaderBrand theme={theme} />
 
         <nav
-          className="hidden items-center gap-gutter md:flex"
+          className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 md:flex lg:gap-1"
           aria-label="Primary"
         >
           {primaryNav.map((item) =>
             "guidesMenu" in item && item.guidesMenu ? (
-              <SiteHeaderGuidesNav key={item.href} />
+              <SiteHeaderGuidesNav key={item.href} theme={theme} />
             ) : (
               <SiteHeaderNavLink
                 key={item.href}
                 href={item.href}
                 label={item.label}
+                shortLabel={"shortLabel" in item ? item.shortLabel : undefined}
                 layout="desktop"
+                theme={theme}
               />
             ),
           )}
         </nav>
 
-        <div className="flex items-center gap-stack-sm">
-          <SiteHeaderUtilities className="hidden lg:flex" />
+        <div className="relative z-[60] flex shrink-0 items-center gap-1 sm:gap-stack-sm">
+          <SiteHeaderUtilities
+            className="flex md:hidden"
+            theme={theme}
+            variant="whatsapp"
+          />
+          <SiteHeaderUtilities className="hidden md:flex" theme={theme} />
 
           <Link
             href="/#contact"
-            className={`hidden sm:inline-flex ${assessmentCtaClassName}`}
+            className={headerCtaCompactClass(theme)}
+            aria-label="Free Assessment"
           >
+            Assessment
+          </Link>
+          <Link href="/#contact" className={headerCtaFullClass(theme)}>
             Free Assessment
           </Link>
 
-          <SiteHeaderMobileSheet />
+          {/* Spacer for portaled mobile menu button (see SiteHeaderMobileSheet) */}
+          <div className="h-11 w-11 shrink-0 md:hidden" aria-hidden="true" />
         </div>
       </div>
-    </header>
+      </header>
+      <SiteHeaderMobileSheet />
+    </ActiveSectionContext.Provider>
   );
 }

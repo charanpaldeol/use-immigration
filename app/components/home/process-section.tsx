@@ -4,7 +4,10 @@ import { Eyebrow } from "./eyebrow";
 
 export function ProcessSection() {
   return (
-    <section className="scroll-mt-20 border-y border-outline-variant bg-surface-container-low py-section-padding">
+    <section
+      id="process"
+      className="scroll-mt-header-scroll-offset border-y border-outline-variant bg-surface-container-low py-section-padding"
+    >
       <div className="mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop">
         <div className="max-w-2xl">
           <Eyebrow>How We Work</Eyebrow>

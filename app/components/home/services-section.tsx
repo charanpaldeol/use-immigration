@@ -7,7 +7,7 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="mx-auto max-w-container-max scroll-mt-20 px-margin-mobile py-section-padding md:px-margin-desktop"
+      className="mx-auto max-w-container-max scroll-mt-header-scroll-offset px-margin-mobile py-section-padding md:px-margin-desktop"
     >
       <div className="mb-10 max-w-2xl md:mb-12">
         <Eyebrow>Core Services</Eyebrow>

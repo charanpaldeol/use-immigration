@@ -143,9 +143,9 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-background text-on-background">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-primary focus:px-4 focus:py-2 focus:font-label focus:text-label-lg focus:text-on-primary"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-primary-container focus:px-4 focus:py-2.5 focus:font-label focus:text-label-lg focus:font-semibold focus:text-on-primary focus:shadow-[var(--shadow-focus-ring)] motion-reduce:transition-none"
         >
-          Skip to content
+          Skip to main content
         </a>
         <SiteHeader />
         {children}

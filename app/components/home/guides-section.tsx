@@ -7,7 +7,7 @@ export function GuidesSection() {
   return (
     <section
       id="insights"
-      className="scroll-mt-20 border-y border-outline-variant bg-surface-container-low py-section-padding"
+      className="scroll-mt-header-scroll-offset border-y border-outline-variant bg-surface-container-low py-section-padding"
     >
       <div className="mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop">
         <div className="mb-section-padding flex flex-col justify-between gap-stack-md sm:flex-row sm:items-end">

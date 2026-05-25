@@ -68,7 +68,7 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="scroll-mt-20 bg-surface-container-low py-section-padding"
+      className="scroll-mt-header-scroll-offset bg-surface-container-low py-section-padding"
     >
       <div className="mx-auto grid max-w-container-max gap-gutter px-margin-mobile md:grid-cols-[minmax(290px,1fr)_minmax(0,2fr)] md:px-margin-desktop">
         <section className="overflow-hidden rounded-lg border border-outline-variant bg-surface-container-lowest shadow-[var(--shadow-institutional)]">

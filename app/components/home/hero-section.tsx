@@ -26,7 +26,7 @@ export function HeroSection() {
             </p>
             <div
               id="assessment"
-              className="mt-stack-lg flex scroll-mt-20 flex-wrap gap-stack-md"
+              className="mt-stack-lg flex scroll-mt-header-scroll-offset flex-wrap gap-stack-md"
             >
               <Link
                 href="#contact"

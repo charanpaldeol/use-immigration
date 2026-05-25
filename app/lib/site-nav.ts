@@ -1,9 +1,16 @@
 // Purpose: Primary navigation links and active-state helpers for the site header.
 export const primaryNav = [
   { href: "/#services", label: "Services" },
-  { href: "/about", label: "About Us" },
   { href: "/guides", label: "2026 Guides", guidesMenu: true },
+  { href: "/#process", label: "How We Work", shortLabel: "Process" },
+  { href: "/about", label: "About Us" },
 ] as const;
+
+// In-page section ids for the homepage scroll-spy, derived from the nav hashes
+// (e.g. "/#services" -> "services") so the two stay in sync.
+export const homeSectionIds = primaryNav
+  .filter((item) => item.href.startsWith("/#"))
+  .map((item) => item.href.slice(2));
 
 export const guidesNav = [
   { href: "/guides/express-entry-2026", label: "Express Entry 2026" },
@@ -28,4 +35,11 @@ export function isNavLinkActive(
 
 export function isGuidesNavActive(pathname: string): boolean {
   return pathname === "/guides" || pathname.startsWith("/guides/");
+}
+
+export function isGuideChildActive(pathname: string, href: string): boolean {
+  return (
+    pathname === href ||
+    (href !== "/guides" && pathname.startsWith(`${href}/`))
+  );
 }

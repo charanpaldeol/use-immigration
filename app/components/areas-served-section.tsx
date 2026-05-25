@@ -27,7 +27,7 @@ export function AreasServedSection({
     <section
       id={id}
       aria-labelledby={`${id}-heading`}
-      className={`scroll-mt-20 border-y border-outline-variant bg-surface-container-low ${compact ? "py-stack-lg" : "py-section-padding"
+      className={`scroll-mt-header-scroll-offset border-y border-outline-variant bg-surface-container-low ${compact ? "py-stack-lg" : "py-section-padding"
         }`}
     >
       <div className="mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop">
