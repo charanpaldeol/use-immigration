@@ -1,0 +1,4 @@
+{
+  "// Purpose": "Project-shared MCP server configuration. Add team-approved MCP servers here (e.g., GitHub, Context7) instead of per-user settings.",
+  "mcpServers": {}
+}

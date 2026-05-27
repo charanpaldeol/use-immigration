@@ -1,0 +1,38 @@
+{
+  "// Purpose": "Project-level Claude Code settings: hooks for protecting files, auto-fixing lint on edits, and reminding Claude of key conventions after compaction.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PROJECT_DIR}\"/.claude/hooks/protect-files.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PROJECT_DIR}\"/.claude/hooks/eslint-fix.sh"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'usd-immigration reminders: use npm; verify with npm run lint && npm run test; NAP only in lib/site-business.ts; read node_modules/next/dist/docs/ for Next.js 16 APIs.'"
+          }
+        ]
+      }
+    ]
+  }
+}
