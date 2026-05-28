@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "PGWP to PR",
     "work permit to PR",
     "temporary resident pathway",
+    "Canada TR to PR",
     "Niagara TR to PR",
     "Post-Graduation Work Permit PR",
     "NOC alignment PR",
@@ -73,12 +74,13 @@ export default function TrToPrGuidePage() {
             </ul>
 
             <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">
-              Niagara Opportunity
+              Opportunity Across Canada
             </h2>
             <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-              Niagara remains a viable region for TR-to-PR planning.
-              Hiring demand continues across healthcare, hospitality, logistics,
-              and trades. Local work history improves pathway credibility.
+              TR-to-PR planning works nationwide when Canadian work history and
+              stream fit are solid. Hiring demand continues across healthcare,
+              hospitality, logistics, and trades — regional markets such as
+              Niagara can strengthen credibility when role and location align.
             </p>
 
             <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">

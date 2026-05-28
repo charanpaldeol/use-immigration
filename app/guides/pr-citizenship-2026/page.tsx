@@ -138,7 +138,7 @@ export default function PrCitizenshipGuidePage() {
                   href="/guides/oinp-2026-niagara"
                   className="font-semibold text-secondary underline-offset-2 hover:underline"
                 >
-                  OINP 2026 Niagara
+                  OINP 2026 (Ontario)
                 </Link>{" "}
                 — provincial nomination toward PR.
               </li>

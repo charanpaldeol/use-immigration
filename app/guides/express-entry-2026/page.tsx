@@ -1,4 +1,4 @@
-// Purpose: This file builds the Express Entry 2026 guide page for Niagara skilled-worker applicants.
+// Purpose: This file builds the Express Entry 2026 guide page for Canada-wide skilled-worker applicants.
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteFooter } from "../../components/site-footer";
@@ -6,10 +6,10 @@ import { SiteFooter } from "../../components/site-footer";
 export const metadata: Metadata = {
   title: "Express Entry 2026 Guide: CRS, FSW, CEC & FSTP Strategy",
   description:
-    "Niagara-focused Express Entry strategy for 2026. CRS scoring, FSW, CEC, and FSTP eligibility, NOC alignment, draw trends, French-language category, and post-ITA document prep.",
+    "Canada-wide Express Entry strategy for 2026. CRS scoring, FSW, CEC, and FSTP eligibility, NOC alignment, draw trends, French-language category, and post-ITA document prep.",
   keywords: [
     "Express Entry 2026",
-    "Express Entry Niagara",
+    "Express Entry Canada",
     "CRS calculator",
     "Comprehensive Ranking System",
     "Federal Skilled Worker",
@@ -23,12 +23,14 @@ export const metadata: Metadata = {
     "Senior Manager Express Entry 2026",
     "ITA preparation",
     "Express Entry profile",
+    "Niagara Express Entry",
+    "Ontario Express Entry",
   ],
   alternates: { canonical: "/guides/express-entry-2026" },
   openGraph: {
-    title: "Express Entry 2026: Niagara Strategy Guide | USD Immigration",
+    title: "Express Entry 2026: Canada Strategy Guide | USD Immigration",
     description:
-      "CRS scoring, FSW/CEC/FSTP eligibility, NOC alignment, and post-ITA document prep for Niagara skilled workers.",
+      "CRS scoring, FSW/CEC/FSTP eligibility, NOC alignment, and post-ITA document prep for skilled workers across Canada.",
     url: "/guides/express-entry-2026",
     type: "article",
     siteName: "USD Immigration",
@@ -46,12 +48,12 @@ export default function ExpressEntryGuidePage() {
               Cornerstone Guide
             </p>
             <h1 className="mt-2 font-headline text-headline-lg-mobile font-bold text-on-primary md:text-display-lg">
-              Express Entry 2026: Niagara Strategy Guide
+              Express Entry 2026: Canada Strategy Guide
             </h1>
             <p className="mt-stack-md max-w-3xl font-body text-body-lg text-on-primary/90">
-              Express Entry is a strong route for qualified skilled workers.
-              This guide shows what matters most in 2026. You leave with a clear
-              filing sequence.
+              Express Entry is a strong route for qualified skilled workers
+              across Canada. This guide shows what matters most in 2026. You
+              leave with a clear filing sequence.
             </p>
           </div>
         </section>
@@ -102,12 +104,13 @@ export default function ExpressEntryGuidePage() {
             </p>
 
             <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">
-              Niagara Advantage
+              Demand Across Canada
             </h2>
             <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-              Niagara gives skilled workers a credible settlement path.
-              The region supports hiring in healthcare and trades with lower
-              cost pressure than major metros. That improves OINP alignment.
+              Skilled workers nationwide compete on CRS, occupation fit, and
+              evidence quality. Regional labour markets — including Niagara and
+              the GTA — can support hiring in healthcare and trades with strong
+              provincial nominee alignment when settlement plans match the role.
             </p>
 
             <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">

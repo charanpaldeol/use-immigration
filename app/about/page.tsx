@@ -1,26 +1,25 @@
-// Purpose: This file builds the About page introducing the firm and its Niagara-based immigration consulting team.
+// Purpose: This file builds the About page introducing the firm and its Canada-wide immigration consulting team.
 import type { Metadata } from "next";
 import { SiteFooter } from "../components/site-footer";
 
 export const metadata: Metadata = {
-  title: "About | Niagara Immigration Consultants",
+  title: "About | Canadian Immigration Consultants",
   description:
-    "USD Immigration is a Niagara Falls-based Canadian immigration consulting team serving the GTA and Niagara Region, specializing in Express Entry, OINP, work permits, LMIA, study permits, and family sponsorship.",
+    "USD Immigration is a Canadian immigration consulting team serving clients across Canada from our Niagara Falls, Ontario office, specializing in Express Entry, OINP, work permits, LMIA, study permits, and family sponsorship.",
   keywords: [
-    "GTA immigration consultants Ontario",
+    "Canadian immigration consultants",
     "USD Immigration about",
-    "Niagara immigration consultants",
     "Canadian immigration consulting team",
-    "Niagara Falls immigration office",
+    "RCIC Canada",
+    "CICC RCIC",
     "Ontario immigration consultants",
-    "immigration consultants Niagara",
-    "CICC RCIC Niagara",
+    "Niagara immigration consultants",
   ],
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About USD Immigration | Niagara Immigration Consultants",
+    title: "About USD Immigration | Canadian Immigration Consultants",
     description:
-      "Niagara Falls-based team serving the GTA and Niagara Region: Express Entry, OINP, work permits, study permits, and family sponsorship.",
+      "Canada-wide team based in Niagara Falls, Ontario: Express Entry, OINP, work permits, study permits, and family sponsorship.",
     url: "/about",
     type: "website",
     siteName: "USD Immigration",
@@ -53,10 +52,10 @@ export default function AboutPage() {
               About USD Immigration
             </h1>
             <p className="mt-stack-md max-w-3xl font-body text-body-lg text-on-primary/90">
-              We are a Niagara-based immigration consulting team focused on
-              clear strategy, compliant applications, and practical outcomes.
-              After serving clients across Canada, we expanded to Niagara Falls
-              to support the region&apos;s growing 2026 immigration opportunities.
+              We are a Canadian immigration consulting team focused on clear
+              strategy, compliant applications, and practical outcomes. We serve
+              clients across Canada, with an office in Niagara Falls, Ontario for
+              in-person work and Ontario-focused pathways.
             </p>
           </div>
         </section>
@@ -83,18 +82,18 @@ export default function AboutPage() {
 
             <article className="rounded-lg border border-outline-variant bg-surface-container-lowest p-7 shadow-[var(--shadow-institutional)]">
               <h2 className="font-headline text-headline-md font-semibold text-primary">
-                Why Niagara
+                Serving Clients Across Canada
               </h2>
               <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-                Niagara offers strong regional potential for skilled workers and
-                employers in healthcare, trades, hospitality, and technology.
-                We positioned our office here to align our clients with local
-                opportunities and Ontario-focused nomination pathways.
+                After serving clients across Canada, we expanded to Niagara
+                Falls to anchor in-person consultations and Ontario-focused
+                pathways. Remote consultations make distance a non-issue, so
+                where you live does not limit the guidance you receive.
               </p>
               <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-                With a lower cost of living than major metro areas and growing
-                employer demand, Niagara can be a strategic location for
-                applicants who want long-term stability in Canada.
+                Our Niagara Falls office supports OINP and employer-driven
+                streams, while our team works with applicants nationwide who want
+                long-term stability in Canada.
               </p>
             </article>
           </div>

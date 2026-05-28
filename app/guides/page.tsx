@@ -6,22 +6,23 @@ import { SiteFooter } from "../components/site-footer";
 export const metadata: Metadata = {
   title: "2026 Immigration Guides: Express Entry, OINP, TR to PR",
   description:
-    "Free 2026 Canadian immigration guides for skilled workers, students, families, and employers. Express Entry CRS strategy, OINP streams, and TR-to-PR planning for Niagara.",
+    "Free 2026 Canadian immigration guides for skilled workers, students, families, and employers. Express Entry CRS strategy, OINP streams, and TR-to-PR planning — Canada-wide, with Ontario and Niagara context where relevant.",
   keywords: [
     "Canadian immigration guides 2026",
     "Express Entry 2026 guide",
     "OINP 2026 guide",
     "TR to PR 2026",
     "CRS strategy",
-    "Niagara immigration guide",
+    "Canada immigration guide",
     "Ontario immigration guide",
+    "Niagara immigration guide",
     "Provincial Nominee Program guide",
   ],
   alternates: { canonical: "/guides" },
   openGraph: {
     title: "2026 Immigration Guides | USD Immigration",
     description:
-      "Detailed 2026 Canadian immigration guides: Express Entry, OINP, and TR to PR for Niagara applicants.",
+      "Detailed 2026 Canadian immigration guides: Express Entry, OINP, and TR to PR for applicants across Canada.",
     url: "/guides",
     type: "website",
     siteName: "USD Immigration",
@@ -38,9 +39,9 @@ const GUIDES = [
   },
   {
     href: "/guides/oinp-2026-niagara",
-    title: "OINP 2026 Niagara Guide",
+    title: "OINP 2026 Ontario Guide",
     summary:
-      "Ontario stream overview with Niagara-focused opportunities and employer-driven pathways.",
+      "Ontario stream overview with employer-driven pathways and current stream-fit guidance.",
   },
   {
     href: "/guides/tr-to-pr-2026",
@@ -52,7 +53,7 @@ const GUIDES = [
     href: "/guides/work-permits-2026",
     title: "Work Permits 2026 Guide",
     summary:
-      "TFWP and LMIA, the International Mobility Program, CUSMA, transfers, and the PGWP for Niagara.",
+      "TFWP and LMIA, the International Mobility Program, CUSMA, transfers, and the PGWP for workers and employers across Canada.",
   },
   {
     href: "/guides/pr-citizenship-2026",

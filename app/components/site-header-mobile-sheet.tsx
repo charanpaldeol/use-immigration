@@ -122,12 +122,13 @@ export function SiteHeaderMobileSheet() {
   const [panelEntered, setPanelEntered] = useState(false);
 
   useEffect(() => {
-    if (!open) {
-      setPanelEntered(false);
-      return;
-    }
+    if (!open) return;
     const frame = requestAnimationFrame(() => setPanelEntered(true));
-    return () => cancelAnimationFrame(frame);
+    // Reset on teardown (close/unmount) so the slide-in re-arms for the next open.
+    return () => {
+      cancelAnimationFrame(frame);
+      setPanelEntered(false);
+    };
   }, [open]);
 
   const panelMotionClass = reducedMotion

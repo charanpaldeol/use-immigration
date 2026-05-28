@@ -1,16 +1,16 @@
-// Purpose: This file builds the OINP 2026 Niagara guide page covering Ontario immigrant nominee streams.
+// Purpose: This file builds the OINP 2026 Ontario guide page covering Ontario immigrant nominee streams (URL slug unchanged).
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteFooter } from "../../components/site-footer";
 
 export const metadata: Metadata = {
-  title: "OINP 2026 Niagara Guide: Streams, Eligibility & Process",
+  title: "OINP 2026 Ontario Guide: Streams, Eligibility & Process",
   description:
-    "Complete 2026 OINP guide for Niagara applicants. Employer Job Offer, In-Demand Skills, International Student, and Entrepreneur streams with stream-fit and filing checklists.",
+    "Complete 2026 OINP guide for Ontario applicants. Employer Job Offer, In-Demand Skills, International Student, and Entrepreneur streams with stream-fit and filing checklists.",
   keywords: [
     "OINP 2026",
     "Ontario Immigrant Nominee Program",
-    "OINP Niagara",
+    "OINP Ontario",
     "OINP Employer Job Offer",
     "OINP In-Demand Skills",
     "OINP International Student",
@@ -19,13 +19,14 @@ export const metadata: Metadata = {
     "Ontario PNP",
     "Provincial Nominee Program Ontario",
     "OINP allocation 2026",
-    "Niagara nomination",
+    "Ontario nomination",
+    "OINP Niagara",
   ],
   alternates: { canonical: "/guides/oinp-2026-niagara" },
   openGraph: {
-    title: "OINP 2026: Complete Niagara Guide | USD Immigration",
+    title: "OINP 2026: Complete Ontario Guide | USD Immigration",
     description:
-      "Ontario Immigrant Nominee Program 2026 guide for Niagara: Employer Job Offer, In-Demand Skills, International Student, and Entrepreneur streams.",
+      "Ontario Immigrant Nominee Program 2026 guide: Employer Job Offer, In-Demand Skills, International Student, and Entrepreneur streams.",
     url: "/guides/oinp-2026-niagara",
     type: "article",
     siteName: "USD Immigration",
@@ -43,12 +44,12 @@ export default function OinpGuidePage() {
               Cornerstone Guide
             </p>
             <h1 className="mt-2 font-headline text-headline-lg-mobile font-bold text-on-primary md:text-display-lg">
-              OINP 2026: Complete Niagara Guide
+              OINP 2026: Complete Ontario Guide
             </h1>
             <p className="mt-stack-md max-w-3xl font-body text-body-lg text-on-primary/90">
               OINP is a direct route for Ontario-focused applicants.
               This guide shows where you fit and what to file next. It is built
-              for workers, students, and employers in Niagara.
+              for workers, students, and employers in Ontario.
             </p>
           </div>
         </section>
@@ -103,12 +104,13 @@ export default function OinpGuidePage() {
             </p>
 
             <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">
-              Why Niagara Matters
+              Why Ontario Matters
             </h2>
             <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-              Niagara supports stable long-term settlement planning.
-              Employer demand and regional fit strengthen nomination strategy.
-              Cases perform better when role, location, and retention align.
+              Ontario supports stable long-term settlement planning across
+              diverse labour markets. Employer demand and regional fit —
+              including Niagara and the GTA — strengthen nomination strategy when
+              role, location, and retention align.
             </p>
 
             <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">

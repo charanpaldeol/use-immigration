@@ -1,6 +1,6 @@
 # USD Immigration — machine-readable site summary (experimental; see https://llmstxt.org/)
 
-> Niagara Falls, Ontario-based Canadian immigration consulting. Public marketing site only — not legal advice.
+> Canada-wide Canadian immigration consulting with an office in Niagara Falls, Ontario. Public marketing site only — not legal advice.
 
 ## Canonical origin
 https://usdimmigration.ca
@@ -8,17 +8,17 @@ https://usdimmigration.ca
 ## What we do
 - Canadian immigration strategy and application support: Express Entry, OINP (Ontario Immigrant Nominee Program), work permits (including LMIA and LMIA-exempt routes), study permits, family and spousal sponsorship, visitor and Super Visa, citizenship, and related pathways.
 - Office: 4838 Dorchester Rd, Niagara Falls, ON L2E 6N9, Canada.
-- Consultations: in person (Niagara office) or remote for clients across Ontario.
+- Consultations: in person (Niagara office) or remote for clients across Canada.
 
 ## Geographic focus
-- Niagara Region and Greater Toronto Area (GTA), including regular work with clients in Niagara Falls, St. Catharines, Welland, Fort Erie, Grimsby, Toronto, Mississauga, Brampton, Hamilton, Oakville, Markham, Vaughan, and neighbouring Ontario communities.
+- Clients across Canada, with an office in Niagara Falls, Ontario. Regular work with applicants in Niagara Falls, St. Catharines, Welland, Fort Erie, Grimsby, Toronto, Mississauga, Brampton, Hamilton, Oakville, Markham, Vaughan, and neighbouring Ontario communities.
 
 ## Key URLs
 - Home: https://usdimmigration.ca/
 - About: https://usdimmigration.ca/about
 - Guides index: https://usdimmigration.ca/guides
 - Express Entry 2026 guide: https://usdimmigration.ca/guides/express-entry-2026
-- OINP 2026 Niagara guide: https://usdimmigration.ca/guides/oinp-2026-niagara
+- OINP 2026 Ontario guide: https://usdimmigration.ca/guides/oinp-2026-niagara
 - TR to PR 2026 guide: https://usdimmigration.ca/guides/tr-to-pr-2026
 - Sitemap: https://usdimmigration.ca/sitemap.xml
 

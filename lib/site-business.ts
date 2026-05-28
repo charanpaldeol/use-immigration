@@ -3,7 +3,7 @@
  * Single source of truth for NAP, hours, and site URL (schema, contact UI, sitemap).
  *
  * Owner checklist (off-site local + AI retrieval):
- * - Google Business Profile: match name/address/phone/hours to these constants; set service areas (GTA + Niagara).
+ * - Google Business Profile: match name/address/phone/hours to these constants; set service areas (Canada-wide + GTA + Niagara).
  * - Google Search Console + Bing Webmaster: verify property; submit sitemap `https://usdimmigration.ca/sitemap.xml` (or your `NEXT_PUBLIC_SITE_URL`).
  */
 
@@ -32,7 +32,7 @@ export const MAPS_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponen
 
 /** Human-readable regions for on-page copy and llms.txt */
 export const SERVICE_AREAS_HEADLINE =
-  "Niagara Region and the Greater Toronto Area (GTA)";
+  "Clients across Canada, with an office in Niagara Falls, Ontario";
 export const SERVICE_AREAS_CITIES = [
   "Niagara Falls",
   "St. Catharines",
@@ -54,6 +54,7 @@ export const SERVICE_AREAS_CITIES = [
  */
 export function buildLocalBusinessJsonLd(): Record<string, unknown> {
   const areaServed: string[] = [
+    "Canada",
     "Niagara Region, Ontario, Canada",
     "Greater Toronto Area, Ontario, Canada",
     ...SERVICE_AREAS_CITIES,
@@ -65,7 +66,7 @@ export function buildLocalBusinessJsonLd(): Record<string, unknown> {
     "@id": `${SITE_URL}/#localbusiness`,
     name: "USD Immigration",
     description:
-      "Canadian immigration consulting for Express Entry, OINP, work permits, study permits, family sponsorship, and related pathways. Niagara Falls office serving Niagara and the GTA.",
+      "Canadian immigration consulting for Express Entry, OINP, work permits, study permits, family sponsorship, and related pathways — serving clients across Canada from our Niagara Falls office.",
     url: SITE_URL,
     telephone: PHONE_TEL,
     email: EMAIL,

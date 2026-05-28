@@ -50,8 +50,8 @@ export const HOME_SERVICES: readonly HomeService[] = [
   {
     title: "Work Permits and LMIA",
     body: "We support LMIA-based and LMIA-exempt streams, including CUSMA, ICT, and C11.",
-    href: "#contact",
-    cta: "Get assessment",
+    href: "/guides/work-permits-2026",
+    cta: "Read guide",
     image:
       "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80",
     imageAlt: "Team meeting in a modern office",
@@ -77,8 +77,8 @@ export const HOME_SERVICES: readonly HomeService[] = [
   {
     title: "Visitor Visas and Super Visa",
     body: "We prepare visitor and super visa applications with strong proof of ties and intent.",
-    href: "#contact",
-    cta: "Get assessment",
+    href: "/guides/pr-citizenship-2026",
+    cta: "Read guide",
     image:
       "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80",
     imageAlt: "Resort pool and travel destination",
@@ -86,8 +86,8 @@ export const HOME_SERVICES: readonly HomeService[] = [
   {
     title: "Canadian Citizenship",
     body: "We confirm eligibility, file your application, and prepare you for the test and oath.",
-    href: "#contact",
-    cta: "Get assessment",
+    href: "/guides/pr-citizenship-2026",
+    cta: "Read guide",
     image:
       "https://images.unsplash.com/photo-1545013806-8e1d077550ca?auto=format&fit=crop&w=900&q=80",
     imageAlt: "Canadian passport with red-and-white national colors linked to the Canadian flag",
@@ -95,8 +95,8 @@ export const HOME_SERVICES: readonly HomeService[] = [
   {
     title: "Humanitarian and Compassionate",
     body: "We build H and C submissions for cases that need a path outside standard streams.",
-    href: "#contact",
-    cta: "Get assessment",
+    href: "/guides/humanitarian-appeals-2026",
+    cta: "Read guide",
     image:
       "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80",
     imageAlt: "Legal documents on a desk",
@@ -160,8 +160,8 @@ export const HOME_GUIDES: readonly HomeGuideCard[] = [
     href: "/guides/express-entry-2026",
   },
   {
-    title: "OINP 2026 for Niagara",
-    body: "Clear stream selection guidance with Ontario rules and Niagara fit.",
+    title: "OINP 2026 (Ontario)",
+    body: "Clear stream selection guidance with current Ontario rules and stream fit.",
     href: "/guides/oinp-2026-niagara",
   },
   {

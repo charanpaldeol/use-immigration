@@ -38,8 +38,8 @@ export function SiteFooter() {
             USD Immigration
           </div>
           <p className="font-body text-body-md text-on-primary/80">
-            Niagara-based immigration strategy for workers, students, families,
-            and employers planning for 2026 pathways.
+            Canada-wide immigration strategy for workers, students, families,
+            and employers — from our Niagara Falls office.
           </p>
         </div>
         <div>

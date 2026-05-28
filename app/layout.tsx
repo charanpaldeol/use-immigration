@@ -62,16 +62,15 @@ const localBusinessJsonLd = buildLocalBusinessJsonLd();
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "USD Immigration | Niagara Immigration Experts",
+    default: "USD Immigration | Canadian Immigration Consultants",
     template: "%s | USD Immigration",
   },
   description:
-    "Niagara Falls and GTA-focused Canadian immigration consultants for Express Entry, OINP, work permits, LMIA, study permits, family sponsorship, super visa, and citizenship in 2026.",
+    "Canada-wide immigration consultants for Express Entry, PNP, work permits, study permits, family sponsorship, and citizenship — with an office in Niagara Falls, Ontario.",
   keywords: [
-    "GTA immigration consultant Ontario",
-    "Greater Toronto Area immigration",
-    "Niagara immigration consultant",
-    "Niagara Falls immigration",
+    "Canadian immigration consultant",
+    "immigration consultant Canada",
+    "RCIC Canada",
     "Canadian immigration 2026",
     "Express Entry",
     "OINP",
@@ -83,15 +82,17 @@ export const metadata: Metadata = {
     "Family Sponsorship",
     "Super Visa",
     "Canadian Citizenship",
+    "Niagara immigration consultant",
+    "GTA immigration consultant",
     "USD Immigration",
   ],
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "USD Immigration | Niagara Immigration Experts",
+    title: "USD Immigration | Canadian Immigration Consultants",
     description:
-      "Niagara Falls and GTA-focused immigration consulting for Express Entry, OINP, work permits, LMIA, study permits, family sponsorship, super visa, and citizenship in 2026.",
+      "Canada-wide immigration consultants for Express Entry, PNP, work permits, study permits, family sponsorship, and citizenship — with an office in Niagara Falls, Ontario.",
     url: SITE_URL,
     type: "website",
     siteName: "USD Immigration",
@@ -99,9 +100,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "USD Immigration | Niagara Immigration Experts",
+    title: "USD Immigration | Canadian Immigration Consultants",
     description:
-      "Niagara Falls and GTA-focused immigration consulting for 2026 Canadian pathways.",
+      "Canada-wide immigration consultants for 2026 Canadian pathways — with an office in Niagara Falls, Ontario.",
   },
   robots: {
     index: true,
