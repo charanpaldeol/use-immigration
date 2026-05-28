@@ -43,3 +43,6 @@ next-env.d.ts
 # Claude Code (personal / local overrides)
 CLAUDE.local.md
 .claude/settings.local.json
+
+# Graphify (generated reports)
+graphify-out/
