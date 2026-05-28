@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat, Source_Serif_4 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE_URL, buildLocalBusinessJsonLd } from "@/lib/site-business";
 import { SiteHeader } from "./components/site-header";
 import "./globals.css";
@@ -151,6 +152,7 @@ export default function RootLayout({
         <SiteHeader />
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
