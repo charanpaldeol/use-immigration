@@ -79,6 +79,29 @@ export default function ExpressEntryGuidePage() {
             </ol>
 
             <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">
+              Federal Skilled Sub-Programs
+            </h2>
+            <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
+              Three federal programs run through Express Entry. The Federal
+              Skilled Worker (FSW) stream scores education, language, and skilled
+              experience. The Federal Skilled Trades Program (FSTP) targets
+              qualified trades. The Canadian Experience Class suits applicants
+              with Canadian work history.
+            </p>
+            <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
+              A high enough ranking earns an Invitation to Apply (ITA), which
+              starts a strict document deadline. If you need to build experience
+              first, the{" "}
+              <Link
+                href="/guides/work-permits-2026"
+                className="font-semibold text-secondary underline-offset-2 hover:underline"
+              >
+                Work Permits 2026 guide
+              </Link>{" "}
+              shows routes that lead toward this stage.
+            </p>
+
+            <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">
               Niagara Advantage
             </h2>
             <p className="mt-stack-md font-body text-body-md text-on-surface-variant">

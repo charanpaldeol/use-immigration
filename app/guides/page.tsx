@@ -48,6 +48,24 @@ const GUIDES = [
     summary:
       "Fast-track transition planning for temporary residents already working in Canada.",
   },
+  {
+    href: "/guides/work-permits-2026",
+    title: "Work Permits 2026 Guide",
+    summary:
+      "TFWP and LMIA, the International Mobility Program, CUSMA, transfers, and the PGWP for Niagara.",
+  },
+  {
+    href: "/guides/pr-citizenship-2026",
+    title: "PR & Citizenship 2026 Guide",
+    summary:
+      "Permanent residence, PR card renewal, citizenship, and visitor status with a maintenance plan.",
+  },
+  {
+    href: "/guides/humanitarian-appeals-2026",
+    title: "Humanitarian & Appeals 2026 Guide",
+    summary:
+      "H&C applications, medical and criminal inadmissibility, and detention reviews explained.",
+  },
 ];
 
 export default function GuidesPage() {
@@ -90,6 +108,19 @@ export default function GuidesPage() {
                 </Link>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-container-max px-margin-mobile pb-section-padding md:px-margin-desktop">
+          <div className="rounded-lg border border-outline-variant bg-surface-container-lowest p-6 shadow-[var(--shadow-institutional)]">
+            <p className="font-label text-label-md font-semibold uppercase tracking-[0.08em] text-secondary">
+              Policy Update — 2026
+            </p>
+            <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
+              Ontario cut the 2025 OINP allocation to 10,750 nominations, and the
+              2024 study-permit cap and attestation system still shape intake. We
+              factor current limits into every plan.
+            </p>
           </div>
         </section>
       </main>

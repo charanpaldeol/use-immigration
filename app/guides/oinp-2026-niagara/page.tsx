@@ -75,6 +75,34 @@ export default function OinpGuidePage() {
             </ul>
 
             <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">
+              Employer Job Offer & Student Streams
+            </h2>
+            <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
+              The Employer Job Offer (Foreign Worker) stream needs an approved
+              Ontario role and a qualifying offer. The job, wage, and employer
+              must meet stream rules. A matching{" "}
+              <Link
+                href="/guides/work-permits-2026"
+                className="font-semibold text-secondary underline-offset-2 hover:underline"
+              >
+                work permit
+              </Link>{" "}
+              often runs alongside the nomination.
+            </p>
+            <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
+              The International Student stream serves eligible Ontario graduates.
+              Program level and timing affect eligibility. Many students later
+              move through a{" "}
+              <Link
+                href="/guides/tr-to-pr-2026"
+                className="font-semibold text-secondary underline-offset-2 hover:underline"
+              >
+                TR-to-PR pathway
+              </Link>
+              .
+            </p>
+
+            <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">
               Why Niagara Matters
             </h2>
             <p className="mt-stack-md font-body text-body-md text-on-surface-variant">

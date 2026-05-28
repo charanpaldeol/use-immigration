@@ -16,6 +16,9 @@ export const guidesNav = [
   { href: "/guides/express-entry-2026", label: "Express Entry 2026" },
   { href: "/guides/oinp-2026-niagara", label: "OINP Niagara 2026" },
   { href: "/guides/tr-to-pr-2026", label: "TR to PR 2026" },
+  { href: "/guides/work-permits-2026", label: "Work Permits 2026" },
+  { href: "/guides/pr-citizenship-2026", label: "PR & Citizenship 2026" },
+  { href: "/guides/humanitarian-appeals-2026", label: "Humanitarian & Appeals 2026" },
   { href: "/guides", label: "All 2026 Guides" },
 ] as const;
 
