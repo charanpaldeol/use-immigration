@@ -3,6 +3,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { guidesNav } from "../lib/site-nav";
 
 export function SiteFooter() {
   const [newsletter, setNewsletter] = useState<
@@ -43,32 +44,26 @@ export function SiteFooter() {
           </p>
         </div>
         <div>
-          <h2 className="mb-stack-md font-label text-label-lg font-semibold uppercase tracking-wider text-on-primary">
+          <p className="mb-stack-md font-label text-label-lg font-semibold uppercase tracking-wider text-on-primary">
             Services
-          </h2>
+          </p>
           <ul className="space-y-stack-sm font-body text-body-md">
+            {guidesNav.map((guide) => (
+              <li key={guide.href}>
+                <Link
+                  href={guide.href}
+                  className="text-on-primary/80 transition-colors hover:text-on-primary"
+                >
+                  {guide.label}
+                </Link>
+              </li>
+            ))}
             <li>
               <Link
-                href="/guides/express-entry-2026"
+                href="/guides"
                 className="text-on-primary/80 transition-colors hover:text-on-primary"
               >
-                Express Entry 2026
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/guides/oinp-2026-niagara"
-                className="text-on-primary/80 transition-colors hover:text-on-primary"
-              >
-                OINP 2026
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/guides/tr-to-pr-2026"
-                className="text-on-primary/80 transition-colors hover:text-on-primary"
-              >
-                TR to PR 2026
+                All 2026 Guides
               </Link>
             </li>
             <li>
@@ -82,9 +77,9 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <h2 className="mb-stack-md font-label text-label-lg font-semibold uppercase tracking-wider text-on-primary">
+          <p className="mb-stack-md font-label text-label-lg font-semibold uppercase tracking-wider text-on-primary">
             Company
-          </h2>
+          </p>
           <ul className="space-y-stack-sm font-body text-body-md">
             <li>
               <Link
@@ -121,9 +116,9 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <h2 className="mb-stack-md font-label text-label-lg font-semibold uppercase tracking-wider text-on-primary">
+          <p className="mb-stack-md font-label text-label-lg font-semibold uppercase tracking-wider text-on-primary">
             Newsletter
-          </h2>
+          </p>
           <p className="mb-stack-md font-body text-body-md text-on-primary/80">
             Receive the latest policy updates directly.
           </p>

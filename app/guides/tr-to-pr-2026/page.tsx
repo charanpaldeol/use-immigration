@@ -1,111 +1,90 @@
-// Purpose: This file builds the TR to PR 2026 guide page for temporary residents moving to permanent residence.
+// Purpose: TR to PR 2026 guide with Article/FAQ schema.
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SiteFooter } from "../../components/site-footer";
+import { GuidePage } from "@/app/components/guide-page";
+import { GuideH2, GuideOl, GuideP, GuideUl } from "@/app/components/guide-prose";
+import { SiteFooter } from "@/app/components/site-footer";
+import { GUIDE_LAST_UPDATED, TR_TO_PR_FAQS } from "@/app/lib/guides/constants";
+
+const SCHEMA_DESCRIPTION =
+  "TR-to-PR transition guide for 2026: Canadian Experience Class, work-to-PR options, NOC and language requirements, and PGWP-to-PR checklists.";
 
 export const metadata: Metadata = {
   title: "TR to PR Pathway 2026: Canadian Experience Class & Work-to-PR",
-  description:
-    "TR-to-PR transition guide for 2026. Eligibility for Canadian Experience Class, work-to-PR options, NOC and language requirements, PGWP-to-PR, and a ready-to-apply checklist.",
-  keywords: [
-    "TR to PR 2026",
-    "TR to PR pathway",
-    "Canadian Experience Class",
-    "CEC eligibility",
-    "PGWP to PR",
-    "work permit to PR",
-    "temporary resident pathway",
-    "Canada TR to PR",
-    "Niagara TR to PR",
-    "Post-Graduation Work Permit PR",
-    "NOC alignment PR",
-  ],
+  description: SCHEMA_DESCRIPTION,
   alternates: { canonical: "/guides/tr-to-pr-2026" },
   openGraph: {
     title: "TR to PR Pathway 2026 | USD Immigration",
-    description:
-      "Canadian Experience Class eligibility, work-to-PR options, NOC alignment, and language requirements for temporary residents in 2026.",
+    description: SCHEMA_DESCRIPTION,
     url: "/guides/tr-to-pr-2026",
     type: "article",
     siteName: "USD Immigration",
     locale: "en_CA",
+    modifiedTime: GUIDE_LAST_UPDATED,
   },
 };
 
 export default function TrToPrGuidePage() {
   return (
     <>
-      <main id="main-content" className="flex-1">
-        <section className="bg-primary-container py-section-padding">
-          <div className="mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop">
-            <p className="font-label text-label-md font-semibold uppercase tracking-[0.08em] text-on-primary/80">
-              Cornerstone Guide
-            </p>
-            <h1 className="mt-2 font-headline text-headline-lg-mobile font-bold text-on-primary md:text-display-lg">
-              TR to PR Pathway 2026
-            </h1>
-            <p className="mt-stack-md max-w-3xl font-body text-body-lg text-on-primary/90">
-              TR to PR is a direct transition route for eligible workers.
-              This guide shows the core checks and filing order. You get a clear
-              readiness plan before submission.
-            </p>
-          </div>
-        </section>
-
-        <article className="mx-auto max-w-container-max px-margin-mobile py-section-padding md:px-margin-desktop">
-          <div className="rounded-lg border border-outline-variant bg-surface-container-lowest p-7 shadow-[var(--shadow-institutional)]">
-            <h2 className="font-headline text-headline-md font-semibold text-primary">
-              Who This Pathway Serves
-            </h2>
-            <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-              This pathway serves temporary residents with valid Canadian work
-              records. Existing employer evidence gives a stronger base than
-              starting from zero.
-            </p>
-
-            <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">
-              Eligibility Priorities
-            </h2>
-            <ul className="mt-stack-md space-y-2 font-body text-body-md text-on-surface-variant">
-              <li>- Valid temporary status and qualifying Canadian experience.</li>
-              <li>- Correct NOC alignment and work-history evidence.</li>
-              <li>- Required language test results for target stream.</li>
-              <li>- Complete records for identity, employment, and compliance.</li>
-            </ul>
-
-            <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">
-              Opportunity Across Canada
-            </h2>
-            <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-              TR-to-PR planning works nationwide when Canadian work history and
-              stream fit are solid. Hiring demand continues across healthcare,
-              hospitality, logistics, and trades — regional markets such as
-              Niagara can strengthen credibility when role and location align.
-            </p>
-
-            <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">
-              Ready-to-Apply Checklist
-            </h2>
-            <ol className="mt-stack-md space-y-2 font-body text-body-md text-on-surface-variant">
-              <li>1. Verify your pathway and intake timing.</li>
-              <li>2. Gather complete employer letters and pay records.</li>
-              <li>3. Schedule language testing if required.</li>
-              <li>4. Build a filing timeline for submission readiness.</li>
-            </ol>
-            <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-              We do not submit early to chase speed. If eligibility is not met,
-              we stop and set a compliant timeline.
-            </p>
-
+      <GuidePage
+        eyebrow="Cornerstone Guide"
+        title="TR to PR Pathway 2026"
+        intro="TR to PR describes moving from temporary status to permanent residence through eligible federal or provincial pathways. This guide covers core checks and filing order for workers and graduates in Canada."
+        lastUpdated={GUIDE_LAST_UPDATED}
+        canonicalPath="/guides/tr-to-pr-2026"
+        schemaHeadline="TR to PR Pathway 2026"
+        schemaDescription={SCHEMA_DESCRIPTION}
+        faqs={TR_TO_PR_FAQS}
+        ctaLabel="Check Eligibility"
+      >
+        <GuideH2>Who This Pathway Serves</GuideH2>
+        <GuideP>
+          This pathway serves temporary residents with valid Canadian work records.
+          Existing employer evidence gives a stronger base than starting from zero.
+        </GuideP>
+        <GuideH2>Eligibility Priorities</GuideH2>
+        <GuideUl>
+          <li>Valid temporary status and qualifying Canadian experience.</li>
+          <li>Correct NOC alignment and work-history evidence.</li>
+          <li>Required language test results for the target stream.</li>
+          <li>Complete records for identity, employment, and compliance.</li>
+        </GuideUl>
+        <GuideH2>Ready-to-Apply Checklist</GuideH2>
+        <GuideOl>
+          <li>Verify your pathway and intake timing.</li>
+          <li>Gather complete employer letters and pay records.</li>
+          <li>Schedule language testing if required.</li>
+          <li>Build a filing timeline for submission readiness.</li>
+        </GuideOl>
+        <GuideH2>Related 2026 Guides</GuideH2>
+        <GuideUl>
+          <li>
             <Link
-              href="/#contact"
-              className="mt-stack-lg inline-flex items-center justify-center rounded-lg bg-secondary px-6 py-3 font-label text-label-lg font-semibold tracking-[0.05em] text-on-secondary"
+              href="/guides/work-permits-2026"
+              className="font-semibold text-secondary underline-offset-2 hover:underline"
             >
-              Check Eligibility
+              Work Permits 2026
             </Link>
-          </div>
-        </article>
-      </main>
+          </li>
+          <li>
+            <Link
+              href="/guides/express-entry-2026"
+              className="font-semibold text-secondary underline-offset-2 hover:underline"
+            >
+              Express Entry 2026
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/guides/oinp-2026-niagara"
+              className="font-semibold text-secondary underline-offset-2 hover:underline"
+            >
+              OINP 2026 (Ontario)
+            </Link>
+          </li>
+        </GuideUl>
+      </GuidePage>
       <SiteFooter />
     </>
   );

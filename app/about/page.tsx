@@ -1,20 +1,17 @@
-// Purpose: This file builds the About page introducing the firm and its Canada-wide immigration consulting team.
+// Purpose: About page with regulated-consultant disclosure and team overview.
 import type { Metadata } from "next";
+import {
+  CICC_FIND_CONSULTANT_URL,
+  LEGAL_BUSINESS_NAME,
+  PHONE_NAP_NOTE,
+  REGULATED_CONSULTANTS,
+} from "@/lib/site-business";
 import { SiteFooter } from "../components/site-footer";
 
 export const metadata: Metadata = {
-  title: "About | Canadian Immigration Consultants",
+  title: "About",
   description:
-    "USD Immigration is a Canadian immigration consulting team serving clients across Canada from our Niagara Falls, Ontario office, specializing in Express Entry, OINP, work permits, LMIA, study permits, and family sponsorship.",
-  keywords: [
-    "Canadian immigration consultants",
-    "USD Immigration about",
-    "Canadian immigration consulting team",
-    "RCIC Canada",
-    "CICC RCIC",
-    "Ontario immigration consultants",
-    "Niagara immigration consultants",
-  ],
+    "USD Immigration is a Canadian immigration consulting team serving clients across Canada from our Niagara Falls, Ontario office, specializing in Express Entry, OINP, work permits, study permits, and family sponsorship.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About USD Immigration | Canadian Immigration Consultants",
@@ -29,8 +26,8 @@ export const metadata: Metadata = {
 
 const TEAM = [
   {
-    name: "Senior Immigration Consultant",
-    focus: "Express Entry, OINP, and employer-driven pathways",
+    name: "Upneet Singh Dhaliwal, RCIC (R534701)",
+    focus: "Express Entry, OINP, work permits, and family sponsorship",
   },
   {
     name: "Case Processing Lead",
@@ -61,6 +58,69 @@ export default function AboutPage() {
         </section>
 
         <section className="mx-auto max-w-container-max px-margin-mobile py-section-padding md:px-margin-desktop">
+          <article className="rounded-lg border border-outline-variant bg-surface-container-lowest p-7 shadow-[var(--shadow-institutional)]">
+            <h2 className="font-headline text-headline-md font-semibold text-primary">
+              Regulated representation
+            </h2>
+            <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
+              Immigration advice and representation are provided through{" "}
+              {LEGAL_BUSINESS_NAME}, in good standing with the College of
+              Immigration and Citizenship Consultants (CICC). You can confirm any
+              consultant&apos;s licence on the{" "}
+              <a
+                href={CICC_FIND_CONSULTANT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-secondary underline-offset-2 hover:underline"
+              >
+                CICC public register
+              </a>
+              .
+            </p>
+            <ul className="mt-stack-md space-y-4">
+              {REGULATED_CONSULTANTS.map((consultant) => (
+                <li
+                  key={consultant.collegeId}
+                  className="rounded-lg border border-outline-variant/70 bg-surface-container-low p-4"
+                >
+                  <p className="font-label text-label-lg font-semibold text-primary">
+                    <a
+                      href={consultant.registerProfileUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary underline-offset-2 hover:underline"
+                    >
+                      {consultant.name}
+                    </a>
+                  </p>
+                  <p className="mt-1 font-body text-body-sm text-on-surface-variant">
+                    {consultant.designation} · College ID {consultant.collegeId} ·{" "}
+                    {consultant.licenseStatus} (licensed since{" "}
+                    {consultant.licensedSince})
+                  </p>
+                  <p className="mt-2 font-body text-body-md text-on-surface-variant">
+                    {consultant.focus}
+                  </p>
+                  <p className="mt-2 font-body text-body-sm">
+                    <a
+                      href={consultant.registerProfileUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-secondary underline-offset-2 hover:underline"
+                    >
+                      View CICC register profile
+                    </a>
+                  </p>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-stack-md font-body text-body-sm text-on-surface-variant">
+              {PHONE_NAP_NOTE}
+            </p>
+          </article>
+        </section>
+
+        <section className="mx-auto max-w-container-max px-margin-mobile pb-section-padding md:px-margin-desktop">
           <div className="grid gap-gutter lg:grid-cols-2">
             <article className="rounded-lg border border-outline-variant bg-surface-container-lowest p-7 shadow-[var(--shadow-institutional)]">
               <h2 className="font-headline text-headline-md font-semibold text-primary">
@@ -72,12 +132,6 @@ export default function AboutPage() {
                 Every case is built around eligibility, documentation accuracy,
                 and realistic timelines.
               </p>
-              <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-                Our team supports work permits, permanent residence pathways,
-                student options, family sponsorship, and business-related
-                immigration needs with a consistent process from intake through
-                submission.
-              </p>
             </article>
 
             <article className="rounded-lg border border-outline-variant bg-surface-container-lowest p-7 shadow-[var(--shadow-institutional)]">
@@ -85,15 +139,9 @@ export default function AboutPage() {
                 Serving Clients Across Canada
               </h2>
               <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-                After serving clients across Canada, we expanded to Niagara
-                Falls to anchor in-person consultations and Ontario-focused
-                pathways. Remote consultations make distance a non-issue, so
-                where you live does not limit the guidance you receive.
-              </p>
-              <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-                Our Niagara Falls office supports OINP and employer-driven
-                streams, while our team works with applicants nationwide who want
-                long-term stability in Canada.
+                Remote consultations make distance a non-issue. Our Niagara Falls
+                office supports OINP and employer-driven streams; we work with
+                applicants nationwide who want long-term stability in Canada.
               </p>
             </article>
           </div>

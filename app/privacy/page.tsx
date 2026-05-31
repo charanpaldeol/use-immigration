@@ -3,9 +3,19 @@ import type { Metadata } from "next";
 import { SiteFooter } from "../components/site-footer";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | USD Immigration",
+  title: "Privacy Policy",
   description:
     "How USD Immigration collects, uses, and safeguards personal information shared by prospective and current clients.",
+  alternates: { canonical: "/privacy" },
+  openGraph: {
+    title: "Privacy Policy | USD Immigration",
+    description:
+      "How USD Immigration collects, uses, and safeguards personal information shared by prospective and current clients.",
+    url: "/privacy",
+    type: "website",
+    siteName: "USD Immigration",
+    locale: "en_CA",
+  },
 };
 
 export default function PrivacyPage() {
@@ -60,10 +70,10 @@ export default function PrivacyPage() {
               You may request access, correction, or deletion of your personal
               information by writing to{" "}
               <a
-                href="mailto:privacy@usdimmigration.com"
+                href="mailto:privacy@usdimmigration.ca"
                 className="underline hover:text-secondary"
               >
-                privacy@usdimmigration.com
+                privacy@usdimmigration.ca
               </a>
               .
             </p>

@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat, Source_Serif_4 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
-import { SITE_URL, buildLocalBusinessJsonLd } from "@/lib/site-business";
+import { SITE_URL, buildOrganizationJsonLd } from "@/lib/site-business";
 import { SiteHeader } from "./components/site-header";
 import "./globals.css";
 
@@ -57,7 +57,7 @@ const MATERIAL_ICONS = [
 
 const MATERIAL_SYMBOLS_HREF = `https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=${MATERIAL_ICONS}&display=swap`;
 
-const localBusinessJsonLd = buildLocalBusinessJsonLd();
+const organizationJsonLd = buildOrganizationJsonLd();
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -67,28 +67,6 @@ export const metadata: Metadata = {
   },
   description:
     "Canada-wide immigration consultants for Express Entry, PNP, work permits, study permits, family sponsorship, and citizenship — with an office in Niagara Falls, Ontario.",
-  keywords: [
-    "Canadian immigration consultant",
-    "immigration consultant Canada",
-    "RCIC Canada",
-    "Canadian immigration 2026",
-    "Express Entry",
-    "OINP",
-    "Provincial Nominee Program",
-    "Work Permit Canada",
-    "LMIA",
-    "Study Permit Canada",
-    "Spousal Sponsorship",
-    "Family Sponsorship",
-    "Super Visa",
-    "Canadian Citizenship",
-    "Niagara immigration consultant",
-    "GTA immigration consultant",
-    "USD Immigration",
-  ],
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: "USD Immigration | Canadian Immigration Consultants",
     description:
@@ -124,7 +102,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-CA"
       className={`${montserrat.variable} ${inter.variable} ${sourceSerif.variable} h-full antialiased`}
     >
       <head>
@@ -137,7 +115,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessJsonLd),
+            __html: JSON.stringify(organizationJsonLd),
           }}
         />
       </head>

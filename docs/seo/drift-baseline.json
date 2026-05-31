@@ -1,0 +1,37 @@
+{
+  "url": "https://usdimmigration.ca",
+  "capturedAt": "2026-05-31",
+  "note": "Static baseline from repo metadata; re-capture after major SEO changes.",
+  "pages": {
+    "/": {
+      "title": "USD Immigration | Canadian Immigration Consultants 2026",
+      "canonical": "https://usdimmigration.ca/",
+      "robots": "index, follow"
+    },
+    "/guides/express-entry-2026": {
+      "title": "Express Entry 2026 Guide: CRS, FSW, CEC & FSTP Strategy | USD Immigration",
+      "canonical": "https://usdimmigration.ca/guides/express-entry-2026",
+      "schema": ["Article", "BreadcrumbList", "FAQPage"]
+    },
+    "/guides/oinp-2026-niagara": {
+      "title": "OINP 2026 Ontario Guide: Streams, Eligibility & Process | USD Immigration",
+      "canonical": "https://usdimmigration.ca/guides/oinp-2026-niagara",
+      "schema": ["Article", "BreadcrumbList", "FAQPage"]
+    },
+    "/guides/study-permits-2026": {
+      "canonical": "https://usdimmigration.ca/guides/study-permits-2026",
+      "schema": ["Article", "BreadcrumbList", "FAQPage"]
+    },
+    "/guides/family-sponsorship-2026": {
+      "canonical": "https://usdimmigration.ca/guides/family-sponsorship-2026",
+      "schema": ["Article", "BreadcrumbList", "FAQPage"]
+    }
+  },
+  "technical": {
+    "robotsTxt": "Allow /, Disallow /api/, Sitemap declared",
+    "previewNoindex": "X-Robots-Tag on *.vercel.app via proxy.ts",
+    "hsts": "max-age=31536000; includeSubDomains",
+    "llmsTxt": "/llms.txt",
+    "indexNowKey": "/8f3c2a9e1d7046b5a0e8f7c4d2b1a9063e5f7c8d9a0b1c2.txt"
+  }
+}

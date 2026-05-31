@@ -122,7 +122,7 @@ export const HOME_PROOF_POINTS: readonly HomeProofPoint[] = [
   {
     icon: "person",
     label: "Direct With Your RCIC",
-    body: "A licensed consultant handles your file. No call centre.",
+    body: "Regulated representation — verify RCIC R534701 on the CICC public register.",
   },
 ] as const;
 

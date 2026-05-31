@@ -3,9 +3,19 @@ import type { Metadata } from "next";
 import { SiteFooter } from "../components/site-footer";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | USD Immigration",
+  title: "Terms of Service",
   description:
     "The terms governing your use of USD Immigration's website and consultation services.",
+  alternates: { canonical: "/terms" },
+  openGraph: {
+    title: "Terms of Service | USD Immigration",
+    description:
+      "The terms governing your use of USD Immigration's website and consultation services.",
+    url: "/terms",
+    type: "website",
+    siteName: "USD Immigration",
+    locale: "en_CA",
+  },
 };
 
 export default function TermsPage() {
@@ -57,10 +67,10 @@ export default function TermsPage() {
             <p>
               Questions about these terms can be sent to{" "}
               <a
-                href="mailto:legal@usdimmigration.com"
+                href="mailto:legal@usdimmigration.ca"
                 className="underline hover:text-secondary"
               >
-                legal@usdimmigration.com
+                legal@usdimmigration.ca
               </a>
               .
             </p>

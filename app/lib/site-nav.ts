@@ -19,6 +19,8 @@ export const guidesNav = [
   { href: "/guides/work-permits-2026", label: "Work Permits 2026" },
   { href: "/guides/pr-citizenship-2026", label: "PR & Citizenship 2026" },
   { href: "/guides/humanitarian-appeals-2026", label: "Humanitarian & Appeals 2026" },
+  { href: "/guides/study-permits-2026", label: "Study Permits 2026" },
+  { href: "/guides/family-sponsorship-2026", label: "Family Sponsorship 2026" },
   { href: "/guides", label: "All 2026 Guides" },
 ] as const;
 

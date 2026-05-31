@@ -6,18 +6,7 @@ import { SiteFooter } from "../components/site-footer";
 export const metadata: Metadata = {
   title: "2026 Immigration Guides: Express Entry, OINP, TR to PR",
   description:
-    "Free 2026 Canadian immigration guides for skilled workers, students, families, and employers. Express Entry CRS strategy, OINP streams, and TR-to-PR planning — Canada-wide, with Ontario and Niagara context where relevant.",
-  keywords: [
-    "Canadian immigration guides 2026",
-    "Express Entry 2026 guide",
-    "OINP 2026 guide",
-    "TR to PR 2026",
-    "CRS strategy",
-    "Canada immigration guide",
-    "Ontario immigration guide",
-    "Niagara immigration guide",
-    "Provincial Nominee Program guide",
-  ],
+    "Free 2026 Canadian immigration guides for skilled workers, students, families, and employers. Express Entry CRS strategy, OINP streams, study permits, family sponsorship, and TR-to-PR planning — Canada-wide.",
   alternates: { canonical: "/guides" },
   openGraph: {
     title: "2026 Immigration Guides | USD Immigration",
@@ -66,6 +55,18 @@ const GUIDES = [
     title: "Humanitarian & Appeals 2026 Guide",
     summary:
       "H&C applications, medical and criminal inadmissibility, and detention reviews explained.",
+  },
+  {
+    href: "/guides/study-permits-2026",
+    title: "Study Permits 2026 Guide",
+    summary:
+      "PAL/TAL attestation, DLI selection, work while studying, and PGWP-to-PR sequencing.",
+  },
+  {
+    href: "/guides/family-sponsorship-2026",
+    title: "Family Sponsorship 2026 Guide",
+    summary:
+      "Spousal and partner sponsorship, dependants, PGP, Super Visa, and relationship evidence.",
   },
 ];
 

@@ -7,6 +7,7 @@ import {
   MAPS_DIRECTIONS_URL,
   MAPS_EMBED_URL,
   PHONE_DISPLAY,
+  PHONE_NAP_NOTE,
   PHONE_TEL,
   WHATSAPP_URL,
 } from "@/lib/site-business";
@@ -89,6 +90,9 @@ export function ContactSection() {
                 >
                   {PHONE_DISPLAY}
                 </a>
+                <p className="mt-2 font-body text-body-sm text-on-surface-variant/90">
+                  {PHONE_NAP_NOTE}
+                </p>
               </ContactItem>
 
               <ContactItem

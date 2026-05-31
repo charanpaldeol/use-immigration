@@ -1,141 +1,47 @@
-// Purpose: This file builds the OINP 2026 Ontario guide page covering Ontario immigrant nominee streams (URL slug unchanged).
+// Purpose: OINP 2026 Ontario guide (expanded content, Article/FAQ schema).
 import type { Metadata } from "next";
-import Link from "next/link";
-import { SiteFooter } from "../../components/site-footer";
+import { GuidePage } from "@/app/components/guide-page";
+import { SiteFooter } from "@/app/components/site-footer";
+import { GUIDE_LAST_UPDATED, OINP_FAQS } from "@/app/lib/guides/constants";
+import { Oinp2026Content } from "@/app/lib/guides/oinp-2026-content";
+
+const SCHEMA_DESCRIPTION =
+  "Complete 2026 OINP guide for Ontario applicants: Employer Job Offer, Human Capital, graduate, and business streams with stream-fit and federal-stage checklists.";
 
 export const metadata: Metadata = {
   title: "OINP 2026 Ontario Guide: Streams, Eligibility & Process",
   description:
     "Complete 2026 OINP guide for Ontario applicants. Employer Job Offer, In-Demand Skills, International Student, and Entrepreneur streams with stream-fit and filing checklists.",
-  keywords: [
-    "OINP 2026",
-    "Ontario Immigrant Nominee Program",
-    "OINP Ontario",
-    "OINP Employer Job Offer",
-    "OINP In-Demand Skills",
-    "OINP International Student",
-    "OINP Entrepreneur",
-    "OINP Foreign Worker",
-    "Ontario PNP",
-    "Provincial Nominee Program Ontario",
-    "OINP allocation 2026",
-    "Ontario nomination",
-    "OINP Niagara",
-  ],
   alternates: { canonical: "/guides/oinp-2026-niagara" },
   openGraph: {
     title: "OINP 2026: Complete Ontario Guide | USD Immigration",
     description:
-      "Ontario Immigrant Nominee Program 2026 guide: Employer Job Offer, In-Demand Skills, International Student, and Entrepreneur streams.",
+      "Ontario Immigrant Nominee Program 2026 guide: streams, Express Entry alignment, and preparation checklists.",
     url: "/guides/oinp-2026-niagara",
     type: "article",
     siteName: "USD Immigration",
     locale: "en_CA",
+    publishedTime: "2026-01-15",
+    modifiedTime: GUIDE_LAST_UPDATED,
   },
 };
 
 export default function OinpGuidePage() {
   return (
     <>
-      <main id="main-content" className="flex-1">
-        <section className="bg-primary-container py-section-padding">
-          <div className="mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop">
-            <p className="font-label text-label-md font-semibold uppercase tracking-[0.08em] text-on-primary/80">
-              Cornerstone Guide
-            </p>
-            <h1 className="mt-2 font-headline text-headline-lg-mobile font-bold text-on-primary md:text-display-lg">
-              OINP 2026: Complete Ontario Guide
-            </h1>
-            <p className="mt-stack-md max-w-3xl font-body text-body-lg text-on-primary/90">
-              OINP is a direct route for Ontario-focused applicants.
-              This guide shows where you fit and what to file next. It is built
-              for workers, students, and employers in Ontario.
-            </p>
-          </div>
-        </section>
-
-        <article className="mx-auto max-w-container-max px-margin-mobile py-section-padding md:px-margin-desktop">
-          <div className="rounded-lg border border-outline-variant bg-surface-container-lowest p-7 shadow-[var(--shadow-institutional)]">
-            <h2 className="font-headline text-headline-md font-semibold text-primary">
-              Program Snapshot
-            </h2>
-            <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-              OINP rewards fit with Ontario labor demand.
-              In 2026, demand remains strong in healthcare, trades, technology,
-              and employer-supported roles. Stream choice must match evidence.
-            </p>
-
-            <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">
-              Main Streams to Evaluate
-            </h2>
-            <ul className="mt-stack-md space-y-2 font-body text-body-md text-on-surface-variant">
-              <li>- Employer Job Offer stream for approved Ontario roles.</li>
-              <li>- In-Demand Skills stream for qualifying occupations.</li>
-              <li>- International Student options after eligible graduation.</li>
-              <li>- Business-focused routes for qualified entrepreneurs.</li>
-            </ul>
-
-            <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">
-              Employer Job Offer & Student Streams
-            </h2>
-            <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-              The Employer Job Offer (Foreign Worker) stream needs an approved
-              Ontario role and a qualifying offer. The job, wage, and employer
-              must meet stream rules. A matching{" "}
-              <Link
-                href="/guides/work-permits-2026"
-                className="font-semibold text-secondary underline-offset-2 hover:underline"
-              >
-                work permit
-              </Link>{" "}
-              often runs alongside the nomination.
-            </p>
-            <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-              The International Student stream serves eligible Ontario graduates.
-              Program level and timing affect eligibility. Many students later
-              move through a{" "}
-              <Link
-                href="/guides/tr-to-pr-2026"
-                className="font-semibold text-secondary underline-offset-2 hover:underline"
-              >
-                TR-to-PR pathway
-              </Link>
-              .
-            </p>
-
-            <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">
-              Why Ontario Matters
-            </h2>
-            <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-              Ontario supports stable long-term settlement planning across
-              diverse labour markets. Employer demand and regional fit —
-              including Niagara and the GTA — strengthen nomination strategy when
-              role, location, and retention align.
-            </p>
-
-            <h2 className="mt-stack-lg font-headline text-headline-md font-semibold text-primary">
-              Application Preparation Checklist
-            </h2>
-            <ol className="mt-stack-md space-y-2 font-body text-body-md text-on-surface-variant">
-              <li>1. Confirm stream criteria and current intake conditions.</li>
-              <li>2. Prepare language, education, and work records.</li>
-              <li>3. Validate job offer terms where required.</li>
-              <li>4. Build timeline from nomination to federal PR stage.</li>
-            </ol>
-            <p className="mt-stack-md font-body text-body-md text-on-surface-variant">
-              We do not force weak stream choices. If your profile does not fit,
-              we say no and move to a better path.
-            </p>
-
-            <Link
-              href="/#contact"
-              className="mt-stack-lg inline-flex items-center justify-center rounded-lg bg-secondary px-6 py-3 font-label text-label-lg font-semibold tracking-[0.05em] text-on-secondary"
-            >
-              Get OINP Assessment
-            </Link>
-          </div>
-        </article>
-      </main>
+      <GuidePage
+        eyebrow="Cornerstone Guide"
+        title="OINP 2026: Complete Ontario Guide"
+        intro="OINP is a direct route for Ontario-focused applicants. This guide compares streams, Express Entry alignment, and what to file next — for workers, students, and employers across Ontario including Niagara and the GTA."
+        lastUpdated={GUIDE_LAST_UPDATED}
+        canonicalPath="/guides/oinp-2026-niagara"
+        schemaHeadline="OINP 2026: Complete Ontario Guide"
+        schemaDescription={SCHEMA_DESCRIPTION}
+        faqs={OINP_FAQS}
+        ctaLabel="Get OINP Assessment"
+      >
+        <Oinp2026Content />
+      </GuidePage>
       <SiteFooter />
     </>
   );

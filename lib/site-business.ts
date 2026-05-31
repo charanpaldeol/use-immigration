@@ -12,8 +12,35 @@ export const SITE_URL =
 
 export const PHONE_DISPLAY = "403 971 0038";
 export const PHONE_TEL = "+14039710038";
+/** Shown near phone on contact/about — matches CICC register employment listing. */
+export const PHONE_NAP_NOTE =
+  "Canada-wide line (403). Office: Niagara Falls, ON — same phone listed on our CICC public register profile.";
 export const EMAIL = "info@usdimmigration.ca";
 export const HOURS = "Mon-Fri 9-6";
+
+export const CICC_FIND_CONSULTANT_URL =
+  "https://college-ic.ca/protecting-the-public/find-an-immigration-consultant";
+
+/** Legal entity per CICC public register (employment record). */
+export const LEGAL_BUSINESS_NAME = "USD Immigration Consultancy Services Inc";
+
+/**
+ * Primary RCIC — verify status on the
+ * @see https://register.college-ic.ca/Public-Register-EN/Licensee/Profile.aspx?ID=22167
+ */
+export const PRIMARY_RCIC = {
+  name: "Upneet Singh Dhaliwal",
+  collegeId: "R534701",
+  designation: "RCIC",
+  licenseStatus: "Active" as const,
+  licensedSince: "2019-08-21",
+  registerProfileUrl:
+    "https://register.college-ic.ca/Public-Register-EN/Licensee/Profile.aspx?ID=22167",
+  focus:
+    "Express Entry, OINP, work permits, study permits, and family sponsorship",
+} as const;
+
+export const REGULATED_CONSULTANTS = [PRIMARY_RCIC] as const;
 
 export const ADDRESS_LINES = ["4838 Dorchester Rd", "Niagara Falls, ON L2E 6N9"] as const;
 export const ADDRESS_FOR_MAPS =
@@ -61,10 +88,10 @@ export function buildLocalBusinessJsonLd(): Record<string, unknown> {
   ];
 
   return {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "ProfessionalService"],
     "@id": `${SITE_URL}/#localbusiness`,
     name: "USD Immigration",
+    additionalType: "https://schema.org/ProfessionalService",
     description:
       "Canadian immigration consulting for Express Entry, OINP, work permits, study permits, family sponsorship, and related pathways — serving clients across Canada from our Niagara Falls office.",
     url: SITE_URL,
@@ -94,5 +121,33 @@ export function buildLocalBusinessJsonLd(): Record<string, unknown> {
       },
     ],
     priceRange: "$$",
+    legalName: LEGAL_BUSINESS_NAME,
+  };
+}
+
+export function buildPrimaryRcicPersonJsonLd(): Record<string, unknown> {
+  return {
+    "@type": "Person",
+    "@id": `${SITE_URL}/#rcic-${PRIMARY_RCIC.collegeId}`,
+    name: PRIMARY_RCIC.name,
+    jobTitle: "Regulated Canadian Immigration Consultant (RCIC)",
+    identifier: PRIMARY_RCIC.collegeId,
+    url: PRIMARY_RCIC.registerProfileUrl,
+    worksFor: { "@id": `${SITE_URL}/#localbusiness` },
+  };
+}
+
+/** LocalBusiness + primary RCIC for sitewide JSON-LD. */
+export function buildOrganizationJsonLd(): Record<string, unknown> {
+  const person = buildPrimaryRcicPersonJsonLd();
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        ...buildLocalBusinessJsonLd(),
+        employee: { "@id": person["@id"] },
+      },
+      person,
+    ],
   };
 }

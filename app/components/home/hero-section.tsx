@@ -1,5 +1,6 @@
 // Purpose: Homepage hero with primary CTAs and proof-point sidebar.
 import Link from "next/link";
+import { PRIMARY_RCIC, SERVICE_AREAS_HEADLINE } from "@/lib/site-business";
 import { HOME_PROOF_POINTS } from "../../lib/home-content";
 import { Eyebrow } from "./eyebrow";
 
@@ -23,6 +24,11 @@ export function HeroSection() {
               Most people qualify for more than one pathway — and the wrong choice
               costs time and money. We tell you which one fits, and what it takes
               to get there.
+            </p>
+            <p className="mt-stack-sm max-w-xl font-body text-body-md text-on-primary/75">
+              {SERVICE_AREAS_HEADLINE}. In-person consultations in Niagara Falls
+              or remote for clients in Toronto, Hamilton, Mississauga, and across
+              Canada.
             </p>
             <div
               id="assessment"
@@ -56,7 +62,7 @@ export function HeroSection() {
                   verified
                 </span>
                 <span className="font-label text-label-md font-semibold text-on-primary">
-                  Licensed Canadian Consultants
+                  {PRIMARY_RCIC.designation} {PRIMARY_RCIC.collegeId} · CICC regulated
                 </span>
               </div>
               <div className="flex items-center gap-2">
