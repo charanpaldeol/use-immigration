@@ -4,30 +4,43 @@ export type HeaderTheme = "default" | "hero";
 export const headerFocusRing =
   "focus-visible:outline-none focus-visible:shadow-[var(--shadow-focus-ring)]";
 
-export const desktopNavLinkBase =
-  "rounded px-2.5 py-1.5 font-label text-label-lg font-semibold tracking-[0.05em] transition-[color,background-color,box-shadow] duration-150 motion-reduce:transition-none";
+/** Shared shell for every desktop nav item (single link or link + chevron). */
+export const desktopNavItemWrapper =
+  "inline-flex min-h-11 items-center rounded border-b-2 pb-0.5";
 
+export const desktopNavLinkBase =
+  "inline-flex items-center rounded px-2.5 py-1.5 font-label text-label-lg font-semibold tracking-[0.05em] transition-[color,background-color,box-shadow,border-color] duration-150 motion-reduce:transition-none";
+
+/** Applied on the nav item wrapper so one indicator spans label + optional icon. */
 export const desktopNavLinkActive =
-  "text-primary underline decoration-secondary decoration-2 underline-offset-[6px]";
+  "border-secondary text-primary";
 
 export const desktopNavLinkInactive =
-  "text-on-surface-variant hover:bg-surface-container-low hover:text-secondary";
+  "border-transparent text-on-surface-variant hover:bg-surface-container-low hover:text-secondary";
 
 export const desktopNavLinkActiveHero =
-  "text-on-primary underline decoration-secondary decoration-2 underline-offset-[6px]";
+  "border-secondary text-on-primary";
 
 export const desktopNavLinkInactiveHero =
-  "text-on-primary/85 hover:bg-on-primary/10 hover:text-on-primary";
+  "border-transparent text-on-primary/85 hover:bg-on-primary/10 hover:text-on-primary";
+
+export const desktopNavChevronButton = `inline-flex h-11 w-9 shrink-0 items-center justify-center rounded bg-transparent text-inherit ${headerFocusRing}`;
 
 export function desktopNavLinkStateClass(
   theme: HeaderTheme,
   active: boolean,
 ): string {
-  if (theme === "hero") {
-    return active ? desktopNavLinkActiveHero : desktopNavLinkInactiveHero;
-  }
-  return active ? desktopNavLinkActive : desktopNavLinkInactive;
+  const state = (() => {
+    if (theme === "hero") {
+      return active ? desktopNavLinkActiveHero : desktopNavLinkInactiveHero;
+    }
+    return active ? desktopNavLinkActive : desktopNavLinkInactive;
+  })();
+  return `${desktopNavItemWrapper} ${state}`;
 }
+
+/** Child link/button inside a nav item wrapper — no per-child underline. */
+export const desktopNavLinkChildClass = "no-underline decoration-transparent";
 
 export function headerShellClass(theme: HeaderTheme, scrolled: boolean): string {
   const base =

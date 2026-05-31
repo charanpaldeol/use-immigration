@@ -13,6 +13,8 @@ import {
 } from "react";
 import {
   desktopNavLinkBase,
+  desktopNavChevronButton,
+  desktopNavLinkChildClass,
   desktopNavLinkStateClass,
   headerFocusRing,
   type HeaderTheme,
@@ -148,11 +150,11 @@ export function SiteHeaderGuidesNav({ theme = "default" }: SiteHeaderGuidesNavPr
       }}
       onKeyDown={onMenuKeyDown}
     >
-      <div className="inline-flex items-center">
+      <div className={desktopNavLinkStateClass(theme, active)}>
         <Link
           href="/guides"
           aria-current={active ? "page" : undefined}
-          className={`${desktopNavLinkBase} ${headerFocusRing} ${desktopNavLinkStateClass(theme, active)}`}
+          className={`${desktopNavLinkBase} ${headerFocusRing} ${desktopNavLinkChildClass}`}
         >
           2026 Guides
         </Link>
@@ -164,7 +166,7 @@ export function SiteHeaderGuidesNav({ theme = "default" }: SiteHeaderGuidesNavPr
           aria-haspopup="menu"
           aria-label={open ? "Close 2026 Guides menu" : "Open 2026 Guides menu"}
           onClick={() => setOpen((value) => !value)}
-          className={`-ml-1 flex h-11 min-w-11 items-center justify-center rounded ${headerFocusRing} ${desktopNavLinkStateClass(theme, active)}`}
+          className={`${desktopNavChevronButton} ${desktopNavLinkChildClass}`}
         >
           <span
             className={`material-symbols-outlined text-[18px] transition-transform duration-150 motion-reduce:transition-none ${

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useContext } from "react";
 import {
   desktopNavLinkBase,
+  desktopNavLinkChildClass,
   desktopNavLinkStateClass,
   headerFocusRing,
   type HeaderTheme,
@@ -39,21 +40,23 @@ export function SiteHeaderNavLink({
 
   if (layout === "desktop") {
     return (
-      <Link
-        href={href}
-        onClick={onNavigate}
-        aria-current={ariaCurrent}
-        className={`${desktopNavLinkBase} ${headerFocusRing} ${desktopNavLinkStateClass(theme, active)} ${className}`}
-      >
-        {shortLabel ? (
-          <>
-            <span className="lg:hidden">{shortLabel}</span>
-            <span className="hidden lg:inline">{label}</span>
-          </>
-        ) : (
-          label
-        )}
-      </Link>
+      <span className={desktopNavLinkStateClass(theme, active)}>
+        <Link
+          href={href}
+          onClick={onNavigate}
+          aria-current={ariaCurrent}
+          className={`${desktopNavLinkBase} ${headerFocusRing} ${desktopNavLinkChildClass} ${className}`}
+        >
+          {shortLabel ? (
+            <>
+              <span className="lg:hidden">{shortLabel}</span>
+              <span className="hidden lg:inline">{label}</span>
+            </>
+          ) : (
+            label
+          )}
+        </Link>
+      </span>
     );
   }
 
