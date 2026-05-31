@@ -9,8 +9,6 @@ See @package.json for scripts and @docs/DESIGN.md for design tokens (Stellar Sov
 - Run `npm run test` when changing logic in `app/lib/` or utilities with tests.
 - Run `npm run build` before PRs that touch routing, `next.config.ts`, API routes, or sitemap.
 - Working directly on `main` is OK for now (small project).
-- When Claude makes a mistake, end with: **Update CLAUDE.md so you do not repeat this.**
-- For every new or edited source file, add a top-of-file `// Purpose:` (or block comment equivalent) explaining the file's role in the project, not line-by-line behavior.
 
 # Architecture
 
